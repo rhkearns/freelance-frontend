@@ -1,7 +1,6 @@
 import React from 'react';
 
 const ProjectCard = (props) => {
-  console.log(props);
   return (
     <>
       <h1>{props.project.title}</h1>
