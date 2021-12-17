@@ -1,10 +1,19 @@
 import styles from './Landing.module.css'
+import './landing.scss'
 
 const Landing = ({ user }) => {
   return (
-    <main className={styles.container}>
-      <h1>hello, {user ? user.name : 'friend'}</h1>
-    </main>
+    <div className="container">
+      <section className="one">
+        <h1>First</h1>
+      </section>
+      <section className="two">
+        <h1>Second</h1>
+      </section>
+      <section className="three">
+        <h1>Third</h1>
+      </section>
+    </div>
   )
 }
 

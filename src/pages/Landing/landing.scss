@@ -1,0 +1,31 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.container {
+  // scroll-snap-type: y proximity;
+  overflow-y: scroll;
+  height: 100vh;
+}
+
+section {
+  scroll-snap-align: start;
+  color: white;
+}
+
+.one {
+  height: 37vh;
+  background-color: rgba(0,0,0,0.7);
+}
+
+.two {
+  height: 74vh;
+  background-color: rgba(0,0,0,0.5);
+}
+
+.three {
+  height: 60vh;
+  background-color: rgba(0,0,0,0.9);
+}
