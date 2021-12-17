@@ -10,24 +10,25 @@ const ProjectList = () => {
   const [projects, setProjects] = useState([])
 
   useEffect(() => {
-    const fetchAllProjects = async () => {
+    const fetchProjects = async () => {
       const postData = await getAllProjects()
       setProjects(postData)
       console.log('post fetch', projects);
     }
-    fetchAllProjects()
+    fetchProjects()
     return () => { setProjects([]) }
   }, [])
 
   return (
     <>
     <h1>Projects</h1>
-    {projects?.map((project) => (
+    
+    {/* {projects?.map((project) => (
       <ProjectCard 
         project={project}
         key={project._id}
       />
-    ))}
+    ))} */}
     </>
   )
 }
