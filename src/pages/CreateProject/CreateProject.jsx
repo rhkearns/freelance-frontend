@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router-dom';
 // Components
 import ProjectForm from './ProjectForm'
 // Services
-import { createProject } from '../../services/projectService';
+import { addProject } from '../../services/projectService';
 
 const CreateProject = (props) => {
   const navigate = useNavigate()
@@ -18,14 +18,13 @@ const CreateProject = (props) => {
   const [validForm, setValidForm] = useState(false)
 
   const handleChange = (e) => {
-    setFormData({...formData, [e.target.name]: e.target.value})
+    setFormData({ ...formData, [e.target.name]: e.target.value})
   }
 
   const handleCreateProject = async (e) => {
     e.preventDefault()
     try {
-      const newProject = await createProject(formData)
-      console.log('new project data', newProject);
+      const newProject = await addProject(formData)
       navigate('/projects')
     } catch (error) {
       throw error

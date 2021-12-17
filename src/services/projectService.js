@@ -18,7 +18,7 @@ export const getAllProjects = async () => {
   }
 }
 
-export const createProjcet = async (project) => {
+export const addProject = async (project) => {
   try {
     const res = await fetch(`${BASE_URL}`, {
       method: "POST",
