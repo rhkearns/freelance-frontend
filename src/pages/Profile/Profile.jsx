@@ -1,8 +1,14 @@
 import React from 'react';
+import ProjectList from '../ProjectList';
 
-const Profile = () => {
+const Profile = ({user}) => {
+  
+  
   return (
-    <h1>Profile</h1>
+    <>
+      <h1>Profile</h1>
+      <ProjectList user={user}/>
+    </>
   )
 }
 

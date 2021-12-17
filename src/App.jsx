@@ -4,7 +4,6 @@ import NavBar from './components/NavBar/NavBar'
 import Signup from './pages/Signup/Signup'
 import Login from './pages/Login/Login'
 import Landing from './pages/Landing/Landing'
-import Profiles from './pages/Profiles/Profiles'
 import * as authService from './services/authService'
 import ProjectList from './pages/ProjectList'
 import CreateProject from './pages/CreateProject/CreateProject'
@@ -40,7 +39,7 @@ const App = () => {
         />
         <Route
           path="/profile"
-          element={user ? <Profile /> : <Navigate to="/login" />}
+          element={user ? <Profile user={user}/> : <Navigate to="/login" />}
         />
         <Route
           path="/projects"
