@@ -9,10 +9,16 @@ import { createProjcet } from '../../services/projectService';
 const CreateProject = (props) => {
   const navigate = useNavigate()
   const [project, setProject] = useState('')
-  
-  const formData = {
-    project: project,
-    owner: props.user.profile,
+  const [formData, setFormData] = useState({
+    title: '',
+    startDate: '',
+    endDate: '',
+    hourlyRate: 0,
+  })
+  const [validForm, setValidForm] = useState(false)
+
+  const handleChange = (e) => {
+    setFormData({...formData, [e.target.name]: e.target.value})
   }
 
   const handleCreateProject = async (e) => {
@@ -33,6 +39,11 @@ const CreateProject = (props) => {
         project={project}
         setProject={setProject}
         handleCreateProject={handleCreateProject}
+        handleChange={handleChange}
+        validForm={validForm}
+        setValidForm={setValidForm}
+        formData={formData}
+        setFormData={setFormData}
       />
     </>
   )
