@@ -7,7 +7,7 @@ import { getAllProjects } from '../services/projectService';
 // Components
 import ProjectCard from '../components/Project/ProjectCard'
 
-const ProjectList = () => {
+const ProjectList = ({user}) => {
   const [projects, setProjects] = useState([])
 
   useEffect(() => {
