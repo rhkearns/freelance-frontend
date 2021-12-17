@@ -12,9 +12,9 @@ const ProjectList = () => {
   useEffect(() => {
     const fetchProjects = async () => {
       const postData = await getAllProjects()
-      console.log("post data", postData);
+      // console.log("post data", postData);
       setProjects(postData)
-      console.log('projects', projects);
+      // console.log('projects', projects);
     }
     fetchProjects()
     return () => { setProjects([]) }
