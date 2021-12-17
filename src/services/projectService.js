@@ -34,3 +34,13 @@ export const addProject = async (project) => {
     throw error
   }
 }
+
+export const getProjectById = async (projectId) => {
+  try{
+    const res = await fetch(`${BASE_URL}${projectId}`)
+    const data = await res.json()
+    return data
+  } catch (error) {
+    throw error
+  }
+}
