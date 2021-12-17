@@ -20,7 +20,7 @@ const ProjectForm = ({project, setProject, handleCreateProject, handleChange, va
           name='title'
           autoComplete='off'
           placeholder='Title'
-          onChange={(e) => setProject(e.target.value)}
+          onChange={(e) => handleChange(e.target.value)}
         />
         <label>Start Date</label>
         <input 
@@ -28,8 +28,30 @@ const ProjectForm = ({project, setProject, handleCreateProject, handleChange, va
           type='date'
           name='startDate'
           autoComplete='off'
-          onChange={(e) => setProject(e.target.value)}
+          onChange={(e) => handleChange(e.target.value)}
         />
+        <label>End Date</label>
+        <input 
+          required
+          type='date'
+          name='endDate'
+          autoComplete='off'
+          onChange={(e) => handleChange(e.target.value)}
+        />
+        <label>Hourly Rate</label>
+        <input 
+          required
+          type='number'
+          name='hourlyRate'
+          autoComplete='off'
+          onChange={(e) => handleChange(e.target.value)}
+        />
+        <button
+          type="submit"
+          disabled={!validForm}
+        >
+          Add Project
+        </button>
       </form>
     </>
   )

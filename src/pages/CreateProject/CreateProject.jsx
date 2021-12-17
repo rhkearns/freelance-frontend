@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router-dom';
 // Components
 import ProjectForm from './ProjectForm'
 // Services
-import { createProjcet } from '../../services/projectService';
+import { createProject } from '../../services/projectService';
 
 const CreateProject = (props) => {
   const navigate = useNavigate()
@@ -24,7 +24,7 @@ const CreateProject = (props) => {
   const handleCreateProject = async (e) => {
     e.preventDefault()
     try {
-      const newProject = await CreateProject(formData)
+      const newProject = await createProject(formData)
       console.log('new project data', newProject);
       navigate('/projects')
     } catch (error) {
