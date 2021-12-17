@@ -1,5 +1,4 @@
 import React from 'react';
-import ProjectList from '../../pages/ProjectList';
 
 const ProjectCard = (props) => {
   console.log(props);

@@ -17,3 +17,20 @@ export const getAllProjects = async () => {
     throw error
   }
 }
+
+export const addProject = async (project) => {
+  try {
+    const res = await fetch(`${BASE_URL}`, {
+      method: "POST",
+      headers: {
+        'content-type': 'application/json',
+        'Authorization': `Bearer ${tokenService.getToken()}`
+      },
+      body: JSON.stringify(project)
+    })
+    const data = await res.json()
+    return data
+  } catch (error) {
+    throw error
+  }
+}
