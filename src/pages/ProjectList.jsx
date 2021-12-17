@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom'
 
 // Services
@@ -7,8 +7,7 @@ import { getAllProjects } from '../services/projectService';
 // Components
 import ProjectCard from '../components/Project/ProjectCard'
 
-const ProjectList = ({user}) => {
-  const [projects, setProjects] = useState([])
+const ProjectList = ({user, projects, setProjects}) => {
 
   useEffect(() => {
     const fetchProjects = async () => {

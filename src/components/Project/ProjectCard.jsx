@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const ProjectCard = (props) => {
   return (
@@ -9,6 +10,12 @@ const ProjectCard = (props) => {
       <h3>Start Date: {props.project.startDate}</h3>
       <h3>End Date: {props.project.endDate}</h3>
       <h3>Hourly Rate: ${props.project.hourlyRate}</h3>
+      <Link 
+        to='/projects/edit'
+        state={props.project}
+      >
+        Update Project
+      </Link>
     </>
 
   )

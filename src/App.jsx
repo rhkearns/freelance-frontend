@@ -9,10 +9,13 @@ import ProjectList from './pages/ProjectList'
 import CreateProject from './pages/CreateProject/CreateProject'
 import ProjectDetails from './pages/ProjectDetails'
 import Profile from './pages/Profile/Profile'
+import UpdateProject from './pages/UpdateProject/UpdateProject'
 
 const App = () => {
   const [user, setUser] = useState(authService.getUser())
   const navigate = useNavigate()
+  const [projects, setProjects] = useState([])
+
 
   const handleLogout = () => {
     authService.logout()
@@ -22,6 +25,14 @@ const App = () => {
 
   const handleSignupOrLogin = () => {
     setUser(authService.getUser())
+  }
+
+  const handleUpdateProjectsList = (updatedProject) => {
+    console.log('in app');
+    const updatedArray = projects.map(project => 
+      project._id === updatedProject._id ? updatedProject : project
+    )
+    setProjects(updatedArray)
   }
 
   return (
@@ -43,7 +54,14 @@ const App = () => {
         />
         <Route
           path="/projects"
-          element={user ? <ProjectList /> : <Navigate to='/login' />}
+          element={user ? <ProjectList projects={projects} setProjects={setProjects}/> : <Navigate to='/login' />}
+        />
+        <Route
+          path="/projects/edit"
+          element={user ? <UpdateProject 
+            handleUpdateProjectsList={handleUpdateProjectsList}/> 
+            : 
+            <Navigate to='/login' />}
         />
         <Route
           path="/newProject"
