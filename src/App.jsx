@@ -9,6 +9,7 @@ import * as authService from './services/authService'
 import ProjectList from './pages/ProjectList'
 import CreateProject from './pages/CreateProject/CreateProject'
 import ProjectDetails from './pages/ProjectDetails'
+import Profile from './pages/Profile/Profile'
 
 const App = () => {
   const [user, setUser] = useState(authService.getUser())
@@ -38,8 +39,8 @@ const App = () => {
           element={<Login handleSignupOrLogin={handleSignupOrLogin} />}
         />
         <Route
-          path="/profiles"
-          element={user ? <Profiles /> : <Navigate to="/login" />}
+          path="/profile"
+          element={user ? <Profile /> : <Navigate to="/login" />}
         />
         <Route
           path="/projects"
