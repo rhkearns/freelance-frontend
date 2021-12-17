@@ -8,6 +8,7 @@ const Profile = ({user}) => {
     <>
       <h1>Profile</h1>
       <ProjectList user={user}/>
+      <h1>Client List</h1>
     </>
   )
 }
