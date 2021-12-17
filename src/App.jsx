@@ -7,6 +7,7 @@ import Landing from './pages/Landing/Landing'
 import Profiles from './pages/Profiles/Profiles'
 import * as authService from './services/authService'
 import ProjectList from './pages/ProjectList'
+import CreateProject from './pages/CreateProject/CreateProject'
 
 const App = () => {
   const [user, setUser] = useState(authService.getUser())
@@ -42,6 +43,10 @@ const App = () => {
         <Route
           path="/projects"
           element={user ? <ProjectList /> : <Navigate to='/login' />}
+        />
+        <Route
+          path="/newProject"
+          element={user ? <CreateProject /> : <Navigate to='/login' />}
         />
       </Routes>
     </>
