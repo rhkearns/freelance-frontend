@@ -1,7 +1,7 @@
 import React from 'react';
 import { useEffect, useRef } from 'react';
 
-const ProjectForm = ({project, setProject, handleCreateProject, handleChange, validForm, setValidForm, formData, setFormData}) => {
+const ProjectForm = ({ handleCreateProject, handleChange, validForm, setValidForm, formData, setFormData}) => {
   
   const formElement = useRef()
   
@@ -12,7 +12,7 @@ const ProjectForm = ({project, setProject, handleCreateProject, handleChange, va
   return (
     <>
       <h1>Project Form</h1>
-      <form onSubmit={handleCreateProject} ref={formElement}>
+      <form onSubmit={(e) => handleCreateProject(e)} ref={formElement}>
         <label>Project Title</label><br />
         <input
           required
