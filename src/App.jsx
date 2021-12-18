@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { Routes, Route, useNavigate, Navigate } from 'react-router-dom'
 import NavBar from './components/NavBar/NavBar'
 import Signup from './pages/Signup/Signup'
@@ -9,10 +9,14 @@ import ProjectList from './pages/ProjectList'
 import CreateProject from './pages/CreateProject/CreateProject'
 import ProjectDetails from './pages/ProjectDetails'
 import Profile from './pages/Profile/Profile'
+import UpdateProject from './pages/UpdateProject/UpdateProject'
+import * as projectService from './services/projectService'
 
 const App = () => {
   const [user, setUser] = useState(authService.getUser())
   const navigate = useNavigate()
+  const [projects, setProjects] = useState([])
+
 
   const handleLogout = () => {
     authService.logout()
@@ -23,6 +27,25 @@ const App = () => {
   const handleSignupOrLogin = () => {
     setUser(authService.getUser())
   }
+
+  const handleUpdateProjectsList = (updatedProject) => {
+    console.log('in app');
+    const updatedArray = projects.map(project => 
+      project._id === updatedProject._id ? updatedProject : project
+    )
+    setProjects(updatedArray)
+  }
+
+  useEffect(() => {
+    const fetchProjects = async () => {
+      const postData = await projectService.getAllProjects()
+      setProjects(postData)
+    }
+    fetchProjects()
+    return () => { setProjects([]) }
+  }, [])
+
+  console.log('projects', projects);
 
   return (
     <>
@@ -39,11 +62,18 @@ const App = () => {
         />
         <Route
           path="/profile"
-          element={user ? <Profile user={user}/> : <Navigate to="/login" />}
+          element={user ? <Profile user={user} projects={projects}/> : <Navigate to="/login" />}
         />
         <Route
           path="/projects"
-          element={user ? <ProjectList /> : <Navigate to='/login' />}
+          element={user ? <ProjectList projects={projects} setProjects={setProjects}/> : <Navigate to='/login' />}
+        />
+        <Route
+          path="/projects/:id/edit"
+          element={user ? <UpdateProject 
+            handleUpdateProjectsList={handleUpdateProjectsList}/> 
+            : 
+            <Navigate to='/login' />}
         />
         <Route
           path="/newProject"
@@ -51,7 +81,7 @@ const App = () => {
         />
         <Route
           path="/projects/:id"
-          element={user ? <ProjectDetails /> : <Navigate to='/login' />}
+          element={user ? <ProjectDetails projects={projects} setProjects={setProjects}/> : <Navigate to='/login' />}
         />
       </Routes>
     </>

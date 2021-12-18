@@ -37,7 +37,30 @@ export const addProject = async (project) => {
 
 export const getProjectById = async (projectId) => {
   try{
-    const res = await fetch(`${BASE_URL}${projectId}`)
+    const res = await fetch(`${BASE_URL}${projectId}`, {
+      method: "GET",
+      headers: {
+        "Authorization": `Bearer ${tokenService.getToken()}`
+      },
+    })
+    const data = await res.json()
+    return data
+  } catch (error) {
+    throw error
+  }
+}
+
+export const updateProject = async (projectId, formData) => {
+  console.log('here');
+  try {
+    const res = await fetch(`${BASE_URL}${projectId}`, {
+      method: "PUT",
+      headers: {
+        'content-type': 'application/json',
+        'Authorization': 'Bearer ' + tokenService.getToken()
+      },
+      body: JSON.stringify(formData)
+    })
     const data = await res.json()
     return data
   } catch (error) {
