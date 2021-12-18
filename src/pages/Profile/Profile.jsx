@@ -11,7 +11,7 @@ const Profile = ({user, projects}) => {
         <h3>{user.name}</h3>
       </div>
       <section className="project-container">
-        <div className="project">
+        <div style={{color: "black"}}className="project">
           <ProjectList user={user} projects={projects}/>
         </div>
       </section>
