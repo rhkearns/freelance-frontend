@@ -1,6 +1,14 @@
 .clients {
   background-color: cadetblue;
-  position: absolute;
-  top: 0;
+  position: fixed;
+  bottom: 0;
   right: 0;
+  width: 50%;
+  height: 95%;
+  z-index: 2;
+}
+
+.project-container {
+  overflow-y: scroll;
+  height: 15vh;
 }

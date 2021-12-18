@@ -6,17 +6,19 @@ const Profile = ({user}) => {
   
   
   return (
-    <>
+    <div className="prof-page">
       <div className="profile-card">
         <h3>{user.name}</h3>
       </div>
-      <div className="project-list">
-        <ProjectList user={user}/>
-      </div>
+      <section className="project-container">
+        <div className="project">
+          <ProjectList user={user}/>
+        </div>
+      </section>
       <div className="clients">
         <h1>Client List</h1>
       </div>
-    </>
+    </div>
   )
 }
 
