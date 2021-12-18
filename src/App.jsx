@@ -38,8 +38,8 @@ const App = () => {
 
   useEffect(() => {
     const fetchProjects = async () => {
-      const postData = await projectService.getAllProjects()
-      setProjects(postData)
+      const projectData = await projectService.getAllProjects()
+      setProjects(projectData)
     }
     fetchProjects()
     return () => { setProjects([]) }

@@ -9,7 +9,6 @@ import { useEffect } from 'react/cjs/react.development';
 
 const ProjectDetails = (props) => {
   const { id } = useParams()
-  const navigate = useNavigate()
   const [project, setProject] = useState()
   const [tasks, setTasks] = useState()
   console.log('project', project);
