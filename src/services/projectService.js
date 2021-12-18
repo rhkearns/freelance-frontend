@@ -46,6 +46,7 @@ export const getProjectById = async (projectId) => {
 }
 
 export const updateProject = async (projectId) => {
+  console.log('here');
   try {
     const res = await fetch(`${BASE_URL}${projectId}`, {
       method: "PUT",

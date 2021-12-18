@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { useEffect, useRef } from 'react'
 
 const UpdateForm = ({handleChange, handleUpdateProject, validForm, setValidForm, formData}) => {
@@ -12,7 +12,7 @@ const UpdateForm = ({handleChange, handleUpdateProject, validForm, setValidForm,
   return (
     <>
       <h1>Project Form</h1>
-      <form onSubmit={handleUpdateProject} ref={formElement}>
+      <form onSubmit={() => handleUpdateProject(formData)} ref={formElement}>
         <label>Project Title</label><br />
         <input
           required

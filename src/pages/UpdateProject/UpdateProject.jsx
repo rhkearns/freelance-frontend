@@ -7,7 +7,7 @@ import { updateProject } from '../../services/projectService';
 
 const UpdateProject = (props) => {
   console.log('props', props);
-  const navigate = useNavigate
+  const navigate = useNavigate()
   const location = useLocation()
   console.log('location', location);
   const [formData, setFormData] = useState(location.state)
@@ -21,11 +21,12 @@ const UpdateProject = (props) => {
     console.log('form data in update', formData);
     try {
       const updatedProject = await updateProject(formData)
-      props.handleUpdateProjectsList(updatedProject)
+      console.log(updatedProject);
+    //   // props.handleUpdateProjectsList(updatedProject)
       navigate(`/projects`)
-    } catch (error) {
-      throw error
-    }
+      } catch (error) {
+        throw error
+      }
   }
 
   return (

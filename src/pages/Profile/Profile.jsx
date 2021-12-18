@@ -7,7 +7,7 @@ const Profile = ({user}) => {
   return (
     <>
       <h1>Profile</h1>
-      <ProjectList user={user}/>
+        <ProjectList user={user}/>
       <h1>Client List</h1>
     </>
   )
