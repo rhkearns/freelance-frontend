@@ -2,7 +2,7 @@ import React from 'react';
 import ProjectList from '../ProjectList';
 import './profile.scss'
 
-const Profile = ({user}) => {
+const Profile = ({user, projects}) => {
   
   
   return (
