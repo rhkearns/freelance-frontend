@@ -1,34 +1,43 @@
-import React, { useState } from 'react';
-import { useNavigate, useLocation } from 'react-router-dom';
+import React, { useState, useEffect } from 'react';
+import { useNavigate, useLocation, useParams } from 'react-router-dom';
 
 import UpdateForm from './UpdateForm'
 
-import { updateProject } from '../../services/projectService';
+import { updateProject, getProjectById } from '../../services/projectService';
 
 const UpdateProject = (props) => {
   console.log('props', props);
   const navigate = useNavigate()
-  const location = useLocation()
-  console.log('location', location);
-  const [formData, setFormData] = useState(location.state)
+  const { id } = useParams()
+  const [formData, setFormData] = useState()
   const [validForm, setValidForm] = useState(false)
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value})
   }
 
-  const handleUpdateProject = async (formData) => {
+  const handleUpdateProject = async (e) => {
+    e.preventDefault()
     console.log('form data in update', formData);
     try {
-      const updatedProject = await updateProject(formData)
+      const updatedProject = await updateProject(id, formData)
       console.log(updatedProject);
-    //   // props.handleUpdateProjectsList(updatedProject)
+      props.handleUpdateProjectsList(updatedProject)
       navigate(`/projects`)
       } catch (error) {
         throw error
       }
   }
 
+  useEffect(() => {
+    const fetchProject = async () => {
+      const projData = await getProjectById(id)
+      setFormData(projData)
+    }
+    fetchProject()
+  }, [id])
+
+  console.log('formdata', formData);
   return (
     <UpdateForm 
       handleChange={handleChange}

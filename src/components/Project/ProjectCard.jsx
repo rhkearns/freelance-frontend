@@ -1,7 +1,9 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 const ProjectCard = (props) => {
+  const navigate = useNavigate()
+
   return (
     <>
       <h1>{props.project.title}</h1>
@@ -10,12 +12,9 @@ const ProjectCard = (props) => {
       <h3>Start Date: {props.project.startDate}</h3>
       <h3>End Date: {props.project.endDate}</h3>
       <h3>Hourly Rate: ${props.project.hourlyRate}</h3>
-      <Link 
-        to='/projects/edit'
-        state={props.project}
-      >
+      <button onClick={() => navigate(`/projects/${props.project._id}/edit`)}>
         Update Project
-      </Link>
+      </button>
     </>
 
   )

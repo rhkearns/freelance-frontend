@@ -9,10 +9,12 @@ const UpdateForm = ({handleChange, handleUpdateProject, validForm, setValidForm,
     formElement.current.checkValidity() ? setValidForm (true) : setValidForm(false)
   }, [formData])
   
+
+
   return (
     <>
       <h1>Project Form</h1>
-      <form onSubmit={() => handleUpdateProject(formData)} ref={formElement}>
+      <form onSubmit={(e) => handleUpdateProject(e)} ref={formElement}>
         <label>Project Title</label><br />
         <input
           required
@@ -20,7 +22,7 @@ const UpdateForm = ({handleChange, handleUpdateProject, validForm, setValidForm,
           name='title'
           autoComplete='off'
           placeholder='Title'
-          value={formData.title}
+          value={formData?.title}
           onChange={handleChange}
         /><br />
         <label>Start Date</label><br />
@@ -29,7 +31,7 @@ const UpdateForm = ({handleChange, handleUpdateProject, validForm, setValidForm,
           type='date'
           name='startDate'
           autoComplete='off'
-          value={formData.startDate}
+          value={formData?.startDate}
           onChange={handleChange}
         /><br />
         <label>End Date</label><br />
@@ -38,7 +40,7 @@ const UpdateForm = ({handleChange, handleUpdateProject, validForm, setValidForm,
           type='date'
           name='endDate'
           autoComplete='off'
-          value={formData.endDate}
+          value={formData?.endDate}
           onChange={handleChange}
         /><br />
         <label>Hourly Rate</label><br />
@@ -47,7 +49,7 @@ const UpdateForm = ({handleChange, handleUpdateProject, validForm, setValidForm,
           type='number'
           name='hourlyRate'
           autoComplete='off'
-          value={formData.hourlyRate}
+          value={formData?.hourlyRate}
           onChange={handleChange}
         /><br />
         <button

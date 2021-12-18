@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { Routes, Route, useNavigate, Navigate } from 'react-router-dom'
 import NavBar from './components/NavBar/NavBar'
 import Signup from './pages/Signup/Signup'
@@ -10,6 +10,7 @@ import CreateProject from './pages/CreateProject/CreateProject'
 import ProjectDetails from './pages/ProjectDetails'
 import Profile from './pages/Profile/Profile'
 import UpdateProject from './pages/UpdateProject/UpdateProject'
+import * as projectService from './services/projectService'
 
 const App = () => {
   const [user, setUser] = useState(authService.getUser())
@@ -35,6 +36,17 @@ const App = () => {
     setProjects(updatedArray)
   }
 
+  useEffect(() => {
+    const fetchProjects = async () => {
+      const postData = await projectService.getAllProjects()
+      setProjects(postData)
+    }
+    fetchProjects()
+    return () => { setProjects([]) }
+  }, [])
+
+  console.log('projects', projects);
+
   return (
     <>
       <NavBar user={user} handleLogout={handleLogout} />
@@ -50,14 +62,14 @@ const App = () => {
         />
         <Route
           path="/profile"
-          element={user ? <Profile user={user}/> : <Navigate to="/login" />}
+          element={user ? <Profile user={user} projects={projects}/> : <Navigate to="/login" />}
         />
         <Route
           path="/projects"
           element={user ? <ProjectList projects={projects} setProjects={setProjects}/> : <Navigate to='/login' />}
         />
         <Route
-          path="/projects/edit"
+          path="/projects/:id/edit"
           element={user ? <UpdateProject 
             handleUpdateProjectsList={handleUpdateProjectsList}/> 
             : 
@@ -69,7 +81,7 @@ const App = () => {
         />
         <Route
           path="/projects/:id"
-          element={user ? <ProjectDetails /> : <Navigate to='/login' />}
+          element={user ? <ProjectDetails projects={projects} setProjects={setProjects}/> : <Navigate to='/login' />}
         />
       </Routes>
     </>
