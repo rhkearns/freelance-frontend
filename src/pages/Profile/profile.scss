@@ -1,3 +1,21 @@
+.prof-page {
+  display: flex;
+}
+
+.profile-card {
+  background-color: lightcyan;
+  position: fixed;
+  width: 30%;
+  height: 95%;
+  bottom: 0;
+  left: 0;
+}
+
+.project-container {
+  overflow-y: scroll;
+    height: 15vh;
+}
+
 .clients {
   background-color: cadetblue;
   position: fixed;
@@ -6,9 +24,4 @@
   width: 50%;
   height: 95%;
   z-index: 2;
-}
-
-.project-container {
-  overflow-y: scroll;
-  height: 15vh;
 }
