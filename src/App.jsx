@@ -77,7 +77,7 @@ const App = () => {
         />
         <Route
           path="/newProject"
-          element={user ? <CreateProject /> : <Navigate to='/login' />}
+          element={user ? <CreateProject projects={projects} setProjects={setProjects}/> : <Navigate to='/login' />}
         />
         <Route
           path="/projects/:id"

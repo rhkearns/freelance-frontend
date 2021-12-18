@@ -25,6 +25,7 @@ const CreateProject = (props) => {
     e.preventDefault()
     try {
       const newProject = await addProject(formData)
+      props.setProjects([newProject, ...props.projects ])
       navigate('/projects')
     } catch (error) {
       throw error
