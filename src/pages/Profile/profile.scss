@@ -12,7 +12,15 @@
 
   .project-container {
     overflow-y: scroll;
-      height: 15vh;
+    height: 15vh;
+    background-color: lightgreen;
+    z-index: 10;
+    margin: auto;
+    margin-top: 30vh;
+
+    .project {
+      color: lightslategray;
+    }
   }
 
   .clients {
