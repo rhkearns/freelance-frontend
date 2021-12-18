@@ -12,7 +12,7 @@ const Profile = ({user, projects}) => {
       </div>
       <section className="project-container">
         <div className="project">
-          <ProjectList user={user}/>
+          <ProjectList user={user} projects={projects}/>
         </div>
       </section>
       <div className="clients">
