@@ -1,16 +1,16 @@
-import React, { useState } from 'react';
-import { useParams, useNavigate } from 'react-router-dom'
+import React, { useState, useEffect } from 'react';
+import { useParams } from 'react-router-dom'
 
 // Services
 import * as projectService from '../services/projectService'
 // Components
 import ProjectCard from '../components/Project/ProjectCard';
-import { useEffect } from 'react/cjs/react.development';
+import CardActions from '../components/Project/CardActions';
 
 const ProjectDetails = (props) => {
   const { id } = useParams()
   const [project, setProject] = useState()
-  const [tasks, setTasks] = useState()
+  // const [tasks, setTasks] = useState()
   console.log('project', project);
 
   
@@ -34,6 +34,12 @@ const ProjectDetails = (props) => {
           project={project}
           key={project._id}
         />
+      }
+      {project &&
+        <CardActions 
+        project={project}
+        key={project._id}
+      />
       }
     </>
   )
