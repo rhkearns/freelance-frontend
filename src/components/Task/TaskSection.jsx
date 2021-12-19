@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import TaskList from './TaskList';
 import CreateTask from './CreateTask'
 
-import * as projectService from '../services/projectServices'
+import * as projectService from '../../services/projectService'
 
 const TaskSection = ({project, tasks, setTasks}) => {
   const [toggleNew, setToggleNew] = useState(false)
@@ -20,7 +20,7 @@ const TaskSection = ({project, tasks, setTasks}) => {
   return (
     <>
       <h1>Tasks</h1>
-      <button>Add New Task</button>
+      <button onClick={() => setToggleNew(!toggleNew)}>Add New Task</button>
       {toggleNew && 
         <CreateTask 
         project={project}
