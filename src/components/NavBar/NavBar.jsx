@@ -17,7 +17,7 @@ const NavBar = ({ user, handleLogout }) => {
         </nav>
       :
         <nav>
-          <ul calssName="reg-nav">
+          <ul className="reg-nav">
             <li><Link to="/projects">Placeholder for logo</Link></li>
             <li><Link to="/login">Log In</Link></li>
             <li><Link to="/signup">Sign Up</Link></li>

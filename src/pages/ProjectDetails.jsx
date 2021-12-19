@@ -42,8 +42,8 @@ const ProjectDetails = (props) => {
       }
       {project &&
         <CardActions 
-        project={project}
-      />
+          project={project}
+        />
       } 
       <TaskSection 
         project={project}
