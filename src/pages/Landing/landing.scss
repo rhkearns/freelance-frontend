@@ -12,7 +12,7 @@
 
   section {
     scroll-snap-align: start;
-    color: white;
+    color: $mid2;
   
   }
   
@@ -21,9 +21,11 @@
     background-image: url('../../images/Project-photo1.jpg');
     background-size: 100%;
     background-repeat: no-repeat;
+    background-position: fixed;
 
     .title-info {
       margin-left: 20vw;
+      position: absolute;
     }
   }
   
@@ -49,5 +51,4 @@
     background-color: $mid1;
   }
 }
-
 
