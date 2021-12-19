@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom'
+import './project-details.scss'
 
 // Services
 import * as projectService from '../services/projectService'
