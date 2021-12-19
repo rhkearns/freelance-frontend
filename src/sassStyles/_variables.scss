@@ -1,21 +1,13 @@
-//Creating Variables for Screen Size to use when implementing responsive design
+// Media Query Screen Sizes
 $screen-small: 768px;
 $screen-medium: 992px;
 $screen-large: 1200px;
 
-// Will set variables for Colors that will be used throughout the entire application
+// Colors
+$dark1: #353535;
 
-/*
-textColorL: (Light)
-textColorD: (Dark)
+$mid1: #3C6E71;
+$mid2: #284B63;
 
-primary1L
-primary2L
-
-primary
-
-primary1D
-primary2D
-
-
-secondary*/
+$light1: #D9D9D9;
+$light2: #FFFFFF;
