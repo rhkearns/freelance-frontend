@@ -83,3 +83,19 @@ export const createTask = async (projectId, task) => {
     throw error
   }
 }
+
+export const setTaskStatus = async (projectId, taskId) => {
+  try {
+    const res = await fetch(`${BASE_URL}${projectId}/tasks/${taskId}`, {
+      method: "PUT",
+      headers: {
+        'content-type': 'application/json',
+        'Authorization': `Bearer ` + tokenService.getToken()
+      },
+    })
+    const data = await res.json()
+    return data
+  } catch (error) {
+    throw error
+  }
+}

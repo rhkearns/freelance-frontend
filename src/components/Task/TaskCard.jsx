@@ -1,4 +1,5 @@
 import React from 'react';
+import TaskActions from './TaskActions'
 
 const TaskCard = (props) => {
   return (
@@ -9,6 +10,7 @@ const TaskCard = (props) => {
         <option value="In-progress">In Progress</option>
         <option value="Complete">Complete</option>
       </select>
+      <TaskActions />
     </>
   )
 }
