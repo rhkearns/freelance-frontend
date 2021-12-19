@@ -1,26 +1,43 @@
+@import '../../sassStyles/variables';
+
 .prof-page {
   display: flex;
   
-  .profile-card {
+  .prof-side-bar {
     background-color: rgba(161, 241, 228, 0.432);
     position: fixed;
     width: 30%;
     height: 95%;
     bottom: 0;
     left: 0;
+
+    .prof-picture {
+      height: 16%;
+      background-color: red;
+    }
+
+    .prof-card {
+      height: 33%;
+      background-color: linen;
+    }
+
+    .side-nav {
+      height: 51%;
+      background-color: rgba(9, 55, 47, 0.432);
+    }
   }
+
+
 
   .project-container {
     overflow-y: scroll;
-    height: 15vh;
+    height: 25vh;
     width: 50%;
-    background-color: lightgreen;
+    margin-top: 2px solid $dark1;
     margin: auto;
-    margin-top: 33vh;
-
-    .project {
-      color: lightslategray;
-    }
+    margin-top: 35%;
+    border-top: 2px solid $dark1;
+    border-bottom: 2px solid $dark1;
   }
 
   .clients {
