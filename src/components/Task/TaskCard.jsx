@@ -1,8 +1,11 @@
 import React from 'react';
 
-const TaskCard = () => {
+const TaskCard = ({task}) => {
   return (
-    <h1>Task Card</h1>
+    <>
+      <p>{task.task}</p>
+      <p>{task.status}</p>
+    </>
   )
 }
 

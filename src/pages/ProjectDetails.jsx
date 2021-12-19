@@ -1,21 +1,22 @@
-import React, { useState } from 'react';
-import { useParams, useNavigate } from 'react-router-dom'
+import React, { useState, useEffect } from 'react';
+import { useParams } from 'react-router-dom'
 import './project-details.scss'
 
 // Services
 import * as projectService from '../services/projectService'
 // Components
 import ProjectCard from '../components/Project/ProjectCard';
-import { useEffect } from 'react/cjs/react.development';
+import CardActions from '../components/Project/CardActions';
+import TaskSection from '../components/Task/TaskSection'
 
 const ProjectDetails = (props) => {
   const { id } = useParams()
-  const navigate = useNavigate()
   const [project, setProject] = useState()
   const [tasks, setTasks] = useState()
   console.log('project', project);
 
   
+
   useEffect(() => {
     const fetchProject = async () => {
       try {
@@ -35,6 +36,18 @@ const ProjectDetails = (props) => {
         <ProjectCard 
           project={project}
           key={project._id}
+        />
+      }
+      {project &&
+        <CardActions 
+        project={project}
+        key={project._id}
+      />
+      }
+      {project && 
+        <TaskSection 
+        project={project}
+        key={project.id}
         />
       }
     </>

@@ -11,7 +11,6 @@ export const getAllProjects = async () => {
       },
     })
     const data = await res.json()
-    // console.log('service', data);
     return data
   } catch (error) {
     throw error

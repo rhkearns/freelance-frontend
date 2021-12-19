@@ -1,8 +1,18 @@
 import React from 'react';
 
-const TaskList = () => {
+import TaskCard from './TaskCard'
+
+const TaskList = ({project}) => {
   return (
-    <h1>Task List</h1>
+    <>
+      {project.tasks?.map((task) => (
+        <TaskCard 
+          task={task}
+          id={task._id}
+        />
+      ))
+      }
+    </>
   )
 }
 

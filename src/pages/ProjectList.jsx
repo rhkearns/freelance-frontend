@@ -1,15 +1,12 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom'
 
 // Services
-import { getAllProjects } from '../services/projectService';
 
 // Components
 import ProjectCard from '../components/Project/ProjectCard'
 
 const ProjectList = ({user, projects}) => {
-
-  
 
   return (
     <>

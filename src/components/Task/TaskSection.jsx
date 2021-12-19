@@ -1,8 +1,25 @@
-import React from 'react';
+import React, { useState } from 'react';
 
-const TaskSection = () => {
+import TaskList from './TaskList';
+import CreateTask from './CreateTask'
+
+const TaskSection = ({project}) => {
+  const [toggleNew, setToggleNew] = useState(false)
+  
   return (
-    <h1>Task Section</h1>
+    <>
+      <h1>Tasks</h1>
+      <button>Add New Task</button>
+      {toggleNew && 
+        <CreateTask 
+        project={project}
+        setToggleNew={setToggleNew}
+        />
+      }
+      <TaskList 
+        project={project}
+      />
+    </>
   )
 }
 
