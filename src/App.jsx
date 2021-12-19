@@ -10,12 +10,14 @@ import CreateProject from './pages/CreateProject/CreateProject'
 import ProjectDetails from './pages/ProjectDetails'
 import Profile from './pages/Profile/Profile'
 import UpdateProject from './pages/UpdateProject/UpdateProject'
+import ClientList from './pages/ClientList'
 import * as projectService from './services/projectService'
 
 const App = () => {
   const [user, setUser] = useState(authService.getUser())
   const navigate = useNavigate()
   const [projects, setProjects] = useState([])
+  const [clients, setClients] = useState([])
 
 
   const handleLogout = () => {
@@ -82,6 +84,10 @@ const App = () => {
         <Route
           path="/projects/:id"
           element={user ? <ProjectDetails projects={projects} setProjects={setProjects}/> : <Navigate to='/login' />}
+        />
+        <Route 
+          path="/clients"
+          element={user ? <ClientList user={user} clients={clients}/> : <Navigate to='/login' />}
         />
       </Routes>
     </>
