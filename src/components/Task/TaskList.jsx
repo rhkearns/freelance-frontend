@@ -2,13 +2,14 @@ import React from 'react';
 
 import TaskCard from './TaskCard'
 
-const TaskList = ({tasks}) => {
+const TaskList = (props) => {
   return (
     <>
-      {tasks.tasks?.map((task) => (
+      {props.tasks?.map((task) => (
         <TaskCard 
+          {...props}
           task={task}
-          id={task._id}
+          key={task._id}
         />
       ))
       }

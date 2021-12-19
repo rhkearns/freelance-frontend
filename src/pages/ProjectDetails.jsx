@@ -12,21 +12,24 @@ import TaskSection from '../components/Task/TaskSection'
 const ProjectDetails = (props) => {
   const { id } = useParams()
   const [project, setProject] = useState()
-  const [tasks, setTasks] = useState()
-
-  
+  const [tasks, setTasks] = useState([])
+  console.log(project);
+  console.log('tasks', tasks)
 
   useEffect(() => {
     const fetchProject = async () => {
       try {
         const projectData = await projectService.getProjectById(id)
         setProject(projectData)
+        setTasks(projectData.taskList)
       } catch (error) {
         throw error
       }
     }
     fetchProject()
   }, [id])
+
+  
 
   return (
     <>
@@ -44,6 +47,7 @@ const ProjectDetails = (props) => {
       } 
       <TaskSection 
         project={project}
+        setProject={setProject}
         tasks={tasks}
         setTasks={setTasks}
         />

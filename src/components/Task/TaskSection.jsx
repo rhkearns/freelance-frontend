@@ -17,6 +17,8 @@ const TaskSection = ({project, tasks, setTasks}) => {
     }
   }
 
+  
+
   return (
     <>
       <h1>Tasks</h1>
