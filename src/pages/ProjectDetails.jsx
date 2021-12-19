@@ -47,6 +47,8 @@ const ProjectDetails = (props) => {
       {project && 
         <TaskSection 
         project={project}
+        tasks={tasks}
+        setTasks={setTasks}
         key={project.id}
         />
       }
