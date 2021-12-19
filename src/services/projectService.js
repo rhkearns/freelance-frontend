@@ -66,3 +66,20 @@ export const updateProject = async (projectId, formData) => {
     throw error
   }
 }
+
+export const createTask = async (projectId, task) => {
+  try {
+    const res = await fetch(`${BASE_URL}${projectId}/tasks`, {
+      method: "POST",
+      headers: {
+        'content-type': 'application/json',
+        'Authorization': `Bearer ${tokenService.getToken()}`
+      },
+      body: JSON.stringify(task)
+    })
+    const data = await res.json()
+    return data
+  } catch (error) {
+    throw error
+  }
+}
