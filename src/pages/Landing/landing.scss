@@ -1,3 +1,5 @@
+@import '../../sassStyles/variables';
+
 * {
   margin: 0;
   padding: 0;
@@ -5,33 +7,47 @@
 }
 
 .container {
-  // scroll-snap-type: y proximity;
   overflow-y: scroll;
   height: 100vh;
+
+  section {
+    scroll-snap-align: start;
+    color: white;
+  
+  }
+  
+  .one {
+    height: 37vh;
+    background-image: url('../../images/Project-photo1.jpg');
+    background-size: 100%;
+    background-repeat: no-repeat;
+
+    .title-info {
+      margin-left: 25%;
+    }
+  }
+  
+  .two {
+    height: 74vh;
+    background-color: rgba(0,0,0,0.5);
+  }
+  
+  .three {
+    height: 60vh;
+    background-image: url('../../images/Project-photo2.jpg');
+    background-size: 100%;
+    background-repeat: no-repeat;
+  }
+
+  .spacer1 {
+    height: 45px;
+    background-color: $mid1;
+  }
+
+  .spacer2 {
+    height: 45px;
+    background-color: $mid1;
+  }
 }
 
-section {
-  scroll-snap-align: start;
-  color: white;
 
-}
-
-
-.one {
-  height: 37vh;
-  background-image: url('../../images/Project-photo1.jpg');
-  background-size: 100%;
-  background-repeat: no-repeat;
-}
-
-.two {
-  height: 74vh;
-  background-color: rgba(0,0,0,0.5);
-}
-
-.three {
-  height: 60vh;
-  background-image: url('../../images/Project-photo2.jpg');
-  background-size: 100%;
-  background-repeat: no-repeat;
-}

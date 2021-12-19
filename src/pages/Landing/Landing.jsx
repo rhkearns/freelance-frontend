@@ -5,11 +5,15 @@ const Landing = ({ user }) => {
   return (
     <div className="container">
       <section className="one">
-        <h1>First</h1>
+        <div className="title-info">
+          <h1>First</h1>
+        </div>
       </section>
+      <section className="spacer1"></section>
       <section className="two">
         <h1>Second</h1>
       </section>
+      <section className="spacer2"></section>
       <section className="three">
         <h1>Third</h1>
       </section>
