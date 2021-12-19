@@ -99,3 +99,16 @@ export const setTaskStatus = async (projectId, taskId) => {
     throw error
   }
 }
+
+export const deleteTask = async (projectId, taskId) => {
+  try {
+    await fetch(`${BASE_URL}${projectId}/tasks/${taskId}`, {
+      method: "DELETE",
+      headers: {
+        'Authorization': 'Bearer ' + tokenService.getToken()
+      }
+    })
+  } catch (error) {
+    throw error
+  }
+}
