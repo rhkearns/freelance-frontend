@@ -3,8 +3,6 @@ import { useNavigate } from 'react-router-dom';
 import './project-card.scss'
 
 const ProjectCard = (props) => {
-  const navigate = useNavigate()
-
   return (
     <div className='project-card'>
       <h1>{props.project.title}</h1>
