@@ -12,7 +12,7 @@
 
   section {
     scroll-snap-align: start;
-    color: $mid2;
+    color: $mid1;
   
   }
   
@@ -24,8 +24,12 @@
     background-position: fixed;
 
     .title-info {
-      margin-left: 20vw;
+      margin-left: 19vw;
       position: absolute;
+
+      h1 {
+        font-size: 4rem; 
+      }
     }
   }
   
@@ -43,12 +47,12 @@
 
   .spacer1 {
     height: 45px;
-    background-color: $mid1;
+    background-color: $mid2;
   }
 
   .spacer2 {
     height: 45px;
-    background-color: $mid1;
+    background-color: $mid2;
   }
 }
 

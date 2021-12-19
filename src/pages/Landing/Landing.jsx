@@ -6,7 +6,10 @@ const Landing = ({ user }) => {
     <div className="container">
       <section className="one">
         <div className="title-info">
-          <h1>First</h1>
+          <br/>
+          <br/>
+          <br/>
+          <h1>Folio</h1>
         </div>
       </section>
       <section className="spacer1"></section>
