@@ -30,9 +30,11 @@ const TaskSection = ({project, tasks, setTasks}) => {
         setToggleNew={setToggleNew}
         />
       }
-      <TaskList 
-        project={project}
-      />
+      {tasks && 
+        <TaskList 
+        tasks={tasks}
+        />
+      }
     </>
   )
 }

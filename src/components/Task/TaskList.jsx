@@ -2,10 +2,10 @@ import React from 'react';
 
 import TaskCard from './TaskCard'
 
-const TaskList = ({project}) => {
+const TaskList = ({tasks}) => {
   return (
     <>
-      {project.tasks?.map((task) => (
+      {tasks.tasks?.map((task) => (
         <TaskCard 
           task={task}
           id={task._id}

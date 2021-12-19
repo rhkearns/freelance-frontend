@@ -13,7 +13,6 @@ const ProjectDetails = (props) => {
   const { id } = useParams()
   const [project, setProject] = useState()
   const [tasks, setTasks] = useState()
-  console.log('project', project);
 
   
 
@@ -41,17 +40,13 @@ const ProjectDetails = (props) => {
       {project &&
         <CardActions 
         project={project}
-        key={project._id}
       />
-      }
-      {project && 
-        <TaskSection 
+      } 
+      <TaskSection 
         project={project}
         tasks={tasks}
         setTasks={setTasks}
-        key={project.id}
         />
-      }
     </>
   )
 }
