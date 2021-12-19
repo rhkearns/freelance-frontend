@@ -11,6 +11,7 @@ const NavBar = ({ user, handleLogout }) => {
             <li><Link to="/projects">Placeholder for logo</Link></li>
             <li><Link to="/profile">Profile</Link></li>
             <li><Link to="/projects">Projects</Link></li>
+            <li><Link to="/clients">Clients</Link></li>
             <li><Link to="/newProject">Add A Project</Link></li>
             <li><Link to="" onClick={handleLogout}>LOG OUT</Link></li>
           </ul>

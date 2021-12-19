@@ -1,5 +1,4 @@
 import React from 'react';
-import { useNavigate } from 'react-router-dom';
 import './project-card.scss'
 
 const ProjectCard = (props) => {
