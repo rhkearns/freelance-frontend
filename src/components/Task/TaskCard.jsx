@@ -10,7 +10,9 @@ const TaskCard = (props) => {
         <option value="In-progress">In Progress</option>
         <option value="Complete">Complete</option>
       </select>
-      <TaskActions />
+      <TaskActions 
+        {...props}
+      />
     </>
   )
 }
