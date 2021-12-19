@@ -1,0 +1,42 @@
+.prof-page {
+  display: flex;
+  
+  .profile-card {
+    background-color: rgba(161, 241, 228, 0.432);
+    position: fixed;
+    width: 30%;
+    height: 95%;
+    bottom: 0;
+    left: 0;
+  }
+
+  .project-container {
+    overflow-y: scroll;
+    height: 15vh;
+    width: 50%;
+    background-color: lightgreen;
+    margin: auto;
+    margin-top: 33vh;
+
+    .project {
+      color: lightslategray;
+    }
+  }
+
+  .clients {
+    background-color: rgba(37, 153, 134, 0.432);
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    width: 50%;
+    height: 95%;
+    z-index: 2;
+  }
+}
+
+
+
+
+
+
+

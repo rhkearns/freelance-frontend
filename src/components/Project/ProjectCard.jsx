@@ -1,11 +1,12 @@
 import React from 'react';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
+import './project-card.scss'
 
 const ProjectCard = (props) => {
   const navigate = useNavigate()
 
   return (
-    <>
+    <div className='project-card'>
       <h1>{props.project.title}</h1>
       <h3>{props.project.clientList}</h3>
       <h3>Status: {props.project.is_Active}</h3>
@@ -15,7 +16,7 @@ const ProjectCard = (props) => {
       <button onClick={() => navigate(`/projects/${props.project._id}/edit`)}>
         Update Project
       </button>
-    </>
+    </div>
 
   )
 }
