@@ -6,14 +6,16 @@ import * as projectService from '../services/projectService'
 // Components
 import ProjectCard from '../components/Project/ProjectCard';
 import CardActions from '../components/Project/CardActions';
+import TaskSection from '../components/Task/TaskSection'
 
 const ProjectDetails = (props) => {
   const { id } = useParams()
   const [project, setProject] = useState()
-  // const [tasks, setTasks] = useState()
+  const [tasks, setTasks] = useState()
   console.log('project', project);
 
   
+
   useEffect(() => {
     const fetchProject = async () => {
       try {
@@ -40,6 +42,12 @@ const ProjectDetails = (props) => {
         project={project}
         key={project._id}
       />
+      }
+      {project && 
+        <TaskSection 
+        project={project}
+        key={project.id}
+        />
       }
     </>
   )
