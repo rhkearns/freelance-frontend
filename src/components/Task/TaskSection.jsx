@@ -17,6 +17,14 @@ const TaskSection = ({project, tasks, setTasks}) => {
     }
   }
 
+  const handleDeleteTask = async (taskId) => {
+    try {
+      await projectService.deleteTask(project._id, taskId)
+      setTasks(tasks.filter(task => task._id !== taskId))
+    } catch (error) {
+      throw error
+    }
+  }
   
 
   return (
@@ -35,6 +43,7 @@ const TaskSection = ({project, tasks, setTasks}) => {
       {tasks && 
         <TaskList 
         tasks={tasks}
+        handleDeleteTask={handleDeleteTask}
         />
       }
     </>
