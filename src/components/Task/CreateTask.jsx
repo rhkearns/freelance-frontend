@@ -1,8 +1,32 @@
-import React from 'react';
+import React, { useState } from 'react';
 
-const CreateTask = () => {
+const CreateTask = (props) => {
+  const [text, setText] = useState('')
+
+  const formData = {
+    task: text
+  }
+
+  const handleSubmit = (e) => {
+    e.preventDefault()
+    props.handleCreateTask(formData)
+    props.setToggleNew(false)
+  }
+
   return (
-    <h1>Create Task</h1>
+    <form onSubmit={handleSubmit}>
+      <label>Task: </label>
+      <input 
+        type="text" 
+        autoComplete='off'
+        name='task'
+        value={text}
+        onChange={(e) => setText(e.target.value)}
+      />
+      <button
+        type="submit"
+      >Add Task</button>
+    </form>
   )
 }
 
