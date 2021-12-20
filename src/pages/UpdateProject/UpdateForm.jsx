@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from 'react';
 
-const UpdateForm = ({handleChange, handleUpdateProject, validForm, setValidForm, formData}) => {
+const UpdateForm = ({handleChange, handleUpdateProject, validForm, setValidForm, formData, clients}) => {
   
   const formElement = useRef()
   console.log('in form', formData);
@@ -24,6 +24,12 @@ const UpdateForm = ({handleChange, handleUpdateProject, validForm, setValidForm,
           value={formData?.title}
           onChange={handleChange}
         /><br />
+        <label>Client: </label>
+        <select name="clientList" value={formData?.clientList}>
+          {clients.map((client) => (
+            <option value="client.name">{client.name}</option>
+          ))}
+        </select><br />
         <label>Start Date</label><br />
         <input 
           required

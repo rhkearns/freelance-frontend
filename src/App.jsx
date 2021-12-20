@@ -91,7 +91,7 @@ const App = () => {
         <Route
           path="/projects/:id/edit"
           element={user ? <UpdateProject 
-            handleUpdateProjectsList={handleUpdateProjectsList}/> 
+            handleUpdateProjectsList={handleUpdateProjectsList} clients={clients}/> 
             : 
             <Navigate to='/login' />}
         />

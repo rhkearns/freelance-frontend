@@ -22,7 +22,7 @@ const ProjectForm = ({ handleCreateProject, handleChange, validForm, setValidFor
           onChange={handleChange}
         /><br />
         <label>Client: </label>
-        <select>
+        <select name="clientList">
           {clients.map((client) => (
             <option value="client.name">{client.name}</option>
           ))}
