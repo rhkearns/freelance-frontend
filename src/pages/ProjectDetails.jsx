@@ -33,7 +33,7 @@ const ProjectDetails = (props) => {
     try {
       const updatedProject = await projectService.markComplete(projectId)
       setProject(updatedProject)
-      props.handleUpdateProjectList(updatedProject)
+      props.handleUpdateProjectsList(updatedProject)
     } catch (error) {
       throw error
     }
