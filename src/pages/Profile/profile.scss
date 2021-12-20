@@ -1,4 +1,5 @@
 @import '../../sassStyles/variables';
+@import '../../sassStyles/animations';
 
 .prof-page {
   display: flex;
@@ -62,6 +63,8 @@
 
 .active-list {
   background-color: black;
+  transform: translateX(100%);
+  transition: 0.5s ease-in-out;
 }
 
 
