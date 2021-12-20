@@ -1,36 +1,66 @@
+@import '../../sassStyles/variables';
+
 .prof-page {
   display: flex;
   
-  .profile-card {
-    background-color: rgba(161, 241, 228, 0.432);
+  .prof-side-bar {
     position: fixed;
     width: 30%;
     height: 95%;
     bottom: 0;
     left: 0;
+    box-shadow: 2px 2px 25px;
+
+    .prof-picture {
+      height: 12%;
+      background-color: $light2;
+
+      .circle {
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+        background-color: $light1;
+      }
+    }
+
+    .prof-card {
+      height: 37%;
+      background-image: url('../../images/ProjectPhoto3.png');
+      background-size: cover;
+      background-repeat: no-repeat;
+    }
+
+    .side-nav {
+      height: 51%;
+      background-color: $light2;
+      li {
+        font-size: 1.5rem;
+        color: $light1;
+        margin-left: 3%;
+      }
+    }
   }
 
   .project-container {
     overflow-y: scroll;
-    height: 15vh;
-    width: 50%;
-    background-color: lightgreen;
+    height: 25vh;
+    width: 25%;
+    margin-top: 2px solid $dark1;
     margin: auto;
-    margin-top: 33vh;
-
-    .project {
-      color: lightslategray;
-    }
+    margin-top: 35%;
+    border-top: 2px solid $dark1;
+    border-bottom: 2px solid $dark1;
   }
 
   .clients {
-    background-color: rgba(37, 153, 134, 0.432);
+    background-color: $light2;
     position: fixed;
     bottom: 0;
     right: 0;
     width: 50%;
     height: 95%;
     z-index: 2;
+    box-shadow: 2px 2px 25px;
   }
 }
 
