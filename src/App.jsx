@@ -36,7 +36,6 @@ const App = () => {
   }
 
   const handleUpdateProjectsList = (updatedProject) => {
-    console.log('in app');
     const updatedArray = projects.map(project => 
       project._id === updatedProject._id ? updatedProject : project
     )
@@ -44,7 +43,6 @@ const App = () => {
   }
 
   const handleUpdateClientsList = (updatedClient) => {
-    console.log('in app');
     const updatedArray = clients.map(client => 
       client._id === updatedClient._id ? updatedClient : client
     )
@@ -69,8 +67,6 @@ const App = () => {
     }
   }, [])
 
-  console.log('projects', projects);
-
   return (
     <>
       <NavBar user={user} handleLogout={handleLogout} />
@@ -88,10 +84,10 @@ const App = () => {
           path="/profile"
           element={user ? <Profile user={user} projects={projects} clients={clients} clientListStatus={clientListStatus} setClientListStatus={setClientListStatus}/> : <Navigate to="/login" />}
         />
-        {/* <Route
+        <Route
           path="/projects"
           element={user ? <ProjectList projects={projects} setProjects={setProjects}/> : <Navigate to='/login' />}
-        /> */}
+        />
         <Route
           path="/projects/:id/edit"
           element={user ? <UpdateProject 
