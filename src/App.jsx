@@ -22,7 +22,6 @@ const App = () => {
   const navigate = useNavigate()
   const [projects, setProjects] = useState([])
   const [clients, setClients] = useState([])
-
   const [clientListStatus, setClientListStatus] = useState (false)
 
 
@@ -89,10 +88,10 @@ const App = () => {
           path="/profile"
           element={user ? <Profile user={user} projects={projects} clients={clients} clientListStatus={clientListStatus} setClientListStatus={setClientListStatus}/> : <Navigate to="/login" />}
         />
-        <Route
+        {/* <Route
           path="/projects"
           element={user ? <ProjectList projects={projects} setProjects={setProjects}/> : <Navigate to='/login' />}
-        />
+        /> */}
         <Route
           path="/projects/:id/edit"
           element={user ? <UpdateProject 
