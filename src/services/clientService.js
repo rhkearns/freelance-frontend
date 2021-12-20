@@ -66,3 +66,16 @@ export const updateClient = async (clientId, formData) => {
     throw error
   }
 }
+
+export const deleteClient = async (clientId) => {
+  try {
+    const res = await fetch(`${BASE_URL}${clientId}`, {
+      method: 'DELETE', 
+      headers: {
+        'Authorization': `Bearer ` + tokenService.getToken()
+      }
+    })
+  } catch (error) {
+    throw error
+  }
+}

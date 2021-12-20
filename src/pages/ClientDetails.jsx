@@ -12,6 +12,14 @@ const ClientDetails = (props) => {
   console.log('client', client);
   console.log('id', id);
 
+  const handleDeleteClient = async (clientId) => {
+    try {
+      await clientService.deleteClient(clientId)
+    } catch (error) {
+      throw error
+    }
+  }
+
   useEffect(() => {
     const fetchClient = async () => {
       try {
