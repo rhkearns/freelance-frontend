@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom'
 
 import * as clientService from '../services/clientService'
-import clientCard from '../components/Client_components/ClientCard'
+import ClientCard from '../components/Client_components/ClientCard'
 
 
 const ClientDetails = (props) => {
@@ -21,7 +21,15 @@ const ClientDetails = (props) => {
   }, [id])
   
   return (
-    <h1>Client Details</h1>
+    <>
+      <h1>Client Details</h1>
+      {client &&
+        <ClientCard 
+          client={client}
+          key={client._id}
+        />
+      }
+    </>
   )
 }
 
