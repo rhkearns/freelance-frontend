@@ -50,6 +50,7 @@ const App = () => {
     setClients(updatedArray)
   }
 
+
   useEffect(() => {
     const fetchProjects = async () => {
       const projectData = await projectService.getAllProjects()
