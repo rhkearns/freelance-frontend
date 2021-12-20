@@ -18,7 +18,7 @@ const Profile = ({user, projects, clients, clientListStatus, setClientListStatus
         <div className="side-nav">
           <ul>
             <br/><br/><br/>
-            <li>Client List</li>
+            <li><button onClick={() => setClientListStatus(!clientListStatus)}>Client List</button></li>
             <br/><br/><br/>
             <li>Create New Project</li>
             <br/><br/><br/>
@@ -29,7 +29,7 @@ const Profile = ({user, projects, clients, clientListStatus, setClientListStatus
         </div>
       </div>
       <section className="project-container">
-        <div className="project">
+        <div className={`clients ${clientListStatus ? "active-list" : ""}`}>
           <ProjectList user={user} projects={projects}/>
         </div>
       </section>

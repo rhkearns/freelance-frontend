@@ -22,7 +22,6 @@ const App = () => {
   const navigate = useNavigate()
   const [projects, setProjects] = useState([])
   const [clients, setClients] = useState([])
-
   const [clientListStatus, setClientListStatus] = useState (false)
 
 
