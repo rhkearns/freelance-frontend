@@ -3,6 +3,7 @@ import { useParams } from 'react-router-dom'
 
 import * as clientService from '../services/clientService'
 import ClientCard from '../components/Client_components/ClientCard'
+import ClientActions from '../components/Client_components/ClientActions';
 
 
 const ClientDetails = (props) => {
@@ -31,6 +32,11 @@ const ClientDetails = (props) => {
         <ClientCard 
           client={client}
           key={client._id}
+        />
+      }
+      {client &&
+        <ClientActions 
+          client={client}
         />
       }
     </>

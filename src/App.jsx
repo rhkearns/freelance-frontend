@@ -13,6 +13,7 @@ import UpdateProject from './pages/UpdateProject/UpdateProject'
 import ClientList from './pages/ClientList'
 import CreateClient from './pages/AddClient/AddClient'
 import ClientDetails from './pages/ClientDetails'
+import UpdateClient from './pages/UpdateClient/UpdateClient'
 import * as projectService from './services/projectService'
 import * as clientService from './services/clientService'
 
@@ -39,6 +40,14 @@ const App = () => {
       project._id === updatedProject._id ? updatedProject : project
     )
     setProjects(updatedArray)
+  }
+
+  const handleUpdateClientsList = (updatedClient) => {
+    console.log('in app');
+    const updatedArray = clients.map(client => 
+      client._id === updatedClient._id ? updatedClient : client
+    )
+    setClients(updatedArray)
   }
 
   useEffect(() => {
@@ -107,6 +116,13 @@ const App = () => {
         <Route
           path="/clients/:id"
           element={user ? <ClientDetails clients={clients} setClients={setClients}/> : <Navigate to='/login' />}
+        />
+        <Route
+          path="/clients/:id/edit"
+          element={user ? <UpdateClient 
+            handleUpdateClientsList={handleUpdateClientsList}/> 
+            : 
+            <Navigate to='/login' />}
         />
       </Routes>
     </>

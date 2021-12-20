@@ -49,3 +49,20 @@ export const getClientById = async (clientId) => {
     throw error
   }
 }
+
+export const updateClient = async (clientId, formData) => {
+  try {
+    const res = await fetch(`${BASE_URL}${clientId}`, {
+      method: "PUT",
+      headers: {
+        'content-type': 'application/json',
+        'Authorization': 'Bearer ' + tokenService.getToken()
+      },
+      body: JSON.stringify(formData)
+    })
+    const data = await res.json()
+    return data
+  } catch (error) {
+    throw error
+  }
+}
