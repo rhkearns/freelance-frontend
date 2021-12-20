@@ -12,7 +12,8 @@ const ClientDetails = (props) => {
   useEffect(() => {
     const fetchClient = async () => {
       try {
-
+        const clientData = await clientService.getClientById(id)
+        setClient(clientData)
       } catch (error) {
         throw error
       }

@@ -13,6 +13,7 @@ import UpdateProject from './pages/UpdateProject/UpdateProject'
 import ClientList from './pages/ClientList'
 import CreateClient from './pages/AddClient/AddClient'
 import * as projectService from './services/projectService'
+import * as clientService from './services/clientService'
 
 const App = () => {
   const [user, setUser] = useState(authService.getUser())
@@ -44,8 +45,16 @@ const App = () => {
       const projectData = await projectService.getAllProjects()
       setProjects(projectData)
     }
+    const fetchClients = async () => {
+      const clientData = await clientService.getAllClients()
+      setClients(clientData)
+    }
     fetchProjects()
-    return () => { setProjects([]) }
+    fetchClients()
+    return () => { 
+      setProjects([]) 
+      setClients([])
+    }
   }, [])
 
   console.log('projects', projects);
