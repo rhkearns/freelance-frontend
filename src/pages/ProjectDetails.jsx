@@ -29,7 +29,15 @@ const ProjectDetails = (props) => {
     fetchProject()
   }, [id])
 
-  
+  const markProjectComplete = async (projectId) => {
+    try {
+      const updatedProject = await projectService.markComplete(projectId)
+      setProject(updatedProject)
+      props.handleUpdateProjectsList(updatedProject)
+    } catch (error) {
+      throw error
+    }
+  }
 
   return (
     <>
@@ -43,6 +51,7 @@ const ProjectDetails = (props) => {
       {project &&
         <CardActions 
           project={project}
+          markProjectComplete={markProjectComplete}
         />
       } 
       <TaskSection 
