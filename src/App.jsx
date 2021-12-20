@@ -102,7 +102,7 @@ const App = () => {
         />
         <Route
           path="/newProject"
-          element={user ? <CreateProject projects={projects} setProjects={setProjects}/> : <Navigate to='/login' />}
+          element={user ? <CreateProject projects={projects} setProjects={setProjects} clients={clients}/> : <Navigate to='/login' />}
         />
         <Route
           path="/projects/:id"
