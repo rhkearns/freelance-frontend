@@ -70,7 +70,7 @@ export const updateProject = async (projectId, formData) => {
 export const markComplete = async (projectId) => {
   try {
     const res = await fetch(`${BASE_URL}${projectId}`, {
-      method: "PUT",
+      method: "PATCH",
       headers: {
         'content-type': 'application/json',
         'Authorization': `Bearer ` + tokenService.getToken()
