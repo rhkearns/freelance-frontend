@@ -46,19 +46,27 @@
     border-top: 2px solid $dark1;
     border-bottom: 2px solid $dark1;
   }
-
-  .clients {
-    background-color: $light2;
-    position: fixed;
-    bottom: 0;
-    right: 0;
-    width: 50%;
-    height: 95%;
-    z-index: 2;
-    box-shadow: 2px 2px 25px;
-  }
+  
 }
 
+.clients {
+  background-color: $light2;
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  width: 50%;
+  height: 95%;
+  z-index: 2;
+  box-shadow: 2px 2px 25px;
+}
+
+.active-list {
+  background-color: black;
+}
+
+
+
+  
 
 
 

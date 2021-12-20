@@ -5,7 +5,7 @@ import './profile.scss'
 
 const Profile = ({user, projects, clients, clientListStatus, setClientListStatus}) => {
   
-  
+  console.log(clientListStatus)
 
   return (
     <div className="prof-page">
@@ -29,11 +29,13 @@ const Profile = ({user, projects, clients, clientListStatus, setClientListStatus
         </div>
       </div>
       <section className="project-container">
-        <div>
-          <ProjectList user={user} projects={projects}/>
+        <div className="project-list">
+          {projects?.forEach(p => {
+            <h1>{p.title}</h1>
+          })}
         </div>
       </section>
-      <div className={`clients ${clientListStatus ? "active-list" : ""}`}>
+      <div className={`clients ${clientListStatus ? "active-list" : " "}`}>
         <h1>Client List</h1>
           <ClientList user={user} clients={clients} />
       </div>
@@ -53,11 +55,11 @@ export default Profile
 // }
 
 
-/* <div className="project">
-{projects.map((p)=> (
+{/* <div className="project">
+{projects?.map((p)=> (
   <ProjectCard
     title={p.title}
     startDate={p.startDate}
     endDate={p.endDate}
   />
-))} */
+))} */}
