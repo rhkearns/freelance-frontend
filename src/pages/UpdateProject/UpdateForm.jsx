@@ -1,12 +1,11 @@
-import React from 'react';
-import { useEffect, useRef } from 'react'
+import React, { useEffect, useRef } from 'react';
 
 const UpdateForm = ({handleChange, handleUpdateProject, validForm, setValidForm, formData}) => {
   
   const formElement = useRef()
   console.log('in form', formData);
   useEffect(() => {
-    formElement.current.checkValidity() ? setValidForm (true) : setValidForm(false)
+    formElement.current.checkValidity() ? setValidForm(true) : setValidForm(false)
   }, [formData])
   
 
