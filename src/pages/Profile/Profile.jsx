@@ -5,36 +5,37 @@ import './profile.scss'
 
 const Profile = ({user, projects, clients, clientListStatus, setClientListStatus}) => {
   
-  
+  console.log(clientListStatus)
 
   return (
     <div className="prof-page">
       <div className="prof-side-bar">
         <div className="prof-picture">
-          <div className="circle"></div>
         </div>
         <div className="prof-card">
           <h1>{user.name}</h1>
         </div>
         <div className="side-nav">
           <ul>
-            <br/><br/><br/><br/>
-            <li>Client List</li>
-            <br/><br/><br/><br/><br/>
+            <br/><br/><br/>
+            <li><button onClick={() => setClientListStatus(!clientListStatus)}>Client List</button></li>
+            <br/><br/><br/>
             <li>Create New Project</li>
-            <br/><br/><br/><br/><br/>
+            <br/><br/><br/>
             <li>Another Link</li>
-            <br/><br/><br/><br/><br/>
+            <br/><br/><br/>
             <li>Log Out</li>
           </ul>
         </div>
       </div>
       <section className="project-container">
-        <div className="project">
-          <ProjectList user={user} projects={projects}/>
+        <div className="project-list">
+          {projects?.forEach(p => {
+            <h1>{p.title}</h1>
+          })}
         </div>
       </section>
-      <div className={`clients`}>
+      <div className={`clients ${clientListStatus ? "active-list" : " "}`}>
         <h1>Client List</h1>
           <ClientList user={user} clients={clients} />
       </div>
@@ -52,3 +53,13 @@ export default Profile
 //   const selectedClient = clients.filter((state) => state.id === id)
 //   await setCurrentClient({...selectedClient[0]})
 // }
+
+
+{/* <div className="project">
+{projects?.map((p)=> (
+  <ProjectCard
+    title={p.title}
+    startDate={p.startDate}
+    endDate={p.endDate}
+  />
+))} */}
