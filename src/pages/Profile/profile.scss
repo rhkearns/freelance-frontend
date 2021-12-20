@@ -15,12 +15,6 @@
       height: 12%;
       background-color: $light2;
 
-      .circle {
-        width: 100px;
-        height: 100px;
-        border-radius: 50%;
-        background-color: $light1;
-      }
     }
 
     .prof-card {
@@ -31,12 +25,13 @@
     }
 
     .side-nav {
-      height: 51%;
+      height: 51vh;
       background-color: $light2;
       li {
         font-size: 1.5rem;
         color: $light1;
         margin-left: 3%;
+        overflow-y: scroll;
       }
     }
   }
@@ -53,7 +48,7 @@
   }
 
   .clients {
-    background-color: $light2;
+    // background-color: $light2;
     position: fixed;
     bottom: 0;
     right: 0;
