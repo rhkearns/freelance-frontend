@@ -103,6 +103,10 @@ const App = () => {
           path="/newClient"
           element={user ? <CreateClient user={user} clients={clients} setClients={setClients}/> : <Navigate to='/login' />}
         />
+        <Route
+          path="/clients/:id"
+          element={user ? <ProjectDetails clients={clients} setClients={setClients}/> : <Navigate to='/login' />}
+        />
       </Routes>
     </>
   )
