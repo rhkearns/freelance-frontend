@@ -84,16 +84,19 @@ export const createTask = async (projectId, task) => {
   }
 }
 
-export const setTaskStatus = async (projectId, taskId) => {
+export const setTaskStatus = async (projectId, taskId, stat) => {
+  console.log('stat', stat);
   try {
     const res = await fetch(`${BASE_URL}${projectId}/tasks/${taskId}`, {
-      method: "PUT",
+      method: "PATCH",
       headers: {
         'content-type': 'application/json',
         'Authorization': `Bearer ` + tokenService.getToken()
       },
+      body: JSON.stringify(stat)
     })
     const data = await res.json()
+    console.log('data', data);
     return data
   } catch (error) {
     throw error
