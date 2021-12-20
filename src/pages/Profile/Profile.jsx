@@ -1,10 +1,12 @@
 import React from 'react';
 import ProjectList from '../ProjectList';
+import ClientList from '../ClientList';
 import './profile.scss'
 
-const Profile = ({user, projects}) => {
+const Profile = ({user, projects, clients, clientListStatus, setClientListStatus}) => {
   
   
+
   return (
     <div className="prof-page">
       <div className="prof-side-bar">
@@ -34,6 +36,7 @@ const Profile = ({user, projects}) => {
       </section>
       <div className={`clients`}>
         <h1>Client List</h1>
+          <ClientList user={user} clients={clients} />
       </div>
     </div>
   )

@@ -2,6 +2,7 @@ import React from 'react';
 import TaskActions from './TaskActions'
 
 const TaskCard = (props) => {
+
   return (
     <>
       <p>{props.task.task}</p>

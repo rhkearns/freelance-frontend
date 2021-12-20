@@ -5,7 +5,7 @@ import CreateTask from './CreateTask'
 
 import * as projectService from '../../services/projectService'
 
-const TaskSection = ({project, tasks, setTasks}) => {
+const TaskSection = ({project, setProject, tasks, setTasks}) => {
   const [toggleNew, setToggleNew] = useState(false)
   
   const handleCreateTask = async (formData) => {
@@ -32,7 +32,9 @@ const TaskSection = ({project, tasks, setTasks}) => {
       const updatedTaskList = tasks.map((task) => (
         task._id === taskId ? updatedTask : task
       ))
-      console.log('updatedtask', updatedTask);
+
+      console.log('updatedTask', updatedTask);
+
       setTasks(updatedTaskList)
     } catch (error) {
       throw error
