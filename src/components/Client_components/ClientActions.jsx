@@ -9,7 +9,7 @@ const ClientActions = (props) => {
       <button onClick={() => navigate(`/clients/${props.client._id}/edit`)}>
         Update Client
       </button>
-      <button>
+      <button onClick={() => props.handleDeleteClient(props.client._id)}>
         Delete Client
       </button>
     </>
