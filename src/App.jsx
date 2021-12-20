@@ -11,6 +11,7 @@ import ProjectDetails from './pages/ProjectDetails'
 import Profile from './pages/Profile/Profile'
 import UpdateProject from './pages/UpdateProject/UpdateProject'
 import ClientList from './pages/ClientList'
+import CreateClient from './pages/AddClient/AddClient'
 import * as projectService from './services/projectService'
 
 const App = () => {
@@ -88,6 +89,10 @@ const App = () => {
         <Route 
           path="/clients"
           element={user ? <ClientList user={user} clients={clients}/> : <Navigate to='/login' />}
+        />
+        <Route 
+          path="/newClient"
+          element={user ? <CreateClient user={user} clients={clients} setClients={setClients}/> : <Navigate to='/login' />}
         />
       </Routes>
     </>

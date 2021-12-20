@@ -16,3 +16,20 @@ export const getAllClients = async () => {
     throw error
   }
 }
+
+export const addClient = async (client) => {
+  try {
+    const res = await fetch(`${BASE_URL}`, {
+      method: "POST",
+      headers: {
+        'content-type': 'application/json',
+        'Authorization': `Bearer ${tokenService.getToken()}`
+      },
+      body: JSON.stringify(client)
+    })
+    const data = await res.json()
+    return data
+  } catch (error) {
+    throw error
+  }
+}
