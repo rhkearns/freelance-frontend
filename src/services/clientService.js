@@ -1,5 +1,5 @@
 import * as tokenService from './tokenService'
-const BASE_URL = `${process.env.REACT_APP_BACKEND_SERVER_URL}/api/clients`
+const BASE_URL = `${process.env.REACT_APP_BACKEND_SERVER_URL}/api/clients/`
 
 export const getAllClients = async () => {
   try {
@@ -29,6 +29,52 @@ export const addClient = async (client) => {
     })
     const data = await res.json()
     return data
+  } catch (error) {
+    throw error
+  }
+}
+
+export const getClientById = async (clientId) => {
+  try {
+    const res = await fetch(`${BASE_URL}${clientId}`, {
+      method: 'GET',
+      headers: {
+        "Authorization": `Bearer ${tokenService.getToken()}`
+      },
+    })
+    console.log('res', res);
+    const data = await res.json()
+    return data
+  } catch (error) {
+    throw error
+  }
+}
+
+export const updateClient = async (clientId, formData) => {
+  try {
+    const res = await fetch(`${BASE_URL}${clientId}`, {
+      method: "PUT",
+      headers: {
+        'content-type': 'application/json',
+        'Authorization': 'Bearer ' + tokenService.getToken()
+      },
+      body: JSON.stringify(formData)
+    })
+    const data = await res.json()
+    return data
+  } catch (error) {
+    throw error
+  }
+}
+
+export const deleteClient = async (clientId) => {
+  try {
+    const res = await fetch(`${BASE_URL}${clientId}`, {
+      method: 'DELETE', 
+      headers: {
+        'Authorization': `Bearer ` + tokenService.getToken()
+      }
+    })
   } catch (error) {
     throw error
   }

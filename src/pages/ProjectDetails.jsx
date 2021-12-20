@@ -50,7 +50,7 @@ const ProjectDetails = (props) => {
         setProject={setProject}
         tasks={tasks}
         setTasks={setTasks}
-        />
+      />
     </>
   )
 }

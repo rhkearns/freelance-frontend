@@ -12,7 +12,10 @@ import Profile from './pages/Profile/Profile'
 import UpdateProject from './pages/UpdateProject/UpdateProject'
 import ClientList from './pages/ClientList'
 import CreateClient from './pages/AddClient/AddClient'
+import ClientDetails from './pages/ClientDetails'
+import UpdateClient from './pages/UpdateClient/UpdateClient'
 import * as projectService from './services/projectService'
+import * as clientService from './services/clientService'
 
 const App = () => {
   const [user, setUser] = useState(authService.getUser())
@@ -39,13 +42,30 @@ const App = () => {
     setProjects(updatedArray)
   }
 
+  const handleUpdateClientsList = (updatedClient) => {
+    console.log('in app');
+    const updatedArray = clients.map(client => 
+      client._id === updatedClient._id ? updatedClient : client
+    )
+    setClients(updatedArray)
+  }
+
+
   useEffect(() => {
     const fetchProjects = async () => {
       const projectData = await projectService.getAllProjects()
       setProjects(projectData)
     }
+    const fetchClients = async () => {
+      const clientData = await clientService.getAllClients()
+      setClients(clientData)
+    }
     fetchProjects()
-    return () => { setProjects([]) }
+    fetchClients()
+    return () => { 
+      setProjects([]) 
+      setClients([])
+    }
   }, [])
 
   console.log('projects', projects);
@@ -93,6 +113,17 @@ const App = () => {
         <Route 
           path="/newClient"
           element={user ? <CreateClient user={user} clients={clients} setClients={setClients}/> : <Navigate to='/login' />}
+        />
+        <Route
+          path="/clients/:id"
+          element={user ? <ClientDetails clients={clients} setClients={setClients}/> : <Navigate to='/login' />}
+        />
+        <Route
+          path="/clients/:id/edit"
+          element={user ? <UpdateClient 
+            handleUpdateClientsList={handleUpdateClientsList}/> 
+            : 
+            <Navigate to='/login' />}
         />
       </Routes>
     </>
