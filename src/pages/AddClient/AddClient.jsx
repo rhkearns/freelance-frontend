@@ -7,9 +7,9 @@ import { addClient } from '../../services/clientService';
 const AddClient = (props) => {
   const navigate = useNavigate()
   const [client, setClient] = useState()
-  const {formData, setFormData} = useState({
+  const [formData, setFormData] = useState({
     name: '',
-    email: ''
+    email: '',
   })
   const [validForm, setValidForm] = useState(false)
   
