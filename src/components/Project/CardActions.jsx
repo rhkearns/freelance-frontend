@@ -9,7 +9,7 @@ const CardActions = (props) => {
       <button onClick={() => navigate(`/projects/${props.project._id}/edit`)}>
           Update Project
       </button>
-      <button>
+      <button onClick={() => props.markProjectComplete(props.project._id)}>
         Mark Project Complete
       </button>
     </>
