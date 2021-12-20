@@ -32,7 +32,9 @@ const TaskSection = ({project, setProject, tasks, setTasks}) => {
       const updatedTaskList = tasks.map((task) => (
         task._id === taskId ? updatedTask : task
       ))
+
       console.log('updatedTask', updatedTask);
+
       setTasks(updatedTaskList)
     } catch (error) {
       throw error

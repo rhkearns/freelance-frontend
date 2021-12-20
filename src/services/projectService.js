@@ -93,7 +93,11 @@ export const setTaskStatus = async (projectId, taskId, stat) => {
         'content-type': 'application/json',
         'Authorization': `Bearer ` + tokenService.getToken()
       },
-      body: JSON.stringify(stat)
+
+      body: JSON.stringify({
+        status: stat
+      })
+
     })
     const data = await res.json()
     console.log('data', data);
