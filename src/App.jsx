@@ -20,6 +20,8 @@ const App = () => {
   const [projects, setProjects] = useState([])
   const [clients, setClients] = useState([])
 
+  const [clientListStatus, setClientListStatus] = useState (false)
+
 
   const handleLogout = () => {
     authService.logout()
@@ -65,7 +67,7 @@ const App = () => {
         />
         <Route
           path="/profile"
-          element={user ? <Profile user={user} projects={projects}/> : <Navigate to="/login" />}
+          element={user ? <Profile user={user} projects={projects} clientListStatus={clientListStatus} setClientListStatus={setClientListStatus}/> : <Navigate to="/login" />}
         />
         <Route
           path="/projects"
