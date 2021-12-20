@@ -25,6 +25,19 @@ const TaskSection = ({project, tasks, setTasks}) => {
       throw error
     }
   }
+
+  const handleSetStatus = async (taskId, stat) => {
+    try {
+      const updatedTask = await projectService.setTaskStatus(project._id, taskId, stat)
+      const updatedTaskList = tasks.map((task) => (
+        task._id === taskId ? updatedTask : task
+      ))
+      console.log('updatedtask', updatedTask);
+      setTasks(updatedTaskList)
+    } catch (error) {
+      throw error
+    }
+  }
   
 
   return (
@@ -44,6 +57,7 @@ const TaskSection = ({project, tasks, setTasks}) => {
         <TaskList 
         tasks={tasks}
         handleDeleteTask={handleDeleteTask}
+        handleSetStatus={handleSetStatus}
         />
       }
     </>
