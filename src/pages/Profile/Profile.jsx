@@ -35,7 +35,7 @@ const Profile = ({user, projects, clients, clientListStatus, setClientListStatus
           })}
         </div>
       </section>
-      <div className={`clients ${clientListStatus ? "active-list" : " "}`}>
+      <div className={`clients ${clientListStatus ? "active-list" : "inactive-list"}`}>
         <h1>Client List</h1>
           <ClientList user={user} clients={clients} />
       </div>
