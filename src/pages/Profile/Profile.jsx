@@ -16,9 +16,13 @@ const Profile = ({user, projects}) => {
         </div>
         <div className="side-nav">
           <ul>
+            <br/><br/><br/>
             <li>Client List</li>
+            <br/><br/><br/>
             <li>Create New Project</li>
-            <li></li>
+            <br/><br/><br/>
+            <li>Another Link</li>
+            <br/><br/><br/>
             <li>Log Out</li>
           </ul>
         </div>
