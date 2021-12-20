@@ -88,12 +88,14 @@ export const setTaskStatus = async (projectId, taskId, stat) => {
   console.log('stat', stat);
   try {
     const res = await fetch(`${BASE_URL}${projectId}/tasks/${taskId}`, {
-      method: "PATCH",
+      method: "PUT",
       headers: {
         'content-type': 'application/json',
         'Authorization': `Bearer ` + tokenService.getToken()
       },
-      body: JSON.stringify(stat)
+      body: JSON.stringify({
+        status: stat
+      })
     })
     const data = await res.json()
     console.log('data', data);
