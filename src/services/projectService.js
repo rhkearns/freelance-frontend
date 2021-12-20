@@ -67,6 +67,22 @@ export const updateProject = async (projectId, formData) => {
   }
 }
 
+export const markComplete = async (projectId) => {
+  try {
+    const res = await fetch(`${BASE_URL}${projectId}`, {
+      method: "PUT",
+      headers: {
+        'content-type': 'application/json',
+        'Authorization': `Bearer ` + tokenService.getToken()
+      },
+    })
+    const data = await res.json()
+    return data
+  } catch (error) {
+    throw error
+  }
+}
+
 export const createTask = async (projectId, task) => {
   try {
     const res = await fetch(`${BASE_URL}${projectId}/tasks`, {
