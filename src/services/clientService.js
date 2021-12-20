@@ -1,5 +1,5 @@
 import * as tokenService from './tokenService'
-const BASE_URL = `${process.env.REACT_APP_BACKEND_SERVER_URL}/api/clients`
+const BASE_URL = `${process.env.REACT_APP_BACKEND_SERVER_URL}/api/clients/`
 
 export const getAllClients = async () => {
   try {
@@ -27,6 +27,22 @@ export const addClient = async (client) => {
       },
       body: JSON.stringify(client)
     })
+    const data = await res.json()
+    return data
+  } catch (error) {
+    throw error
+  }
+}
+
+export const getClientById = async (clientId) => {
+  try {
+    const res = await fetch(`${BASE_URL}${clientId}`, {
+      method: 'GET',
+      headers: {
+        "Authorization": `Bearer ${tokenService.getToken()}`
+      },
+    })
+    console.log('res', res);
     const data = await res.json()
     return data
   } catch (error) {
