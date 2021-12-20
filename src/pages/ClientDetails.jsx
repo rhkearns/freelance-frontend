@@ -8,11 +8,14 @@ import ClientCard from '../components/Client_components/ClientCard'
 const ClientDetails = (props) => {
   const { id } = useParams()
   const [client, setClient] = useState()
-  
+  console.log('client', client);
+  console.log('id', id);
+
   useEffect(() => {
     const fetchClient = async () => {
       try {
         const clientData = await clientService.getClientById(id)
+        console.log('here', clientData);
         setClient(clientData)
       } catch (error) {
         throw error
