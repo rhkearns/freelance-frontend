@@ -5,7 +5,7 @@ import CreateTask from './CreateTask'
 
 import * as projectService from '../../services/projectService'
 
-const TaskSection = ({project, tasks, setTasks}) => {
+const TaskSection = ({project, setProject, tasks, setTasks}) => {
   const [toggleNew, setToggleNew] = useState(false)
   
   const handleCreateTask = async (formData) => {
@@ -21,6 +21,19 @@ const TaskSection = ({project, tasks, setTasks}) => {
     try {
       await projectService.deleteTask(project._id, taskId)
       setTasks(tasks.filter(task => task._id !== taskId))
+    } catch (error) {
+      throw error
+    }
+  }
+
+  const handleSetStatus = async (taskId, stat) => {
+    try {
+      const updatedTask = await projectService.setTaskStatus(project._id, taskId, stat)
+      const updatedTaskList = tasks.map((task) => (
+        task._id === taskId ? updatedTask : task
+      ))
+      console.log('updatedTask', updatedTask);
+      setTasks(updatedTaskList)
     } catch (error) {
       throw error
     }
@@ -44,6 +57,7 @@ const TaskSection = ({project, tasks, setTasks}) => {
         <TaskList 
         tasks={tasks}
         handleDeleteTask={handleDeleteTask}
+        handleSetStatus={handleSetStatus}
         />
       }
     </>

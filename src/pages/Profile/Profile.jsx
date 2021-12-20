@@ -2,9 +2,10 @@ import React from 'react';
 import ProjectList from '../ProjectList';
 import './profile.scss'
 
-const Profile = ({user, projects}) => {
+const Profile = ({user, projects, clientListStatus, setClientListStatus}) => {
   
   
+
   return (
     <div className="prof-page">
       <div className="prof-side-bar">
