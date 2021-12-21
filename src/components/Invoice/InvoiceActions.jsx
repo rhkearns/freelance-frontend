@@ -1,8 +1,12 @@
 import React from 'react';
 
-const InvoiceActions = () => {
+const InvoiceActions = (props) => {
   return (
-    <h1>Invoice Actions</h1>
+    <>
+      <button onClick={() => props.markInvoicePaid(props.invoice._id)}>
+        {props.invoice.is_Paid ? "Mark As Pending" : "Mark As Paid"}
+      </button>
+    </>
   )
 }
 

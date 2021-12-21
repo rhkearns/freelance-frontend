@@ -33,3 +33,34 @@ export const getAllInvoices = async () => {
     throw error
   }
 }
+
+export const getInvoiceById = async (invoiceId) => {
+  try {
+    const res = await fetch(`${BASE_URL}${invoiceId}`, {
+      method: "GET", 
+      headers: {
+        'Authorization': `Bearer ${tokenService.getToken()}`
+      },
+    })
+    const data = await res.json()
+    return data
+  } catch (error) {
+    throw error
+  }
+}
+
+export const markPaid = async (invoiceId) => {
+  try {
+    const res = await fetch(`${BASE_URL}${invoiceId}`, {
+      method: "PATCH",
+      headers: {
+        'content-type': 'application/json',
+        'Authorization': `Bearer ` + tokenService.getToken()
+      },
+    })
+    const data = await res.json()
+    return data
+  } catch (error) {
+    throw error
+  }
+}

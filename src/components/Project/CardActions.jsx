@@ -10,7 +10,7 @@ const CardActions = (props) => {
           Update Project
       </button>
       <button onClick={() => props.markProjectComplete(props.project._id)}>
-      {props.project.is_Active ? "Mark Project Complete" : "Mark Project Active"}
+        {props.project.is_Active ? "Mark Project Complete" : "Mark Project Active"}
       </button>
     </>
   )
