@@ -6,7 +6,18 @@
 
 
 
+button {
+  background-color: white;
+  border: none;
+  font-size: 1.5rem;
+  color: $light1;
+  cursor: pointer;
 
+  &:hover{
+    border-bottom: 3px solid $mid1;
+    transition: 0.2s ease-in;
+  }
+}
 
 .active-list {
   transform: translateX(100%);
@@ -30,7 +41,7 @@
       height: 95%;
       bottom: 0;
       left: 0;
-      background-color: lightgreen;
+      box-shadow: 2px 2px 25px;
     }
 
     .prof-picture {
