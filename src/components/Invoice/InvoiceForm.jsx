@@ -60,6 +60,15 @@ const InvoiceForm = ({handleCreateInvoice, handleChange, validForm, setValidForm
           autoComplete='off'
           defaultValue={formData?.hoursWorked}
         /> <br />
+        <label>Invoice Total: </label>
+        <input
+          required
+          type='number'
+          name='invoiceTotal'
+          autoComplete='off'
+          defaultValue={formData?.invoiceTotal}
+          onChange={handleChange}
+        /> <br />
         <label>Date: </label><br />
         <input
           required
@@ -76,15 +85,7 @@ const InvoiceForm = ({handleCreateInvoice, handleChange, validForm, setValidForm
           autoComplete='off'
           onChange={handleChange}
         /> <br />
-        <label>Invoice Total: </label>
-        <input
-          required
-          type='number'
-          name='invoiceTotal'
-          autoComplete='off'
-          defaultValue={formData?.invoiceTotal}
-          onChange={handleChange}
-        /> <br />
+        
         <button
           type='submit'
           disabled={!validForm}

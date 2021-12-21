@@ -5,7 +5,7 @@ import * as invoiceService from '../../services/invoiceService'
 import InvoiceCard from './InvoiceCard';
 import InvoiceActions from './InvoiceActions';
 
-const ProjectDetails = (props) => {
+const InvoiceDetails = (props) => {
   const { id } = useParams()
   const [invoice, setInvoice] = useState()
 
@@ -31,4 +31,17 @@ const ProjectDetails = (props) => {
     }
   }
 
+  return (
+    <>
+      <h1>Invoice Details</h1>
+      {invoice && 
+        <InvoiceCard 
+          invoice={invoice}
+          key={invoice._id}
+        />
+      }
+    </>
+  )
 }
+
+export default InvoiceDetails

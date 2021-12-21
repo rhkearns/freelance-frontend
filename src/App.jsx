@@ -141,10 +141,10 @@ const App = () => {
           path='/invoices'
           element={user ? <InvoiceList user={user} invoices={invoices}/> : <Navigate to='/login'/>}
         />
-        {/* <Route 
+        <Route 
           path='/invoices/:id'
           element={user ? <InvoiceDetails user={user} invoices={invoices}/> : <Navigate to="/login"/>}
-        /> */}
+        />
       </Routes>
     </>
   )

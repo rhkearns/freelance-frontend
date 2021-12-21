@@ -14,6 +14,7 @@ const InvoiceCard = (props) => {
       }
       <h3>Hourly Rate: {props.invoice.hourlyRate}</h3>
       <h3>Hours Worked: {props.invoice.hoursWorked}</h3>
+      <h3>Total: {props.invoice.invoiceTotal}</h3>
     </>
   )
 }
