@@ -1,8 +1,7 @@
 import React from 'react';
 import { useEffect, useRef } from 'react';
 
-const ProjectForm = ({ handleCreateProject, handleChange, validForm, setValidForm, formData, setFormData}) => {
-  
+const ProjectForm = ({ handleCreateProject, handleChange, validForm, setValidForm, formData, clients}) => {
   const formElement = useRef()
   
   useEffect(() => {
@@ -22,6 +21,13 @@ const ProjectForm = ({ handleCreateProject, handleChange, validForm, setValidFor
           placeholder='Title'
           onChange={handleChange}
         /><br />
+        <label>Client: </label>
+        <select name="client" onChange={handleChange}>
+            <option value='' default></option>
+          {clients.map((client) => (
+            <option value={client._id} key={client._id}>{client.name}</option>
+          ))}
+        </select><br />
         <label>Start Date</label><br />
         <input 
           required

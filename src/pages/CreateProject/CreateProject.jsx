@@ -11,6 +11,7 @@ const CreateProject = (props) => {
   const [project, setProject] = useState('')
   const [formData, setFormData] = useState({
     title: '',
+    client: '',
     startDate: '',
     endDate: '',
     hourlyRate: 0,
@@ -44,6 +45,7 @@ const CreateProject = (props) => {
         setValidForm={setValidForm}
         formData={formData}
         setFormData={setFormData}
+        clients={props.clients}
       />
     </>
   )
