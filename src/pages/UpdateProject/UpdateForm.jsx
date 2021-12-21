@@ -1,4 +1,5 @@
 import React, { useEffect, useRef } from 'react';
+import moment from 'moment'
 
 const UpdateForm = ({handleChange, handleUpdateProject, validForm, setValidForm, formData, clients}) => {
   
@@ -36,7 +37,7 @@ const UpdateForm = ({handleChange, handleUpdateProject, validForm, setValidForm,
           type='date'
           name='startDate'
           autoComplete='off'
-          value={formData?.startDate}
+          value={moment(formData?.startDate).format('MM/DD/YYYY')}
           onChange={handleChange}
         /><br />
         <label>End Date</label><br />
@@ -45,7 +46,7 @@ const UpdateForm = ({handleChange, handleUpdateProject, validForm, setValidForm,
           type='date'
           name='endDate'
           autoComplete='off'
-          value={formData?.endDate}
+          value={moment(formData?.endDate).format('MM/DD/YYYY')}
           onChange={handleChange}
         /><br />
         <label>Hourly Rate</label><br />
