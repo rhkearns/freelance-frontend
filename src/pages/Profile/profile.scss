@@ -8,8 +8,15 @@ body {
   background-position: fixed;
 }
 
-
-
+.header {
+  height: 5%;
+  width: 75%;
+  background-color: $mid1;
+  top: 0;
+  position: absolute;
+  margin-left: 25%;
+  z-index: 2;
+}
 
 button {
   background-color: white;
@@ -43,7 +50,7 @@ button {
     .prof-side-bar {
       position: fixed;
       width: 25%;
-      height: 95%;
+      height: 100%;
       bottom: 0;
       left: 0;
       box-shadow: 2px 2px 25px;
@@ -68,7 +75,6 @@ button {
         font-size: 1.5rem;
         color: $light1;
         margin-left: 3%;
-        overflow-y: scroll;
       }
     }
 
@@ -81,18 +87,26 @@ button {
       margin-left: 40%;
       border-top: 2px solid $dark1;
       border-bottom: 2px solid $dark1;
+
+      }
     }
-  }
+  
 
   .clients {
     background-color: $light2;
     position: fixed;
     bottom: 0;
     right: 0;
-    width: 50%;
-    height: 95%;
+    width: 35%;
+    height: 100%;
     z-index: 2;
     box-shadow: 2px 2px 25px;
+    cursor: pointer;
+
+    // &:hover {
+    //   background-color: rgba($mid1, 0.5);
+    // }
+    // Need to figure ot how to make this for individual clients instead of the entire library
   }
 }
 
