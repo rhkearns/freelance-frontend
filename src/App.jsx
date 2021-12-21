@@ -19,6 +19,7 @@ import InvoiceList from './components/Invoice/InvoiceList'
 import InvoiceDetails from './components/Invoice/InvoiceDetails'
 import * as projectService from './services/projectService'
 import * as clientService from './services/clientService'
+import * as invoiceService from './services/invoiceService'
 
 const App = () => {
   const [user, setUser] = useState(authService.getUser())
@@ -63,11 +64,17 @@ const App = () => {
       const clientData = await clientService.getAllClients()
       setClients(clientData)
     }
+    const fetchInvoices = async () => {
+      const invoiceData = await invoiceService.getAllInvoices()
+      setInvoices(invoiceData)
+    }
     fetchProjects()
     fetchClients()
+    fetchInvoices()
     return () => { 
       setProjects([]) 
       setClients([])
+      setInvoices([])
     }
   }, [])
 
@@ -134,10 +141,10 @@ const App = () => {
           path='/invoices'
           element={user ? <InvoiceList user={user} invoices={invoices}/> : <Navigate to='/login'/>}
         />
-        <Route 
+        {/* <Route 
           path='/invoices/:id'
           element={user ? <InvoiceDetails user={user} invoices={invoices}/> : <Navigate to="/login"/>}
-        />
+        /> */}
       </Routes>
     </>
   )

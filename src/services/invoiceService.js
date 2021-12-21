@@ -17,3 +17,19 @@ export const addInvoice = async (invoice) => {
     throw error
   }
 }
+
+export const getAllInvoices = async () => {
+  try {
+    const res = await fetch(`${BASE_URL}`, {
+      method: "GET",
+      headers: {
+        'content-type': 'application/json',
+        'Authorization': `Bearer ${tokenService.getToken()}`
+      },
+    })
+    const data = await res.json()
+    return data
+  } catch (error) {
+    throw error
+  }
+}
