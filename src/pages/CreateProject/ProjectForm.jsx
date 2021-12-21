@@ -1,11 +1,11 @@
-import React from 'react';
-import { useEffect, useRef } from 'react';
+import React, { useEffect, useRef } from 'react';
+
 
 const ProjectForm = ({ handleCreateProject, handleChange, validForm, setValidForm, formData, clients}) => {
   const formElement = useRef()
   
   useEffect(() => {
-    formElement.current.checkValidity() ? setValidForm (true) : setValidForm(false)
+    formElement.current.checkValidity() ? setValidForm(true) : setValidForm(false)
   }, [formData])
   
   return (

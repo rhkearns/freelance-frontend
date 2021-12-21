@@ -14,6 +14,8 @@ import ClientList from './pages/ClientList'
 import CreateClient from './pages/AddClient/AddClient'
 import ClientDetails from './pages/ClientDetails'
 import UpdateClient from './pages/UpdateClient/UpdateClient'
+import AddInvoice from './components/Invoice/AddInvoice'
+import InvoiceList from './components/Invoice/InvoiceList'
 import * as projectService from './services/projectService'
 import * as clientService from './services/clientService'
 
@@ -22,6 +24,7 @@ const App = () => {
   const navigate = useNavigate()
   const [projects, setProjects] = useState([])
   const [clients, setClients] = useState([])
+  const [invoices, setInvoices] = useState([])
   const [clientListStatus, setClientListStatus] = useState (false)
 
 
@@ -121,6 +124,10 @@ const App = () => {
             handleUpdateClientsList={handleUpdateClientsList}/> 
             : 
             <Navigate to='/login' />}
+        />
+        <Route 
+          path='/newInvoice'
+          element={user ? <AddInvoice invoices={invoices} setInvoices={setInvoices} projects={projects} clients={clients}/> : <Navigate to="/login"/>}
         />
       </Routes>
     </>
