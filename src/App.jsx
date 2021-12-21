@@ -129,6 +129,10 @@ const App = () => {
           path='/newInvoice'
           element={user ? <AddInvoice invoices={invoices} setInvoices={setInvoices} projects={projects} clients={clients}/> : <Navigate to="/login"/>}
         />
+        <Route 
+          path='/invoices'
+          element={user ? <InvoiceList user={user} invoices={invoices}/> : <Navigate to='/login'/>}
+        />
       </Routes>
     </>
   )
