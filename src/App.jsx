@@ -72,8 +72,8 @@ const App = () => {
   console.log('projects', projects);
 
   return (
-    <div className="App">
-      <NavBar user={user} handleLogout={handleLogout} />
+    <>
+      {/* <NavBar user={user} handleLogout={handleLogout} /> */}
       <Routes>
         <Route path="/" element={<Landing user={user} />} />
         <Route
@@ -127,7 +127,7 @@ const App = () => {
             <Navigate to='/login' />}
         />
       </Routes>
-    </div>
+    </>
   )
 }
 

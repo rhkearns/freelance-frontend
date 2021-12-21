@@ -9,6 +9,9 @@ const Profile = ({user, projects, clients, clientListStatus, setClientListStatus
 
   return (
     <div className="prof-page">
+      <div className="header">
+        <button className="prof-toggle">Icon</button>
+      </div>
       <div className="prof-side-bar">
         <div className="prof-picture">
         </div>
@@ -16,16 +19,14 @@ const Profile = ({user, projects, clients, clientListStatus, setClientListStatus
           <h1>{user.name}</h1>
         </div>
         <div className="side-nav">
-          <ul>
-            <br/><br/><br/>
-            <li><button onClick={() => setClientListStatus(!clientListStatus)}>Client List</button></li>
-            <br/><br/><br/>
-            <li>Create New Project</li>
-            <br/><br/><br/>
-            <li>Another Link</li>
-            <br/><br/><br/>
-            <li>Log Out</li>
-          </ul>
+            <br/><br/>
+            <p><button onClick={() => setClientListStatus(!clientListStatus)}>Client List</button></p>
+            <br/><br/>
+            <p>Create New Project</p>
+            <br/><br/>
+            <p>Another Link</p>
+            <br/><br/>
+            <p>Log Out</p>
         </div>
       </div>
       <section className="project-container">
