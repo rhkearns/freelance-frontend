@@ -15,13 +15,19 @@
     color: $mid1;
   
   }
+
+  .header {
+    height: 5vh;
+    width: 100%;
+  }
   
   .one {
-    height: 37vh;
+    height: 42vh;
     background-image: url('../../images/Project-photo1.jpg');
     background-size: 100%;
     background-repeat: no-repeat;
     background-position: fixed;
+    margin-top: 5vh;
 
     .title-info {
       margin-left: 19vw;

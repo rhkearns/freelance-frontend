@@ -3,7 +3,9 @@ import './landing.scss'
 
 const Landing = ({ user }) => {
   return (
+    
     <div className="container">
+    <div className="header"></div>
       <section className="one">
         <div className="title-info">
           <br/>
