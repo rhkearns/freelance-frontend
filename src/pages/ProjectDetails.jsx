@@ -8,13 +8,16 @@ import * as projectService from '../services/projectService'
 import ProjectCard from '../components/Project/ProjectCard';
 import CardActions from '../components/Project/CardActions';
 import TaskSection from '../components/Task/TaskSection'
+import HoursSection from '../components/Hours/HoursSection';
 
 const ProjectDetails = (props) => {
   const { id } = useParams()
   const [project, setProject] = useState()
   const [tasks, setTasks] = useState([])
+  const [hours, setHours] = useState()
   console.log(project);
   console.log('tasks', tasks)
+  console.log('hours', hours)
 
   useEffect(() => {
     const fetchProject = async () => {
@@ -22,6 +25,7 @@ const ProjectDetails = (props) => {
         const projectData = await projectService.getProjectById(id)
         setProject(projectData)
         setTasks(projectData.taskList)
+        setHours(projectData.hoursWorked)
       } catch (error) {
         throw error
       }
@@ -53,7 +57,15 @@ const ProjectDetails = (props) => {
           project={project}
           markProjectComplete={markProjectComplete}
         />
-      } 
+      }
+      {project &&
+        <HoursSection 
+          project={project}
+          setProject={setProject}
+          hours={hours}
+          setHours={setHours}
+        />
+      }
       <TaskSection 
         project={project}
         setProject={setProject}
