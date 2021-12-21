@@ -69,7 +69,7 @@ export const updateProject = async (projectId, formData) => {
 
 export const markComplete = async (projectId) => {
   try {
-    const res = await fetch(`${BASE_URL}${projectId}`, {
+    const res = await fetch(`${BASE_URL}${projectId}/toggleActive`, {
       method: "PATCH",
       headers: {
         'content-type': 'application/json',
@@ -131,6 +131,22 @@ export const deleteTask = async (projectId, taskId) => {
         'Authorization': 'Bearer ' + tokenService.getToken()
       }
     })
+  } catch (error) {
+    throw error
+  }
+}
+
+export const updateHours = async (projectId, hours) => {
+  try {
+    const res = await fetch(`${BASE_URL}${projectId}/updateHours`, {
+      method: "PATCH",
+      headers: {
+        'Authorization': `Bearer ` + tokenService.getToken()
+      },
+      body: JSON.stringify(hours)
+    })
+    const data = await res.json()
+    return data
   } catch (error) {
     throw error
   }

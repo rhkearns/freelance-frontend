@@ -53,17 +53,18 @@ const ProjectDetails = (props) => {
         />
       }
       {project &&
-        <CardActions 
-          project={project}
-          markProjectComplete={markProjectComplete}
-        />
-      }
-      {project &&
         <HoursSection 
           project={project}
           setProject={setProject}
           hours={hours}
           setHours={setHours}
+          handleUpdateProjectsList={props.handleUpdateProjectsList}
+        />
+      }
+      {project &&
+        <CardActions 
+          project={project}
+          markProjectComplete={markProjectComplete}
         />
       }
       <TaskSection 
