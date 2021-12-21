@@ -9,12 +9,16 @@ const InvoiceForm = ({handleCreateInvoice, handleChange, validForm, setValidForm
       return project._id === e.target.value
     })
     setFormData({
-      projectBilled: foundProj.title,
+      projectBilled: foundProj._id,
+      title: foundProj.title,
       hourlyRate: foundProj.hourlyRate,
       hoursWorked: foundProj.hoursWorked,
-      client: foundProj.client,
+      clientList: foundProj.client,
+      invoiceTotal: foundProj.hoursWorked * foundProj.hourlyRate
     })
   }
+
+  
 
   useEffect(() => {
     formElement.current.checkValidity() ? setValidForm(true) : setValidForm(false)
@@ -22,7 +26,7 @@ const InvoiceForm = ({handleCreateInvoice, handleChange, validForm, setValidForm
 
   return (
     <>
-      <h1>Invoice for: {formData?.projectBilled}</h1>
+      <h1>Invoice for: {formData?.title}</h1>
       <form onSubmit={(e) => handleCreateInvoice(e)} ref={formElement}>
         <label>Project:</label>
         <select name="projectBilled" onChange={(e) => fetchProjectData(e)}>
@@ -37,7 +41,7 @@ const InvoiceForm = ({handleCreateInvoice, handleChange, validForm, setValidForm
           type='text'
           name='clientList'
           autoComplete='off'
-          value={formData?.client.name}
+          defaultValue={formData?.clientList?.name}
         /> <br />
         <label>Hourly Rate: </label>
         <input 
@@ -63,12 +67,21 @@ const InvoiceForm = ({handleCreateInvoice, handleChange, validForm, setValidForm
           autoComplete='off'
           onChange={handleChange}
         /> <br />
-        <label>Due Date (optional): </label>
+        <label>Due Date: </label>
         <input
           required
           type='date'
           name='dueDate'
           autoComplete='off'
+          onChange={handleChange}
+        /> <br />
+        <label>Invoice Total: </label>
+        <input
+          required
+          type='number'
+          name='invoiceTotal'
+          autoComplete='off'
+          defaultValue={formData?.invoiceTotal}
           onChange={handleChange}
         /> <br />
         <button
