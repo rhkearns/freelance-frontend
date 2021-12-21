@@ -1,20 +1,64 @@
 @import '../../sassStyles/variables';
+@import '../../sassStyles/mixins';
 
-.prof-page {
-  display: flex;
-  
-  .prof-side-bar {
-    position: fixed;
-    width: 30%;
-    height: 95%;
-    bottom: 0;
-    left: 0;
-    box-shadow: 2px 2px 25px;
+body {
+  background-image: url('../../images/Project-photo3-Original.jpg');
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-position: fixed;
+}
+
+.header {
+  height: 5%;
+  width: 75%;
+  background-color: $mid1;
+  top: 0;
+  position: absolute;
+  margin-left: 25%;
+  z-index: 2;
+}
+
+button {
+  background-color: white;
+  border: none;
+  font-size: 1.5rem;
+  color: $light1;
+  cursor: pointer;
+
+  &:hover{
+    border-bottom: 2px solid rgba($mid1, 0.5);
+    transition: 0.1s ease-in;
+  }
+}
+
+.active-list {
+  transform: translateX(100%);
+  transition: 0.5s ease-in-out;
+}
+
+
+.inactive-list {
+  transform: translateX(0%);
+  transition: 0.5s ease-in-out;
+}
+
+
+@media screen and (max-width: 992px) {
+  .prof-page {
+    display: flex;
+
+    .prof-side-bar {
+      position: fixed;
+      width: 25%;
+      height: 100%;
+      bottom: 0;
+      left: 0;
+      box-shadow: 2px 2px 25px;
+    }
 
     .prof-picture {
       height: 12%;
       background-color: $light2;
-
     }
 
     .prof-card {
@@ -27,38 +71,117 @@
     .side-nav {
       height: 51vh;
       background-color: $light2;
-      li {
+      p {
         font-size: 1.5rem;
         color: $light1;
         margin-left: 3%;
-        overflow-y: scroll;
       }
     }
+
+    .project-container {
+      overflow-y: scroll;
+      height: 25vh;
+      width: 45%;
+      margin-top: 2px solid $dark1;
+      margin-top: 25%;
+      margin-left: 40%;
+      border-top: 2px solid $dark1;
+      border-bottom: 2px solid $dark1;
+
+      }
+    }
+  
+
+  .clients {
+    background-color: $light2;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    width: 35%;
+    height: 100%;
+    z-index: 2;
+    box-shadow: 2px 2px 25px;
+    cursor: pointer;
+
+    // &:hover {
+    //   background-color: rgba($mid1, 0.5);
+    // }
+    // Need to figure ot how to make this for individual clients instead of the entire library
+  }
+}
+
+
+@media screen and (max-width: 768px) {
+  .prof-page {
+    display: flex;
+    
+    .prof-side-bar {
+      position: fixed;
+      width: 30%;
+      height: 100%;
+      bottom: 0;
+      left: 0;
+      box-shadow: 2px 2px 25px;
+      z-index: 1;
+  
+      .prof-picture {
+        height: 12%;
+        background-color: $light2;
+  
+      }
+  
+      .prof-card {
+        height: 37%;
+        background-image: url('../../images/ProjectPhoto3.png');
+        background-size: cover;
+        background-repeat: no-repeat;
+      }
+  
+      .side-nav {
+        height: 51vh;
+        background-color: $light2;
+        li {
+          font-size: 1.5rem;
+          color: $light1;
+          margin-left: 3%;
+          overflow-y: scroll;
+        }
+      }
+    }
+  
+    .project-container {
+      overflow-y: scroll;
+      height: 25vh;
+      width: 35%;
+      margin-top: 2px solid $dark1;
+      margin-left: 40%;
+      margin-top: 25%;
+      border-top: 2px solid rgba($dark1, 0.5);
+      border-bottom: 2px solid rgba($dark1, 0.5);
+    }
+    
+  }
+  
+  .clients {
+    background-color: $light2;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    width: 50%;
+    height: 100%;
+    z-index: 2;
+    box-shadow: 2px 2px 25px;
   }
 
-  .project-container {
-    overflow-y: scroll;
-    height: 25vh;
-    width: 25%;
-    margin-top: 2px solid $dark1;
-    margin: auto;
-    margin-top: 35%;
-    border-top: 2px solid $dark1;
-    border-bottom: 2px solid $dark1;
+  .header {
+    width: 100%;
+    z-index: 2;
+    margin-left: 0;
   }
+
   
 }
 
-.clients {
-  background-color: $light2;
-  position: fixed;
-  bottom: 0;
-  right: 0;
-  width: 50%;
-  height: 95%;
-  z-index: 2;
-  box-shadow: 2px 2px 25px;
-}
 
 .active-list {
   background-color: black;
