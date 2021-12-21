@@ -1,7 +1,12 @@
 @import '../../sassStyles/variables';
 @import '../../sassStyles/mixins';
 
-
+body {
+  background-image: url('../../images/Project-photo3-Original.jpg');
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-position: fixed;
+}
 
 
 
@@ -37,7 +42,7 @@ button {
 
     .prof-side-bar {
       position: fixed;
-      width: 30%;
+      width: 25%;
       height: 95%;
       bottom: 0;
       left: 0;
