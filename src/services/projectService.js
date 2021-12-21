@@ -101,7 +101,6 @@ export const createTask = async (projectId, task) => {
 }
 
 export const setTaskStatus = async (projectId, taskId, stat) => {
-  console.log('stat', stat);
   try {
     const res = await fetch(`${BASE_URL}${projectId}/tasks/${taskId}`, {
       method: "PATCH",
@@ -116,7 +115,6 @@ export const setTaskStatus = async (projectId, taskId, stat) => {
 
     })
     const data = await res.json()
-    console.log('data', data);
     return data
   } catch (error) {
     throw error
@@ -138,12 +136,15 @@ export const deleteTask = async (projectId, taskId) => {
 
 export const updateHours = async (projectId, hours) => {
   try {
-    const res = await fetch(`${BASE_URL}${projectId}/updateHours`, {
+    const res = await fetch(`${BASE_URL}${projectId}/addHours`, {
       method: "PATCH",
       headers: {
+        'content-type': 'application/json',
         'Authorization': `Bearer ` + tokenService.getToken()
       },
-      body: JSON.stringify(hours)
+      body: JSON.stringify({
+        hoursWorked: hours
+      })
     })
     const data = await res.json()
     return data

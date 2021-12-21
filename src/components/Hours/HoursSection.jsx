@@ -10,9 +10,9 @@ const HoursSection = (props) => {
   
   const handleUpdateHours = async (totalHours) => {
     try {
-      setHoursToggle(totalHours)
+      props.setHours(totalHours)
       const updatedProject = await updateHours(props.project._id, totalHours)
-      props.handleUpdateProjectList(updatedProject)
+      // props.handleUpdateProjectList(updatedProject)
     } catch (error) {
       throw error
     }

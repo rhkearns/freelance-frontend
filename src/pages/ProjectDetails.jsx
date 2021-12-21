@@ -10,7 +10,7 @@ import CardActions from '../components/Project/CardActions';
 import TaskSection from '../components/Task/TaskSection'
 import HoursSection from '../components/Hours/HoursSection';
 
-const ProjectDetails = (props) => {
+const ProjectDetails = ({projects, setProjects, handleUpdateProjectsList}) => {
   const { id } = useParams()
   const [project, setProject] = useState()
   const [tasks, setTasks] = useState([])
@@ -37,7 +37,7 @@ const ProjectDetails = (props) => {
     try {
       const updatedProject = await projectService.markComplete(projectId)
       setProject(updatedProject)
-      props.handleUpdateProjectsList(updatedProject)
+      handleUpdateProjectsList(updatedProject)
     } catch (error) {
       throw error
     }
@@ -58,7 +58,7 @@ const ProjectDetails = (props) => {
           setProject={setProject}
           hours={hours}
           setHours={setHours}
-          handleUpdateProjectsList={props.handleUpdateProjectsList}
+          handleUpdateProjectsList={handleUpdateProjectsList}
         />
       }
       {project &&

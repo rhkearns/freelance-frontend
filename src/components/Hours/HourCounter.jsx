@@ -10,7 +10,8 @@ const HourCounter = (props) => {
   const handleSubmit = (e) => {
     e.preventDefault()
     console.log(text);
-    const totalHours = props.hours += text
+    let totalHours = props.hours + parseInt(text)
+    console.log('totals', totalHours);
     props.handleUpdateHours(totalHours)
     props.setHoursToggle(false)
   }
