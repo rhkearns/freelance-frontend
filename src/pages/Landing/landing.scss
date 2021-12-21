@@ -16,16 +16,8 @@
   
   }
 
-  .user-nav {
-    height: 5vh;
-    width: 100%;
-    background-color: $dark1;
-  }
-
-  .reg-nav {
-    height: 5vh;
-    width: 100%;
-    background-color: $dark1;
+  .navigation {
+    display: flex;
   }
   
   .one {
@@ -35,12 +27,14 @@
     background-repeat: no-repeat;
     background-position: fixed;
 
-    .title-info {
+    h1 {
+      font-size: 4rem; 
       margin-left: 19vw;
+    }
 
-      h1 {
-        font-size: 4rem; 
-      }
+    h2 {
+      font-size: 2rem;
+      margin-left: 23vw;
     }
   }
   
@@ -67,3 +61,38 @@
   }
 }
 
+.navigation {
+  display: flex;
+  height: 5vh;
+  background-color: $dark1;
+}
+
+// .user-nav {
+//   height: 5vh;
+//   width: 100%;
+//   background-color: $dark1;
+
+//   li {
+//     list-style: none;
+//     color: white;
+//     a {
+//       text-decoration: none;
+//       color: white;
+//     }
+//   }
+// }
+
+// .reg-nav {
+//   height: 5vh;
+//   width: 100%;
+//   background-color: $dark1;
+
+//   li {
+//     list-style: none;
+//     color: white;
+//     a {
+//       text-decoration: none;
+//       color: white;
+//     }
+//   }
+// }
