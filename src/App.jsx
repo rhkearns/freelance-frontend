@@ -16,6 +16,7 @@ import ClientDetails from './pages/ClientDetails'
 import UpdateClient from './pages/UpdateClient/UpdateClient'
 import AddInvoice from './components/Invoice/AddInvoice'
 import InvoiceList from './components/Invoice/InvoiceList'
+import InvoiceDetails from './components/Invoice/InvoiceDetails'
 import * as projectService from './services/projectService'
 import * as clientService from './services/clientService'
 
@@ -132,6 +133,10 @@ const App = () => {
         <Route 
           path='/invoices'
           element={user ? <InvoiceList user={user} invoices={invoices}/> : <Navigate to='/login'/>}
+        />
+        <Route 
+          path='/invoices/:id'
+          element={user ? <InvoiceDetails user={user} invoices={invoices}/> : <Navigate to="/login"/>}
         />
       </Routes>
     </>
