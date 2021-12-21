@@ -1,6 +1,7 @@
 import React from 'react';
 import ClientList from '../ClientList';
 import './profile.scss'
+import moment from 'moment'
 
 const Profile = ({user, projects, clients, clientListStatus, setClientListStatus}) => {
   
@@ -32,8 +33,8 @@ const Profile = ({user, projects, clients, clientListStatus, setClientListStatus
           {projects?.map((project) => (
             <div className="project-list">
               <h1>{project.title}</h1>
-              <h2>{project.startDate}</h2>
-              <h2>{project.endDate}</h2>
+              <h2>{moment(project.startDate).format('MM/DD/YYYY')}</h2>
+              <h2>{moment(project.endDate).format('MM/DD/YYYY')}</h2>
               <h3>${project.hourlyRate} /Hr</h3>
             </div>
           ))}
