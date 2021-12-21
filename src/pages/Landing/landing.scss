@@ -16,22 +16,27 @@
   
   }
 
-  .header {
+  .user-nav {
     height: 5vh;
     width: 100%;
+    background-color: $dark1;
+  }
+
+  .reg-nav {
+    height: 5vh;
+    width: 100%;
+    background-color: $dark1;
   }
   
   .one {
     height: 42vh;
     background-image: url('../../images/Project-photo1.jpg');
-    background-size: 100%;
+    background-size: cover;
     background-repeat: no-repeat;
     background-position: fixed;
-    margin-top: 5vh;
 
     .title-info {
       margin-left: 19vw;
-      position: absolute;
 
       h1 {
         font-size: 4rem; 
@@ -46,7 +51,7 @@
   
   .three {
     height: 60vh;
-    background-image: url('../../images/Project-photo2.jpg');
+    background-image: url('../../images/Project-photo5.jpg');
     background-size: 100%;
     background-repeat: no-repeat;
   }

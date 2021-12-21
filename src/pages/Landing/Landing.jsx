@@ -1,11 +1,27 @@
+import { Link } from 'react-router-dom'
+
 import styles from './Landing.module.css'
 import './landing.scss'
 
-const Landing = ({ user }) => {
+const Landing = ({ user, handleLogout }) => {
   return (
     
     <div className="container">
-    <div className="header"></div>
+      {user ? 
+        <div className="user-nav">
+          <ul>
+            <li><Link to="/profile">View Profile</Link></li>
+            <li><Link to="" onClick={handleLogout}>LOG OUT</Link></li>
+          </ul>
+        </div>
+      :
+        <div className="reg-nav">
+          <ul>
+          <li><Link to="/login">Log In</Link></li>
+          <li><Link to="/signup">Sign Up</Link></li>
+          </ul>
+        </div>
+      }
       <section className="one">
         <div className="title-info">
           <br/>
