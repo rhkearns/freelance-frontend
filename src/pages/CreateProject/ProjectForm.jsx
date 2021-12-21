@@ -5,7 +5,7 @@ const ProjectForm = ({ handleCreateProject, handleChange, validForm, setValidFor
   const formElement = useRef()
   
   useEffect(() => {
-    formElement.current.checkValidity() ? setValidForm (true) : setValidForm(false)
+    formElement.current.checkValidity() ? setValidForm(true) : setValidForm(false)
   }, [formData])
   
   return (
