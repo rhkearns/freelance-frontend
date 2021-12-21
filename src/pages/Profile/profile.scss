@@ -118,7 +118,7 @@ button {
     .prof-side-bar {
       position: fixed;
       width: 30%;
-      height: 95%;
+      height: 100%;
       bottom: 0;
       left: 0;
       box-shadow: 2px 2px 25px;
@@ -167,9 +167,15 @@ button {
     bottom: 0;
     right: 0;
     width: 50%;
-    height: 95%;
+    height: 100%;
     z-index: 2;
     box-shadow: 2px 2px 25px;
+  }
+
+  .header {
+    width: 75%;
+    margin-left: 30%;
+    z-index: 2;
   }
 }
 
