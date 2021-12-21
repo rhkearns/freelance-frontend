@@ -6,7 +6,7 @@ import TotalHours from './TotalHours'
 const HoursSection = (props) => {
   return (
     <TotalHours 
-      project={props.hours}
+      hours={props.hours}
     />
   )
 }
