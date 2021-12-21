@@ -58,9 +58,9 @@ export default Profile
 
 {/* <div className="project">
 {projects?.map((p)=> (
-  <ProjectCard
+  
     title={p.title}
     startDate={p.startDate}
     endDate={p.endDate}
-  />
+  
 ))} */}

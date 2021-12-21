@@ -2,10 +2,7 @@
 @import '../../sassStyles/mixins';
 
 body {
-  background-image: url('../../images/Project-photo3-Original.jpg');
-  background-size: 100%;
-  background-repeat: no-repeat;
-  background-position: fixed;
+  background-color: $dark1;
 }
 
 .header {
@@ -19,7 +16,7 @@ body {
 }
 
 button {
-  background-color: white;
+  background-color: rgba(255, 255, 255, 0);
   border: none;
   font-size: 1.5rem;
   color: $light1;
@@ -54,6 +51,7 @@ button {
       bottom: 0;
       left: 0;
       box-shadow: 2px 2px 25px;
+      z-index: 3;
     }
 
     .prof-picture {
@@ -70,7 +68,7 @@ button {
 
     .side-nav {
       height: 51vh;
-      background-color: $light2;
+      background-color: $mid1;
       p {
         font-size: 1.5rem;
         color: $light1;
@@ -107,6 +105,16 @@ button {
     //   background-color: rgba($mid1, 0.5);
     // }
     // Need to figure ot how to make this for individual clients instead of the entire library
+  }
+
+  .header {
+    height: 5%;
+    width: 100%;
+    background-color: $mid1;
+    top: 0;
+    position: absolute;
+    margin-left: 0%;
+    z-index: 2;
   }
 }
 
