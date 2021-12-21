@@ -126,7 +126,7 @@ const App = () => {
             <Navigate to='/login' />}
         />
         <Route 
-          path='/invoices/newInvoice'
+          path='/newInvoice'
           element={user ? <AddInvoice invoices={invoices} setInvoices={setInvoices} projects={projects} clients={clients}/> : <Navigate to="/login"/>}
         />
       </Routes>
