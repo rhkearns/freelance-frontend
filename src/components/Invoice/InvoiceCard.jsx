@@ -6,6 +6,7 @@ const InvoiceCard = (props) => {
   return (
     <>
       <h1>{props.invoice.title}</h1>
+      <h2>{props.invoice.is_Paid ? "Paid" : "Pending"}</h2>
       <h3>Client: {props.invoice.clientList.name}</h3>
       <h3>Date Created: {moment(props.invoice.dateCreated).format('MM/DD/YYYY')}</h3>
       {props.invoice.dueDate && 
