@@ -2,32 +2,28 @@
 @import '../../sassStyles/mixins';
 
 body {
-  background-image: url('../../images/Project-photo3-Original.jpg');
-  background-size: 100%;
-  background-repeat: no-repeat;
-  background-position: fixed;
+  background-color: $light2;
 }
 
 .header {
   height: 5%;
-  width: 75%;
-  background-color: $mid1;
+  width: 100%;
+  background-color: $dark1;
   top: 0;
   position: absolute;
-  margin-left: 25%;
-  z-index: 2;
+  margin-left: 0%;
 }
 
 button {
-  background-color: white;
+  background-color: rgba(255, 255, 255, 0);
   border: none;
   font-size: 1.5rem;
   color: $light1;
   cursor: pointer;
 
   &:hover{
-    border-bottom: 2px solid rgba($mid1, 0.5);
-    transition: 0.1s ease-in;
+    border-bottom: 2px solid rgba($light1, 0.5);
+    transition: 0.2s ease-in;
   }
 }
 
@@ -54,6 +50,7 @@ button {
       bottom: 0;
       left: 0;
       box-shadow: 2px 2px 25px;
+      z-index: 3;
     }
 
     .prof-picture {
@@ -70,7 +67,7 @@ button {
 
     .side-nav {
       height: 51vh;
-      background-color: $light2;
+      background-color: $mid1;
       p {
         font-size: 1.5rem;
         color: $light1;
@@ -93,20 +90,33 @@ button {
   
 
   .clients {
-    background-color: $light2;
+    background-color: $mid1;
+    color: $light1;
     position: fixed;
     bottom: 0;
     right: 0;
     width: 35%;
     height: 100%;
     z-index: 2;
-    box-shadow: 2px 2px 25px;
+    box-shadow: -2px -2px 25px rgba($dark1, 1.0);
     cursor: pointer;
+
+    .list-title {
+      text-align: center;
+    }
+
+    .client {
+      margin-left: 5%;
+    }
 
     // &:hover {
     //   background-color: rgba($mid1, 0.5);
     // }
     // Need to figure ot how to make this for individual clients instead of the entire library
+  }
+
+  .header {
+    z-index: 2;
   }
 }
 

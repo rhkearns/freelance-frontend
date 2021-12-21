@@ -1,5 +1,4 @@
 import React from 'react';
-import ProjectList from '../ProjectList';
 import ClientList from '../ClientList';
 import './profile.scss'
 
@@ -30,15 +29,23 @@ const Profile = ({user, projects, clients, clientListStatus, setClientListStatus
         </div>
       </div>
       <section className="project-container">
-        <div className="project-list">
-          {projects?.forEach(p => {
-            <h1>{p.title}</h1>
-          })}
-        </div>
+          {projects?.map((project) => (
+            <div className="project-list">
+              <h1>{project.title}</h1>
+              <h2>{project.startDate}</h2>
+              <h2>{project.endDate}</h2>
+              <h3>${project.hourlyRate} /Hr</h3>
+            </div>
+          ))}
       </section>
       <div className={`clients ${clientListStatus ? "active-list" : "inactive-list"}`}>
-        <h1>Client List</h1>
-          <ClientList user={user} clients={clients} />
+        <h1 className="list-title">Client List</h1>
+          {clients?.map((client) => (
+            <div className="client">
+              <h1>{client.name}</h1>
+              <h2>{client.email}</h2>
+            </div>
+          ))}
       </div>
     </div>
   )
@@ -58,9 +65,9 @@ export default Profile
 
 {/* <div className="project">
 {projects?.map((p)=> (
-  <ProjectCard
+  
     title={p.title}
     startDate={p.startDate}
     endDate={p.endDate}
-  />
+  
 ))} */}
