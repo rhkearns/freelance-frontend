@@ -71,7 +71,7 @@ button {
     .side-nav {
       height: 51vh;
       background-color: $light2;
-      li {
+      p {
         font-size: 1.5rem;
         color: $light1;
         margin-left: 3%;
@@ -122,6 +122,7 @@ button {
       bottom: 0;
       left: 0;
       box-shadow: 2px 2px 25px;
+      z-index: 1;
   
       .prof-picture {
         height: 12%;
@@ -173,10 +174,12 @@ button {
   }
 
   .header {
-    width: 75%;
-    margin-left: 30%;
+    width: 100%;
     z-index: 2;
+    margin-left: 0;
   }
+
+  
 }
 
 
