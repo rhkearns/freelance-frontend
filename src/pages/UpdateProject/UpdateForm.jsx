@@ -58,6 +58,15 @@ const UpdateForm = ({handleChange, handleUpdateProject, validForm, setValidForm,
           value={formData?.hourlyRate}
           onChange={handleChange}
         /><br />
+        <label>Hours Worked</label><br />
+        <input 
+          required
+          type='number'
+          name='hoursWorked'
+          autoComplete='off'
+          value={formData?.hoursWorked}
+          onChange={handleChange}
+        /><br />
         <button
           type="submit"
           disabled={!validForm}

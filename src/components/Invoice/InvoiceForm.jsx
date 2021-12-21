@@ -8,13 +8,14 @@ const InvoiceForm = ({handleCreateInvoice, handleChange, validForm, setValidForm
     const foundProj = projects.find((project) => {
       return project._id === e.target.value
     })
+    console.log(foundProj);
     setFormData({
       projectBilled: foundProj._id,
       title: foundProj.title,
       hourlyRate: foundProj.hourlyRate,
       hoursWorked: foundProj.hoursWorked,
       clientList: foundProj.client,
-      invoiceTotal: foundProj.hoursWorked * foundProj.hourlyRate
+      invoiceTotal: foundProj.hoursWorked * foundProj.hourlyRate,
     })
   }
 

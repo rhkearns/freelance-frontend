@@ -13,9 +13,9 @@ const AddInvoice = (props) => {
     dueDate: '',
     projectBilled: '',
     clientList: {name:''},
-    hoursWorked: 0,
-    hourlyRate: 0,
-    invoiceTotal: 0,
+    hoursWorked: '',
+    hourlyRate: '',
+    invoiceTotal: '',
   })
   const [validForm, setValidForm] = useState(false)
 
