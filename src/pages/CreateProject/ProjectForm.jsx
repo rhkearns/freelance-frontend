@@ -1,5 +1,5 @@
-import React from 'react';
-import { useEffect, useRef } from 'react';
+import React, { useEffect, useRef } from 'react';
+
 
 const ProjectForm = ({ handleCreateProject, handleChange, validForm, setValidForm, formData, clients}) => {
   const formElement = useRef()

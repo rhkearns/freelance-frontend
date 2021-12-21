@@ -24,6 +24,7 @@ const App = () => {
   const navigate = useNavigate()
   const [projects, setProjects] = useState([])
   const [clients, setClients] = useState([])
+  const [invoices, setInvoices] = useState([])
   const [clientListStatus, setClientListStatus] = useState (false)
 
 
@@ -126,7 +127,7 @@ const App = () => {
         />
         <Route 
           path='/invoices/newInvoice'
-          element={user ? <AddInvoice /> : <Navigate to="/login"/>}
+          element={user ? <AddInvoice invoices={invoices} setInvoices={setInvoices} projects={projects} clients={clients}/> : <Navigate to="/login"/>}
         />
       </Routes>
     </>
