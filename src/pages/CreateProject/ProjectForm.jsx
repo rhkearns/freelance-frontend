@@ -25,7 +25,7 @@ const ProjectForm = ({ handleCreateProject, handleChange, validForm, setValidFor
         <select name="client" onChange={handleChange}>
             <option value='' default></option>
           {clients.map((client) => (
-            <option value={client.name}>{client.name}</option>
+            <option value={client._id} key={client._id}>{client.name}</option>
           ))}
         </select><br />
         <label>Start Date</label><br />
