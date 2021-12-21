@@ -2,17 +2,16 @@
 @import '../../sassStyles/mixins';
 
 body {
-  background-color: $mid2;
+  background-color: $light2;
 }
 
 .header {
   height: 5%;
-  width: 75%;
-  background-color: $mid1;
+  width: 100%;
+  background-color: $dark1;
   top: 0;
   position: absolute;
-  margin-left: 25%;
-  z-index: 2;
+  margin-left: 0%;
 }
 
 button {
@@ -91,15 +90,24 @@ button {
   
 
   .clients {
-    background-color: $light2;
+    background-color: $mid1;
+    color: $light1;
     position: fixed;
     bottom: 0;
     right: 0;
     width: 35%;
     height: 100%;
     z-index: 2;
-    box-shadow: 2px 2px 25px;
+    box-shadow: -2px -2px 25px rgba($dark1, 1.0);
     cursor: pointer;
+
+    .list-title {
+      text-align: center;
+    }
+
+    .client {
+      margin-left: 5%;
+    }
 
     // &:hover {
     //   background-color: rgba($mid1, 0.5);
@@ -108,12 +116,6 @@ button {
   }
 
   .header {
-    height: 5%;
-    width: 100%;
-    background-color: $mid1;
-    top: 0;
-    position: absolute;
-    margin-left: 0%;
     z-index: 2;
   }
 }
