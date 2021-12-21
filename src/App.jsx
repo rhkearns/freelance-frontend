@@ -54,6 +54,13 @@ const App = () => {
     setClients(updatedArray)
   }
 
+  const handleUpdateInvoiceList = (updatedInvoice) => {
+    const updatedArray = invoices.map(invoice => 
+      invoice._id === updatedInvoice._id ? updatedInvoice : invoice
+    )
+    setInvoices(updatedArray)
+  }
+
 
   useEffect(() => {
     const fetchProjects = async () => {
@@ -143,7 +150,7 @@ const App = () => {
         />
         <Route 
           path='/invoices/:id'
-          element={user ? <InvoiceDetails user={user} invoices={invoices}/> : <Navigate to="/login"/>}
+          element={user ? <InvoiceDetails user={user} invoices={invoices} handleUpdateInvoiceList={handleUpdateInvoiceList}/> : <Navigate to="/login"/>}
         />
       </Routes>
     </>

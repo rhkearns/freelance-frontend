@@ -40,6 +40,12 @@ const InvoiceDetails = (props) => {
           key={invoice._id}
         />
       }
+      {invoice && 
+        <InvoiceActions 
+          invoice={invoice}
+          markInvoicePaid={markInvoicePaid}
+        />
+      }
     </>
   )
 }
