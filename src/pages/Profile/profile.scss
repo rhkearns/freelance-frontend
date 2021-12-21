@@ -183,8 +183,17 @@ button {
 }
 
 
+.active-list {
+  background-color: black;
+  transform: translateX(100%);
+  transition: 0.5s ease-in-out;
+}
 
 
+.inactive-list {
+  transform: translateX(0%);
+  transition: 0.5s ease-in-out;
+}
 
 
   
