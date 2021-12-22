@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom'
 
 import SignInForm from '../../components/Forms/signInForm'
+import SignUpForm from '../../components/Forms/signUpForm'
 
 import './landing.scss'
 
@@ -37,7 +38,7 @@ const Landing = ({ user, handleLogout, signInFormStatus, setSignInFormStatus,  h
             />
           </div>
           <div className={`sign-up-form ${signUpFormStatus ? "active-sign-up" : "inactive-sign-up"}`}>
-            <SignupForm
+            <SignUpForm
               handleSignupOrLogin={handleSignupOrLogin}
             />
           </div>

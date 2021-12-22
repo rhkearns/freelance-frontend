@@ -1,4 +1,5 @@
 import React from 'react';
+import { useNavigate, Link } from 'react-router-dom';
 import moment from 'moment'
 // Components
 import ClientList from '../ClientList';
@@ -6,7 +7,7 @@ import ClientList from '../ClientList';
 import './profile.scss'
 
 const Profile = ({user, projects, clients, clientListStatus, setClientListStatus}) => {
-  
+  const navigate = useNavigate()
   console.log(clientListStatus)
 
   return (
@@ -33,12 +34,14 @@ const Profile = ({user, projects, clients, clientListStatus, setClientListStatus
       </div>
       <section className="project-container">
           {projects?.map((project) => (
-            <div className="project-list">
-              <h1>{project.title}</h1>
-              <h2>{moment(project.startDate).format('MM/DD/YYYY')}</h2>
-              <h2>{moment(project.endDate).format('MM/DD/YYYY')}</h2>
-              <h3>${project.hourlyRate} /Hr</h3>
-            </div>
+            <Link key={project._id} to={`/projects/${project._id}`}>
+              <div className="project-list" onClick={() => navigate(`projects/${project._id}`)}>
+                <h1>{project.title}</h1>
+                <h2>{moment(project.startDate).format('MM/DD/YYYY')}</h2>
+                <h2>{moment(project.endDate).format('MM/DD/YYYY')}</h2>
+                <h3>${project.hourlyRate} /Hr</h3>
+              </div>
+              </Link>
           ))}
       </section>
       <div className={`clients ${clientListStatus ? "active-list" : "inactive-list"}`}>
