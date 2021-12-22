@@ -32,7 +32,7 @@ const Landing = ({ user, handleLogout, signInFormStatus, setSignInFormStatus }) 
           <br/>
           <h1>Folio</h1>
           <h2>An App for Freelancers</h2>
-          <div className={`sign-in-form ${signInFormStatus ? "sign-in" : ""}`}>
+          <div className={`sign-in-form ${signInFormStatus ? "active-sign-in" : "inactive-sign-in"}`}>
             <SignInForm />
           </div>
         </div>
