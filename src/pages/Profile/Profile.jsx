@@ -31,7 +31,7 @@ const Profile = ({user, projects, clients, clientListStatus, setClientListStatus
             <p>Log Out</p>
         </div>
       </div>
-      {projects &&
+      {projects.length > 0 &&
         <section className="project-container">
             {projects?.map((project) => (
               <Link key={project._id} to={`/projects/${project._id}`}>
