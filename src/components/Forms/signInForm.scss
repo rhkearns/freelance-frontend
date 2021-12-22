@@ -1,13 +1,16 @@
+@import '../../sassStyles/variables';
+
 .sign-in-form {
-  border: 2px solid #d3d3d3;
+  border: 2px solid $dark1;
   border-radius: .5em;
   margin-bottom: 1em;
-  margin-left: auto;
+  margin-left: 35vw;
   margin-right: auto;
-  margin-top: 100px;
   padding: 1em;
   text-align: left;
-  width: 600px;
+  width: 30vw;
+  height: 45vh;
+  background-color: $light1;
 }
 
 .form {

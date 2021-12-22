@@ -31,11 +31,11 @@ const Landing = ({ user, handleLogout, signInFormStatus, setSignInFormStatus }) 
           <br/>
           <br/>
           <br/>
-          <h1>Folio</h1>
-          <h2>An App for Freelancers</h2>
           <div className={`sign-in-form ${signInFormStatus ? "active-sign-in" : "inactive-sign-in"}`}>
             <SignInForm />
           </div>
+          <h1>Folio</h1>
+          <h2>An App for Freelancers</h2>
         </div>
       </section>
       <section className="spacer1"></section>

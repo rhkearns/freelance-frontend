@@ -31,7 +31,7 @@ const SignInForm = (props) => {
             placeholder="********"
           />
         </FormGroup>
-      <Button>Submit</Button>
+      <button>Submit</button>
     </Form>
 </div>
   )
