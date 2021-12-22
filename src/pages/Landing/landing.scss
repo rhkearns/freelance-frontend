@@ -109,6 +109,7 @@
 
 .active-sign-in {
   z-index: 3;
+  backdrop-filter: blur(45px);
 }
 
 .inactive-sign-in {
