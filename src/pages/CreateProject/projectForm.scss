@@ -1,0 +1,66 @@
+@import '../../sassStyles/variables';
+
+.container {
+  background-image: url('../../images/Project-photo6.png');
+  background-position: center;
+  background-size: 125%;
+}
+
+.project-form {
+  padding: 1em;
+  text-align: left;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba($light2, 0.6);
+
+  h1 {
+    text-align: center;
+  }
+
+  h3 {
+    text-align: center;
+    font-size: 2rem;
+  }
+
+  .form {
+    padding-left: 15%;
+    padding-top: 10%;
+    width: 100%;
+  }
+
+  label {
+    font-size: 1.5rem;
+
+  }
+
+  input {
+    width: 20vw;
+    height:3vh;
+    margin-bottom: 3vh;
+
+    &:active {
+      backdrop-filter: blur(25px);
+
+  }
+
+  }
+}
+
+form {
+  margin-top: 10vh;
+  margin-left: 35%;
+  width: 30%;
+  text-align: center;
+
+  label {
+    text-align: left;
+  }
+}
+
+.return {
+  position: absolute;
+  top: 8vh;
+  left: 79.5vw;
+  width: 60px;
+  text-align: center;
+} 
