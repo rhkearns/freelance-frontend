@@ -1,8 +1,10 @@
 import { Link } from 'react-router-dom'
-// Styles
+
+import SignInForm from '../../components/Forms/signInForm'
+
 import './landing.scss'
 
-const Landing = ({ user, handleLogout }) => {
+const Landing = ({ user, handleLogout, signInFormStatus, setSignInFormStatus,  handleSignupOrLogin, signUpFormStatus, setSignUpFormStatus}) => {
   return (
     <div className="container">
       <div className="navigation">
@@ -17,7 +19,9 @@ const Landing = ({ user, handleLogout }) => {
           <div className="reg-nav">
             <ul>
             <li><Link to="/login">Log In</Link></li>
+            <button onClick={() => setSignInFormStatus(!signInFormStatus)}>Form Trigger SignIn</button>
             <li><Link to="/signup">Sign Up</Link></li>
+            <button onClick={() => setSignUpFormStatus(!signUpFormStatus)}>Form Trigger SignUp</button>
             </ul>
           </div>
         }
@@ -27,6 +31,16 @@ const Landing = ({ user, handleLogout }) => {
           <br/>
           <br/>
           <br/>
+          <div className={`sign-in-form ${signInFormStatus ? "active-sign-in" : "inactive-sign-in"}`}>
+            <SignInForm 
+              handleSignupOrLogin={handleSignupOrLogin}
+            />
+          </div>
+          <div className={`sign-up-form ${signUpFormStatus ? "active-sign-up" : "inactive-sign-up"}`}>
+            <SignupForm
+              handleSignupOrLogin={handleSignupOrLogin}
+            />
+          </div>
           <h1>Folio</h1>
           <h2>An App for Freelancers</h2>
         </div>

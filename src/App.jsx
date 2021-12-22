@@ -28,6 +28,11 @@ const App = () => {
   const [clients, setClients] = useState([])
   const [invoices, setInvoices] = useState([])
   const [clientListStatus, setClientListStatus] = useState (false)
+  const [signInFormStatus, setSignInFormStatus] = useState (false)
+  const [signUpFormStatus, setSignUpFormStatus] = useState (false)
+  const [clientFormStatus, setClientInFormStatus] = useState (false)
+  const [projectFormStatus, setProjectInFormStatus] = useState (false)
+  const [invoiceFormStatus, setInvoiceInFormStatus] = useState (false)
 
 
   const handleLogout = () => {
@@ -89,7 +94,7 @@ const App = () => {
     <>
       {/* <NavBar user={user} handleLogout={handleLogout} /> */}
       <Routes>
-        <Route path="/" element={<Landing user={user} handleLogout={handleLogout}/>} />
+        <Route path="/" element={<Landing user={user} handleLogout={handleLogout} signInFormStatus={signInFormStatus} setSignInFormStatus={setSignInFormStatus} signUpFormStatus={signUpFormStatus} setSignUpFormStatus={setSignUpFormStatus} handleSignupOrLogin={handleSignupOrLogin}/>} />
         <Route
           path="/signup"
           element={<Signup handleSignupOrLogin={handleSignupOrLogin} />}
