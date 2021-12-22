@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react'
 import { useNavigate, useParams } from 'react-router-dom'
-
+// Components
 import UpdateForm from './UpdateForm'
-
+// Services
 import { updateClient, getClientById } from '../../services/clientService'
 
 const UpdateClient = (props) => {
@@ -20,7 +20,7 @@ const UpdateClient = (props) => {
     try {
       const updatedClient = await updateClient(id, formData)
       props.handleUpdateClientsList(updatedClient)
-      navigate(`/clients`)
+      navigate(`/profile`)
     } catch (error) {
       throw error
     }

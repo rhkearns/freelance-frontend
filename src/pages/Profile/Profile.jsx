@@ -1,10 +1,12 @@
 import React from 'react';
-import ClientList from '../ClientList';
-import './profile.scss'
+import { Link } from 'react-router-dom';
 import moment from 'moment'
+// Components
+import ClientList from '../ClientList';
+// Styles
+import './profile.scss'
 
 const Profile = ({user, projects, clients, clientListStatus, setClientListStatus}) => {
-  
   console.log(clientListStatus)
 
   return (
@@ -29,16 +31,20 @@ const Profile = ({user, projects, clients, clientListStatus, setClientListStatus
             <p>Log Out</p>
         </div>
       </div>
-      <section className="project-container">
-          {projects?.map((project) => (
-            <div className="project-list">
-              <h1>{project.title}</h1>
-              <h2>{moment(project.startDate).format('MM/DD/YYYY')}</h2>
-              <h2>{moment(project.endDate).format('MM/DD/YYYY')}</h2>
-              <h3>${project.hourlyRate} /Hr</h3>
-            </div>
-          ))}
-      </section>
+      {projects.length > 0 &&
+        <section className="project-container">
+            {projects?.map((project) => (
+              <Link key={project._id} to={`/projects/${project._id}`}>
+                <div className="project-list">
+                  <h1>{project.title}</h1>
+                  <h2>{moment(project.startDate).format('MM/DD/YYYY')}</h2>
+                  <h2>{moment(project.endDate).format('MM/DD/YYYY')}</h2>
+                  <h3>${project.hourlyRate} /Hr</h3>
+                </div>
+              </Link>
+            ))}
+        </section>
+      }
       <div className={`clients ${clientListStatus ? "active-list" : "inactive-list"}`}>
         <h1 className="list-title">Client List</h1>
           {clients?.map((client) => (

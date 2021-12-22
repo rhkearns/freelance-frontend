@@ -29,7 +29,7 @@ const SignInForm = (props) => {
     try {
       await authService.login(formData)
       props.handleSignupOrLogin()
-      navigate('/')
+      navigate('/profile')
     } catch (err) {
       console.log(err)
     }
