@@ -3,7 +3,7 @@ import SignInForm from '../../components/Forms/signInForm'
 
 import './landing.scss'
 
-const Landing = ({ user, handleLogout }) => {
+const Landing = ({ user, handleLogout, signInFormStatus, setSignInFormStatus }) => {
   return (
     
     <div className="container">
@@ -18,7 +18,7 @@ const Landing = ({ user, handleLogout }) => {
         :
           <div className="reg-nav">
             <ul>
-            <li><SignInForm style={{visibility: "hidden"}}/></li>
+            <li><Link to="/login">Log In</Link></li>
             <li><Link to="/signup">Sign Up</Link></li>
             </ul>
           </div>
@@ -31,6 +31,9 @@ const Landing = ({ user, handleLogout }) => {
           <br/>
           <h1>Folio</h1>
           <h2>An App for Freelancers</h2>
+          <div className={`sign-in-form ${signInFormStatus ? "sign-in" : ""}`}>
+            <SignInForm />
+          </div>
         </div>
       </section>
       <section className="spacer1"></section>

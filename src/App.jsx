@@ -28,7 +28,7 @@ const App = () => {
   const [clients, setClients] = useState([])
   const [invoices, setInvoices] = useState([])
   const [clientListStatus, setClientListStatus] = useState (false)
-
+  const [signInFormStatus, setSignInFormStatus] = useState (false)
 
   const handleLogout = () => {
     authService.logout()
@@ -89,7 +89,7 @@ const App = () => {
     <>
       {/* <NavBar user={user} handleLogout={handleLogout} /> */}
       <Routes>
-        <Route path="/" element={<Landing user={user} handleLogout={handleLogout}/>} />
+        <Route path="/" element={<Landing user={user} handleLogout={handleLogout} signInFormStatus={signInFormStatus} setSignInFormStatus={setSignInFormStatus} />} />
         <Route
           path="/signup"
           element={<Signup handleSignupOrLogin={handleSignupOrLogin} />}
