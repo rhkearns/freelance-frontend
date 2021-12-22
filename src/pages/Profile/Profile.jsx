@@ -54,21 +54,3 @@ const Profile = ({user, projects, clients, clientListStatus, setClientListStatus
 
 export default Profile
 
-// {`clients ${active ? "selected" : ""}`} this is the logic for toggling the class name for the client list toggle
-
-// stubbed up function:
-
-// const clientSelectHandler = async () => {
-//   const selectedClient = clients.filter((state) => state.id === id)
-//   await setCurrentClient({...selectedClient[0]})
-// }
-
-
-{/* <div className="project">
-{projects?.map((p)=> (
-  
-    title={p.title}
-    startDate={p.startDate}
-    endDate={p.endDate}
-  
-))} */}

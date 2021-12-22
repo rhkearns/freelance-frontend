@@ -1,4 +1,5 @@
 @import '../../sassStyles/variables';
+@import '../../components/Forms/signInForm.scss';
 
 * {
   margin: 0;
@@ -53,6 +54,7 @@
   .spacer1 {
     height: 45px;
     background-color: $mid2;
+    z-index: 1;
   }
 
   .spacer2 {
@@ -96,3 +98,37 @@
 //     }
 //   }
 // }
+
+.sign-in-form {
+  position: absolute;
+  
+  button {
+    color: black;
+  }
+}
+
+.active-sign-in {
+  z-index: 3;
+  backdrop-filter: blur(45px);
+}
+
+.inactive-sign-in {
+  visibility: hidden;
+}
+
+.sign-up-form {
+  position: absolute;
+  
+  button {
+    color: black;
+  }
+}
+
+.active-sign-up {
+  z-index: 3;
+  backdrop-filter: blur(45px);
+}
+
+.inactive-sign-up {
+  visibility: hidden;
+}
