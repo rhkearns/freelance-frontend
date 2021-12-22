@@ -94,7 +94,7 @@ const App = () => {
     <>
       {/* <NavBar user={user} handleLogout={handleLogout} /> */}
       <Routes>
-        <Route path="/" element={<Landing user={user} handleLogout={handleLogout} signInFormStatus={signInFormStatus} setSignInFormStatus={setSignInFormStatus} handleSignupOrLogin={handleSignupOrLogin}/>} />
+        <Route path="/" element={<Landing user={user} handleLogout={handleLogout} signInFormStatus={signInFormStatus} setSignInFormStatus={setSignInFormStatus} signUpFormStatus={signUpFormStatus} setSignUpFormStatus={setSignUpFormStatus} handleSignupOrLogin={handleSignupOrLogin}/>} />
         <Route
           path="/signup"
           element={<Signup handleSignupOrLogin={handleSignupOrLogin} />}

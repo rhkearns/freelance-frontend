@@ -1,10 +1,11 @@
 import { Link } from 'react-router-dom'
 import SignInForm from '../../components/Forms/signInForm'
+import SignupForm from '../../components/SignupForm/SignupForm'
 
 
 import './landing.scss'
 
-const Landing = ({ user, handleLogout, signInFormStatus, setSignInFormStatus,  handleSignupOrLogin}) => {
+const Landing = ({ user, handleLogout, signInFormStatus, setSignInFormStatus,  handleSignupOrLogin, signUpFormStatus, setSignUpFormStatus}) => {
   return (
     
     <div className="container">
@@ -20,8 +21,9 @@ const Landing = ({ user, handleLogout, signInFormStatus, setSignInFormStatus,  h
           <div className="reg-nav">
             <ul>
             <li><Link to="/login">Log In</Link></li>
-            <button onClick={() => setSignInFormStatus(!signInFormStatus)}>Form Trigger</button>
+            <button onClick={() => setSignInFormStatus(!signInFormStatus)}>Form Trigger SignIn</button>
             <li><Link to="/signup">Sign Up</Link></li>
+            <button onClick={() => setSignUpFormStatus(!signUpFormStatus)}>Form Trigger SignUp</button>
             </ul>
           </div>
         }
@@ -33,6 +35,11 @@ const Landing = ({ user, handleLogout, signInFormStatus, setSignInFormStatus,  h
           <br/>
           <div className={`sign-in-form ${signInFormStatus ? "active-sign-in" : "inactive-sign-in"}`}>
             <SignInForm 
+              handleSignupOrLogin={handleSignupOrLogin} 
+            />
+          </div>
+          <div className={`sign-up-form ${signUpFormStatus ? "active-sign-up" : "inactive-sign-up"}`}>
+            <SignupForm
               handleSignupOrLogin={handleSignupOrLogin} 
             />
           </div>

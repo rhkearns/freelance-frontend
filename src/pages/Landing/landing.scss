@@ -116,3 +116,19 @@
   visibility: hidden;
 }
 
+.sign-up-form {
+  position: absolute;
+  
+  button {
+    color: black;
+  }
+}
+
+.active-sign-up {
+  z-index: 3;
+  backdrop-filter: blur(45px);
+}
+
+.inactive-sign-up {
+  visibility: hidden;
+}
