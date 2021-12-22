@@ -4,7 +4,7 @@ import SignInForm from '../../components/Forms/signInForm'
 
 import './landing.scss'
 
-const Landing = ({ user, handleLogout, signInFormStatus, setSignInFormStatus }) => {
+const Landing = ({ user, handleLogout, signInFormStatus, setSignInFormStatus,  handleSignupOrLogin}) => {
   return (
     
     <div className="container">
@@ -32,7 +32,9 @@ const Landing = ({ user, handleLogout, signInFormStatus, setSignInFormStatus }) 
           <br/>
           <br/>
           <div className={`sign-in-form ${signInFormStatus ? "active-sign-in" : "inactive-sign-in"}`}>
-            <SignInForm />
+            <SignInForm 
+              handleSignupOrLogin={handleSignupOrLogin} 
+            />
           </div>
           <h1>Folio</h1>
           <h2>An App for Freelancers</h2>
