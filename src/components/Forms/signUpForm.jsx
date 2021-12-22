@@ -1,7 +1,16 @@
+import React from 'react'
 import { useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
-import styles from './SignupForm.module.css'
 import * as authService from '../../services/authService'
+import {
+  Button,
+  Form,
+  FormGroup,
+  Input,
+  Label
+} from 'reactstrap';
+import './signUpForm.scss'
+
 
 const SignupForm = props => {
   const navigate = useNavigate()
@@ -13,7 +22,6 @@ const SignupForm = props => {
   })
 
   const handleChange = e => {
-    props.updateMessage('')
     setFormData({
       ...formData,
       [e.target.name]: e.target.value,
@@ -27,7 +35,7 @@ const SignupForm = props => {
       props.handleSignupOrLogin()
       navigate('/')
     } catch (err) {
-      props.updateMessage(err.message)
+      console.log(err)
     }
   }
 
@@ -38,66 +46,58 @@ const SignupForm = props => {
   }
 
   return (
-    <form
-      autoComplete="off"
+  <div className="user-sign-up">
+    <h3>Sign Up</h3>
+    <Form
+      className='form'
       onSubmit={handleSubmit}
-      className={styles.container}
     >
-      <div className={styles.inputContainer}>
-        <label htmlFor="name" className={styles.label}>Name</label>
-        <input
+      <FormGroup>
+        <Label for="name">Name</Label>
+        <Input 
           type="text"
-          autoComplete="off"
+          autoComplete='off'
           id="name"
           value={name}
           name="name"
           onChange={handleChange}
         />
-      </div>
-      <div className={styles.inputContainer}>
-        <label htmlFor="email" className={styles.label}>Email</label>
-        <input
+      </FormGroup>
+      <FormGroup>
+        <Label for="exampleEmail">Email</Label>
+        <Input 
           type="text"
-          autoComplete="off"
+          autoComplete='off'
           id="email"
           value={email}
           name="email"
           onChange={handleChange}
         />
-      </div>
-      <div className={styles.inputContainer}>
-        <label htmlFor="password" className={styles.label}>Password</label>
-        <input
+      </FormGroup>
+      <FormGroup>
+        <Label for="examplePassword">Password</Label>
+        <Input 
           type="password"
-          autoComplete="off"
+          autoComplete='off'
           id="password"
           value={password}
           name="password"
           onChange={handleChange}
         />
-      </div>
-      <div className={styles.inputContainer}>
-        <label htmlFor="confirm" className={styles.label}>
-          Confirm Password
-        </label>
-        <input
-          type="password"
-          autoComplete="off"
+      </FormGroup>
+      <FormGroup>
+        <Label for="passwordConfirm"></Label>
+        <Input 
+           type="password"
+          autoComplete='off'
           id="confirm"
-          value={passwordConf}
           name="passwordConf"
           onChange={handleChange}
         />
-      </div>
-      <div className={styles.inputContainer}>
-        <button disabled={isFormInvalid()} className={styles.button}>
-          Sign Up
-        </button>
-        <Link to="/">
-          <button>Cancel</button>
-        </Link>
-      </div>
-    </form>
+      </FormGroup>
+      <Button disabled={isFormInvalid()}></Button> 
+    </Form>
+   </div>
   )
 }
 
