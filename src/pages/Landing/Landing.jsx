@@ -19,6 +19,7 @@ const Landing = ({ user, handleLogout, signInFormStatus, setSignInFormStatus }) 
           <div className="reg-nav">
             <ul>
             <li><Link to="/login">Log In</Link></li>
+            <button onClick={() => setSignInFormStatus(!signInFormStatus)}>Form Trigger</button>
             <li><Link to="/signup">Sign Up</Link></li>
             </ul>
           </div>
