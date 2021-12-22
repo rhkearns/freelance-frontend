@@ -37,6 +37,9 @@ const App = () => {
 
   const handleLogout = () => {
     authService.logout()
+    setClients([])
+    setProjects([])
+    setInvoices([])
     setUser(null)
     navigate('/')
   }
@@ -88,7 +91,7 @@ const App = () => {
       setClients([])
       setInvoices([])
     }
-  }, [])
+  }, [user])
 
   return (
     <>
