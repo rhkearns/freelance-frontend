@@ -23,7 +23,7 @@ const AddClient = (props) => {
     try {
       const newClient = await addClient(formData)
       props.setClients([...props.clients, newClient])
-      navigate('/clients')
+      navigate('/profile')
     } catch (error) {
       throw error
     }

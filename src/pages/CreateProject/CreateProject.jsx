@@ -26,7 +26,7 @@ const CreateProject = (props) => {
     try {
       const newProject = await addProject(formData)
       props.setProjects([newProject, ...props.projects ])
-      navigate('/projects')
+      navigate(`/projects/${newProject._id}`)
     } catch (error) {
       throw error
     }
