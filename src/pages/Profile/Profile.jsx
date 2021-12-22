@@ -24,7 +24,7 @@ const Profile = ({user, projects, clients, clientListStatus, setClientListStatus
             <br/><br/>
             <p><button onClick={() => setClientListStatus(!clientListStatus)}>Client List</button></p>
             <br/><br/>
-            <p>Create New Project</p>
+            <Link to="new/Project">Create New Project</Link>
             <br/><br/>
             <p>Another Link</p>
             <br/><br/>
