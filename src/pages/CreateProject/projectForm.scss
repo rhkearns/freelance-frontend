@@ -4,6 +4,7 @@
   background-image: url('../../images/Project-photo6.png');
   background-position: center;
   background-size: 125%;
+  background-repeat: no-repeat;
 }
 
 .project-form {
@@ -29,22 +30,18 @@
   }
 
   label {
-    font-size: 1.5rem;
+    font-size: 3vw;
 
   }
 
   input {
     width: 20vw;
-    height:3vh;
+    height:4vh;
     margin-bottom: 3vh;
-
-    &:active {
-      backdrop-filter: blur(25px);
-
   }
 
-  }
 }
+
 
 form {
   margin-top: 10vh;
@@ -55,7 +52,9 @@ form {
   label {
     text-align: left;
   }
+
 }
+
 
 .return {
   position: absolute;
@@ -64,3 +63,7 @@ form {
   width: 60px;
   text-align: center;
 } 
+
+.button {
+
+}

@@ -8,14 +8,17 @@ const ProjectForm = ({ handleCreateProject, handleChange, validForm, setValidFor
   const formElement = useRef()
   
   const linkStyle = {
-    width: "100px",
-    height: "100px",
+    width: "20%",
+    height: "20%",
     backgroundColor: "rgba(60, 110, 113, 0.5",
     color: "black",
     position: "absolute",
     borderRadius: "50%",
     top: "5vh",
     left: "77vw",
+    fontSize: "3vw",
+    display: "flex",
+    alignItems: "center"
   }
 
   useEffect(() => {
@@ -27,10 +30,10 @@ const ProjectForm = ({ handleCreateProject, handleChange, validForm, setValidFor
     <Link 
       to="/profile"
       style={linkStyle}
-    >
+      div className="return">Return To Profile
     </Link>
     <div className="project-form">
-    <div className="return">Return To Profile</div>
+    
       <form onSubmit={(e) => handleCreateProject(e)} ref={formElement}>
         <label>Project Title</label><br />
         <input
