@@ -20,7 +20,7 @@ const UpdateClient = (props) => {
     try {
       const updatedClient = await updateClient(id, formData)
       props.handleUpdateClientsList(updatedClient)
-      navigate(`/clients`)
+      navigate(`/profile`)
     } catch (error) {
       throw error
     }

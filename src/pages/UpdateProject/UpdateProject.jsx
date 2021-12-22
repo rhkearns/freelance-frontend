@@ -20,7 +20,7 @@ const UpdateProject = (props) => {
     try {
       const updatedProject = await updateProject(id, formData)
       props.handleUpdateProjectsList(updatedProject)
-      navigate(`/projects`)
+      navigate(`/projects/${updatedProject._id}`)
       } catch (error) {
         throw error
       }
