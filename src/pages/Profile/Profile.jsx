@@ -45,7 +45,7 @@ const Profile = ({user, projects, clients, clientListStatus, setClientListStatus
             ))}
         </section>
       }
-      <div className={`clients ${clientListStatus ? "active-list" : "inactive-list"}`}>
+      <div className={`clients ${clientListStatus ? "inactive-list" : "active-list"}`}>
         <h1 className="list-title">Client List</h1>
           {clients?.map((client) => (
             <div className="client">
