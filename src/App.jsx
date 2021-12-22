@@ -29,6 +29,11 @@ const App = () => {
   const [invoices, setInvoices] = useState([])
   const [clientListStatus, setClientListStatus] = useState (false)
   const [signInFormStatus, setSignInFormStatus] = useState (false)
+  const [signUpFormStatus, setSignUpFormStatus] = useState (false)
+  const [clientFormStatus, setClientInFormStatus] = useState (false)
+  const [projectFormStatus, setProjectInFormStatus] = useState (false)
+  const [invoiceFormStatus, setInvoiceInFormStatus] = useState (false)
+
 
   const handleLogout = () => {
     authService.logout()
