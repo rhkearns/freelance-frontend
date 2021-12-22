@@ -31,18 +31,20 @@ const Profile = ({user, projects, clients, clientListStatus, setClientListStatus
             <p>Log Out</p>
         </div>
       </div>
-      <section className="project-container">
-          {projects?.map((project) => (
-            <Link key={project._id} to={`/projects/${project._id}`}>
-              <div className="project-list">
-                <h1>{project.title}</h1>
-                <h2>{moment(project.startDate).format('MM/DD/YYYY')}</h2>
-                <h2>{moment(project.endDate).format('MM/DD/YYYY')}</h2>
-                <h3>${project.hourlyRate} /Hr</h3>
-              </div>
+      {projects &&
+        <section className="project-container">
+            {projects?.map((project) => (
+              <Link key={project._id} to={`/projects/${project._id}`}>
+                <div className="project-list">
+                  <h1>{project.title}</h1>
+                  <h2>{moment(project.startDate).format('MM/DD/YYYY')}</h2>
+                  <h2>{moment(project.endDate).format('MM/DD/YYYY')}</h2>
+                  <h3>${project.hourlyRate} /Hr</h3>
+                </div>
               </Link>
-          ))}
-      </section>
+            ))}
+        </section>
+      }
       <div className={`clients ${clientListStatus ? "active-list" : "inactive-list"}`}>
         <h1 className="list-title">Client List</h1>
           {clients?.map((client) => (

@@ -33,7 +33,7 @@ const SignupForm = props => {
     try {
       await authService.signup(formData)
       props.handleSignupOrLogin()
-      navigate('/')
+      navigate('/profile')
     } catch (err) {
       console.log(err)
     }

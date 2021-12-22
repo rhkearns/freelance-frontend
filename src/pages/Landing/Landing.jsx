@@ -32,16 +32,20 @@ const Landing = ({ user, handleLogout, signInFormStatus, setSignInFormStatus,  h
           <br/>
           <br/>
           <br/>
-          <div className={`sign-in-form ${signInFormStatus ? "active-sign-in" : "inactive-sign-in"}`}>
-            <SignInForm 
-              handleSignupOrLogin={handleSignupOrLogin}
-            />
-          </div>
-          <div className={`sign-up-form ${signUpFormStatus ? "active-sign-up" : "inactive-sign-up"}`}>
-            <SignUpForm
-              handleSignupOrLogin={handleSignupOrLogin}
-            />
-          </div>
+          {!user && signInFormStatus &&
+            <div className={`sign-in-form ${signInFormStatus ? "active-sign-in" : "inactive-sign-in"}`}>
+              <SignInForm 
+                handleSignupOrLogin={handleSignupOrLogin}
+                />
+            </div>
+          }
+          {!user && signUpFormStatus &&
+            <div className={`sign-up-form ${signUpFormStatus ? "active-sign-up" : "inactive-sign-up"}`}>
+              <SignUpForm
+                handleSignupOrLogin={handleSignupOrLogin}
+                />
+            </div>
+          }
           <h1>Folio</h1>
           <h2>An App for Freelancers</h2>
         </div>
