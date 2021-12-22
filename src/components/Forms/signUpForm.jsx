@@ -86,7 +86,7 @@ const SignupForm = props => {
         />
       </FormGroup>
       <FormGroup>
-        <Label for="passwordConfirm"></Label>
+        <Label for="passwordConfirm">Confirm Password</Label>
         <Input 
            type="password"
           autoComplete='off'
