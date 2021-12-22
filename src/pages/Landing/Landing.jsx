@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom'
 import SignInForm from '../../components/Forms/signInForm'
 
+
 import './landing.scss'
 
 const Landing = ({ user, handleLogout, signInFormStatus, setSignInFormStatus }) => {

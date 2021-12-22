@@ -6,11 +6,12 @@ import {
   Input,
   Label
 } from 'reactstrap';
+import './signInForm.scss'
     
 const SignInForm = (props) => {
   return (
     <div className="new-user">
-      <h2>Sign In</h2>
+      <h3>Sign In</h3>
       <Form className="form">
         <FormGroup>
           <Label for="exampleEmail">Username</Label>
