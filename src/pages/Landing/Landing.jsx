@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom'
+import SignInForm from '../../components/Forms/signInForm'
 
 import './landing.scss'
 
@@ -17,7 +18,7 @@ const Landing = ({ user, handleLogout }) => {
         :
           <div className="reg-nav">
             <ul>
-            <li><Link to="/login">Log In</Link></li>
+            <li><SignInForm style={{visibility: "hidden"}}/></li>
             <li><Link to="/signup">Sign Up</Link></li>
             </ul>
           </div>
