@@ -1,7 +1,9 @@
 import React from 'react';
-import ClientList from '../ClientList';
-import './profile.scss'
 import moment from 'moment'
+// Components
+import ClientList from '../ClientList';
+// Styles
+import './profile.scss'
 
 const Profile = ({user, projects, clients, clientListStatus, setClientListStatus}) => {
   

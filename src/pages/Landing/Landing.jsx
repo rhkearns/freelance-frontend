@@ -1,10 +1,9 @@
 import { Link } from 'react-router-dom'
-
+// Styles
 import './landing.scss'
 
 const Landing = ({ user, handleLogout }) => {
   return (
-    
     <div className="container">
       <div className="navigation">
         {user ? 
