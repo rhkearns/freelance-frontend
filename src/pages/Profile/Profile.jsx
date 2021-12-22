@@ -26,7 +26,7 @@ const Profile = ({user, projects, clients, clientListStatus, setClientListStatus
             <br/><br/>
             <Link to="/newProject">Create New Project</Link>
             <br/><br/>
-            <p>Another Link</p>
+            <Link to="/newClient">Add New Client</Link>
             <br/><br/>
             <p>Log Out</p>
         </div>
