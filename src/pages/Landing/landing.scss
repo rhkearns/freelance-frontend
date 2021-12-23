@@ -62,8 +62,11 @@
   
   .two {
     height: 74vh;
-    background-color: $light1;
-    background-image: url(../../images/Project-photo13.png);
+    background-color: $light2;
+    background-image: url(../../images/Project-Photo13.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
 
     .Testimony {
       font-family: 'Alegreya Sans SC';
