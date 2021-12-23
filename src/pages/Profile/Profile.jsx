@@ -9,6 +9,12 @@ import './profile.scss'
 const Profile = ({user, projects, clients, clientListStatus, setClientListStatus}) => {
   console.log(clientListStatus)
 
+const navLinkStyle = {
+  fontSize: "2vw",
+  color: "#D9D9D9",
+  marginLeft: "3%"
+}
+
   return (
     <div className="prof-page">
       <div className="header">
@@ -24,9 +30,9 @@ const Profile = ({user, projects, clients, clientListStatus, setClientListStatus
             <br/><br/>
             <p><button onClick={() => setClientListStatus(!clientListStatus)}>Client List</button></p>
             <br/><br/>
-            <Link to="/newProject">Create New Project</Link>
+            <Link to="/newProject" style={navLinkStyle}>Create New Project</Link>
             <br/><br/>
-            <Link to="/newClient">Add New Client</Link>
+            <Link to="/newClient" style={navLinkStyle}>Add New Client</Link>
             <br/><br/>
             <p>Log Out</p>
         </div>
@@ -60,3 +66,4 @@ const Profile = ({user, projects, clients, clientListStatus, setClientListStatus
 
 export default Profile
 
+//will line 37 need to be a button with handle logout attached to it?
