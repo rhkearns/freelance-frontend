@@ -31,7 +31,6 @@ const AddClient = (props) => {
 
   return (
     <>
-      <h1>Add Client</h1>
       <ClientForm 
         client={client}
         setClient={setClient}
