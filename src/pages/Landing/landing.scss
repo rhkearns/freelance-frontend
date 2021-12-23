@@ -13,8 +13,8 @@
   height: 42vh;
   width: 100vw;
   background-color: rgba($light2, 0.5);
-  z-index: 1;
-  top: -13.2%;
+  // z-index: 1;
+  top: -10.9%;
 }
 
 .container {
@@ -83,7 +83,7 @@
     background-size: cover;
     background-repeat: no-repeat;
 
-    .CTA {
+    h1 {
       font-size: 4vw;
       margin-left: 40vw;
     }
@@ -130,7 +130,7 @@
 
 .sign-up-form {
   position: absolute;
-  
+  margin-top: 80vh;
 }
 
 .active-sign-up {
@@ -185,6 +185,7 @@
 .user-nav {
   li {
     display: inline;
+    z-index: 15;
     
     a {
       color: $light2;
@@ -206,8 +207,20 @@
 .sign-in-button {
   background-color: $mid1;
   width: 10vw;
-  margin-top: .5vw;
+  margin-top:  1vh;
+  margin-bottom: 160vh;
   margin-right: 0%;
   margin-left: 85vw;
-  font-size: 3vw;
+  font-size: 2vw;
 }
+
+.sign-up-button {
+  position: relative;
+  background-color: $mid1;
+  width: 20vw;
+  margin-top: -10vh;
+  margin-right: 0%;
+  margin-left: 45vw;
+  font-size: 2.5vw;
+}
+
