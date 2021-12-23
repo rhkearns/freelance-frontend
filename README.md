@@ -14,21 +14,25 @@ This version of the app was built with **React**, **Mongoose**, **Express**, and
 
 ## _Website Instructions_
 
-Profile
+Landing
 
-![Screenshot One](src/images/Project-List.png)
+![Screenshot One](src/images/ScreenS11.png)
 
-Project Form
+Sign Up
 
-![Screenshot Two](src/images/Project-Form.png)
+![Screenshot Two](src/images/ScreenS1.png)
+
+Sign In
+
+![Screenshot Three](src/images/ScreenS2.png)
 
 Project List
 
-![Screenshot Three](src/images/Project-List.png)
+![Screenshot Four](src/images/ScreenS3.png)
 
-Styles
+Project Details
 
-![Screenshot Four](src/images/Project-Style.png)
+![Screenshot Five](src/images/Project-photo13.png)
 
 
 
