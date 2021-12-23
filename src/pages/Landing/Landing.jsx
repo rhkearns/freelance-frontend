@@ -25,6 +25,7 @@ const Landing = ({ user, handleLogout, signInFormStatus, setSignInFormStatus,  h
           </div>
         }
       </div>
+      <div className="blur"></div>
       <section className="one">
         <div className="title-info">
           <br/>
