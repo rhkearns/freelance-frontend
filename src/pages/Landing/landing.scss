@@ -9,12 +9,12 @@
 }
 
 .blur {
-  position: relative;
+  position: fixed;
   height: 42vh;
   width: 100vw;
   background-color: rgba($light2, 0.5);
   z-index: 1;
-  top: -3.2vh;
+  top: 5vh;
 }
 
 .container {
@@ -67,9 +67,9 @@
   }
   
   .three {
-    height: 60vh;
+    height: 50vh;
     background-image: url('../../images/Project-phot7.jpeg');
-    background-size: 100%;
+    background-size: cover;
     background-repeat: no-repeat;
   }
 
@@ -90,40 +90,6 @@
   height: 5vh;
   background-color: $dark1;
 }
-
-// .user-nav {
-//   height: 5vh;
-//   width: 100%;
-//   background-color: $dark1;
-
-//   li {
-//     list-style: none;
-//     color: white;
-//     a {
-//       text-decoration: none;
-//       color: white;
-//     }
-//   }
-// }
-
-// .reg-nav {
-//   width: 100%;
-//   height: 5vh;
-//   margin-top: 1%;
-
-//   li {
-//     list-style: none;
-//     display: inline;
-//     justify-content: space-between;
-//     a {
-//       text-decoration: none;
-//       color: white;
-//       top: 3vh;
-//       font-size: 2vw;
-//       justify-self: center;
-//     }
-//   }
-// }
 
 .sign-in-form {
   position: absolute;
@@ -168,7 +134,7 @@
   .one {
 
     h1 {
-      margin-top: -3vh;
+      margin-top: 2.5vh;
       margin-bottom: -2vh;;
     }
 
@@ -180,5 +146,18 @@
       font-size: 3vw;
       margin-bottom: -2vh;
     }
+  }
+
+  .three {
+    background-size: 200%;
+  }
+}
+
+.user-nav {
+  li {
+    display: inline;
+  }
+  .prof {
+    margin-right: 80vw;
   }
 }
