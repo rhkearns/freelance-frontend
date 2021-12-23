@@ -16,8 +16,10 @@
 
   h1 {
     text-align: center;
+    font-size: 5vw;
     margin-top: 15vh;
     margin-bottom: -3vh;
+    color: $mid1;
   }
 
   h3 {
@@ -34,16 +36,17 @@
 
 label {
   font-size: 3vw;
-
+  font-family: 'Alegreya Sans SC';
+  font-weight: 700;
 }
 
 input {
   width: 20vw;
   height:4vh;
   margin-bottom: 3vh;
+  font-size: 2vw;
+  font-family: 'Alegreya Sans SC';
 }
-
-
 
 
 form {

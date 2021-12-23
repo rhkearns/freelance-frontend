@@ -26,13 +26,13 @@ const navLinkStyle = {
         <div className="side-nav">
             <br/><br/>
             <p><button onClick={() => setClientListStatus(!clientListStatus)}>Client List</button></p>
-            <br/><br/>
+            <br/>
             <Link to="/newProject" style={navLinkStyle}>Create New Project</Link>
-            <br/><br/><br/>
+            <br/><br/>
             <Link to="/newClient" style={navLinkStyle}>Add New Client</Link>
-            <br/><br/><br/>
+            <br/><br/>
             <Link to="/newInvoice" style={navLinkStyle}>Write Invoice</Link>
-            <br/><br/><br/>
+            <br/><br/>
             <Link to="" onClick={handleLogout} style={navLinkStyle}>Log Out</Link>
         </div>
       </div>
