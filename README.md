@@ -14,38 +14,21 @@ This version of the app was built with **React**, **Mongoose**, **Express**, and
 
 ## _Website Instructions_
 
-Landing Page
-
-![Screenshot One](main_app/static/images/.png)
-
-Signing Up
-
-![Screenshot Two](main_app/static/images/.png)
-
-Adding Projects
-
-![Screenshot Three](main_app/static/images/.png)
-
-Adding Clients
-
-![Screenshot Four](main_app/static/images/.png)
-
-Project Details
-
-![Screenshot Five](main_app/static/images/.png)
-
-Client List
-
-![Screenshot Six](main_app/static/images/.png)
-
-Invoice
-
-![Screenshot Seven](main_app/static/images/.png)
-
 Profile
 
-![Screenshot Eight](main_app/static/images/.png)
+![Screenshot One](src/images/Project-List.png)
 
+Project Form
+
+![Screenshot Two](src/images/Project-Form.png)
+
+Project List
+
+![Screenshot Three](src/images/Project-List.png)
+
+Styles
+
+![Screenshot Four](src/images/Project-Style.png)
 
 
 
