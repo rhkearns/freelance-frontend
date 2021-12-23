@@ -82,12 +82,12 @@ button {
     .project-container {
       overflow-y: scroll;
       height: 25vh;
-      width: 45%;
-      margin-top: 25%;
-      margin-left: 40%;
+      width: 35%;
+      align-self: center;
+      justify-self: center;
+      margin-left: 35%;
       border-top: 2px solid rgba($dark1, 0.3);
       border-bottom: 2px solid rgba($dark1, 0.3);
-
       }
     }
   
@@ -155,9 +155,11 @@ button {
       overflow-y: scroll;
       height: 25vh;
       width: 35%;
-      margin-top: 2px solid $dark1;
-      margin-left: 40%;
-      margin-top: 25%;
+      align-self: center;
+      justify-self: center;
+      // margin-top: 2px solid $dark1;
+      // margin-left: 40%;
+      // margin-top: 45%;
       border-top: 2px solid rgba($dark1, 0.5);
       border-bottom: 2px solid rgba($dark1, 0.5);
     }

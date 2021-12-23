@@ -9,7 +9,7 @@ const Profile = ({user, projects, clients, clientListStatus, setClientListStatus
   console.log(clientListStatus)
 
 const navLinkStyle = {
-  fontSize: "2vw",
+  fontSize: "2.3vw",
   color: "#D9D9D9",
   marginLeft: "3%"
 }
@@ -32,7 +32,7 @@ const navLinkStyle = {
             <Link to="/newProject" style={navLinkStyle}>Create New Project</Link>
             <br/><br/><br/>
             <Link to="/newClient" style={navLinkStyle}>Add New Client</Link>
-            <br/><br/>
+            <br/><br/><br/>
             <Link to="" onClick={handleLogout} style={navLinkStyle}>Log Out</Link>
         </div>
       </div>
