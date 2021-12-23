@@ -23,11 +23,9 @@ const HoursSection = (props) => {
         <TotalHours 
           hours={props.hours}
           />
-        <button onClick={() => setHoursToggle(!hoursToggle)}>
+        <button className="add" onClick={() => setHoursToggle(!hoursToggle)}>
           Adjust Hours
         </button>
-      </div>
-      <div>
         {hoursToggle && 
           <HourCounter 
             hours={props.hours}
