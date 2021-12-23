@@ -41,7 +41,7 @@ const ProjectDetails = ({handleUpdateProjectsList}) => {
   }
 
   return (
-    <>
+    <div className="project-details">
       <h1>Project Details</h1>
       {project &&
         <ProjectCard 
@@ -70,7 +70,7 @@ const ProjectDetails = ({handleUpdateProjectsList}) => {
         tasks={tasks}
         setTasks={setTasks}
       />
-    </>
+    </div>
   )
 }
 

@@ -20,7 +20,7 @@ const Landing = ({ user, handleLogout, signInFormStatus, setSignInFormStatus,  h
           <div className="reg-nav">
             <ul>
               <li><button onClick={() => setSignInFormStatus(!signInFormStatus)}>Form Trigger SignIn</button></li>
-              <li><button onClick={() => setSignUpFormStatus(!signUpFormStatus)}>Form Trigger SignUp</button></li>
+              
             </ul>
           </div>
         }
@@ -45,7 +45,11 @@ const Landing = ({ user, handleLogout, signInFormStatus, setSignInFormStatus,  h
             </div>
           }
           <h1>Folio</h1>
+          <br/>
           <h2>An App for Freelancers</h2>
+          <br/><br/>
+          <p className="short-desc">A way to simplify your life with the ability to store your past and current projects and clients</p>
+          <button className="sign-up-button" onClick={() => setSignUpFormStatus(!signUpFormStatus)}>Form Trigger SignUp</button>
         </div>
       </section>
       <section className="spacer1"></section>
