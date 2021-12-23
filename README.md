@@ -32,7 +32,7 @@ Project List
 
 Project Details
 
-![Screenshot Five](src/images/Project-photo13.png)
+![Screenshot Five](src/images/Project-Screenshot1.png)
 
 
 
