@@ -12,6 +12,8 @@
     text-align: center;
     margin-top: 2vh;
     font-size: 5vw;
+    font-family: 'Playfair Display SC';
+    color: $mid1;
   }
 }
 
@@ -45,3 +47,26 @@
 }
 
 
+@media screen and (max-width: 800px) {
+  .update {
+    margin-top: 19vh;
+
+    label {
+      font-size: 2.5vw;
+      font-family: 'Alegreya Sans SC';
+      font-weight: 700;
+    }
+
+    input {
+      height: 3vh;
+    }
+  }
+
+  .change {
+    font-weight: 700;
+  }
+}
+
+@media screen and (max-width: 992px) {
+
+}

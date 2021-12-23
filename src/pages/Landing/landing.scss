@@ -9,10 +9,12 @@
 }
 
 .blur {
-  position: absolute;
+  position: relative;
   height: 42vh;
   width: 100vw;
   background-color: rgba($light2, 0.5);
+  // z-index: 1;
+  top: -10.9%;
 }
 
 .container {
@@ -31,6 +33,7 @@
     background-size: cover;
     background-repeat: no-repeat;
     background-position: fixed;
+    z-index: 3;
 
     h1 {
       font-size: 4rem; 
@@ -45,7 +48,6 @@
     }
 
     .sign-up-button {
-      position: absolute;
       width: 20vw;
       height: 5vw;
       background-color: $mid1;
@@ -60,20 +62,45 @@
   
   .two {
     height: 74vh;
-    background-color: $light1;
+    background-color: $light2;
+    background-image: url(../../images/Project-Photo13.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+
+    .Testimony {
+      font-family: 'Alegreya Sans SC';
+      font-size: 3vw;
+      text-align: center;
+      color: $dark1;
+      font-weight: 800;
+    }
   }
   
   .three {
-    height: 60vh;
+    height: 50vh;
     background-image: url('../../images/Project-phot7.jpeg');
-    background-size: 100%;
+    background-size: cover;
     background-repeat: no-repeat;
+
+    h1 {
+      font-size: 4vw;
+      margin-left: 40vw;
+    }
+
+    h2 {
+      margin-top: 2vh;
+      margin-left: 45vw;
+      line-height: 2;
+      font-family: 'Alegreya Sans SC';
+      color: $dark1;
+    }
   }
 
   .spacer1 {
     height: 45px;
     background-color: $mid2;
-    z-index: 1;
+    z-index: 3;
   }
 
   .spacer2 {
@@ -87,40 +114,6 @@
   height: 5vh;
   background-color: $dark1;
 }
-
-// .user-nav {
-//   height: 5vh;
-//   width: 100%;
-//   background-color: $dark1;
-
-//   li {
-//     list-style: none;
-//     color: white;
-//     a {
-//       text-decoration: none;
-//       color: white;
-//     }
-//   }
-// }
-
-// .reg-nav {
-//   width: 100%;
-//   height: 5vh;
-//   margin-top: 1%;
-
-//   li {
-//     list-style: none;
-//     display: inline;
-//     justify-content: space-between;
-//     a {
-//       text-decoration: none;
-//       color: white;
-//       top: 3vh;
-//       font-size: 2vw;
-//       justify-self: center;
-//     }
-//   }
-// }
 
 .sign-in-form {
   position: absolute;
@@ -137,7 +130,7 @@
 
 .sign-up-form {
   position: absolute;
-  
+  margin-top: 80vh;
 }
 
 .active-sign-up {
@@ -162,10 +155,15 @@
 }
 
 @media screen and (max-width: 768px) {
+
+  .blur {
+    top: -9vh;
+  }
+
   .one {
 
     h1 {
-      margin-top: -3vh;
+      margin-top: 2.5vh;
       margin-bottom: -2vh;;
     }
 
@@ -178,4 +176,51 @@
       margin-bottom: -2vh;
     }
   }
+
+  .three {
+    background-size: 200%;
+  }
 }
+
+.user-nav {
+  li {
+    display: inline;
+    z-index: 15;
+    
+    a {
+      color: $light2;
+      font-size: 1.5vw;
+      margin-top: -3vh;
+    }
+  }
+  .prof {
+    margin-right: 80vw;
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .blur {
+    top: -6.2vh;
+  }
+}
+
+.sign-in-button {
+  background-color: $mid1;
+  width: 10vw;
+  margin-top:  1vh;
+  margin-bottom: 160vh;
+  margin-right: 0%;
+  margin-left: 85vw;
+  font-size: 2vw;
+}
+
+.sign-up-button {
+  position: relative;
+  background-color: $mid1;
+  width: 20vw;
+  margin-top: -10vh;
+  margin-right: 0%;
+  margin-left: 45vw;
+  font-size: 2.5vw;
+}
+

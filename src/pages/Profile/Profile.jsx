@@ -16,14 +16,12 @@ const navLinkStyle = {
 
   return (
     <div className="prof-page">
-      <div className="header">
-        <button className="prof-toggle">Icon</button>
-      </div>
+      <div className="header"></div>
       <div className="prof-side-bar">
         <div className="prof-picture">
-        </div>
-        <div className="prof-card">
           <h1>{user.name}</h1>
+        </div>
+        <div className="prof-card">  
         </div>
         <div className="side-nav">
             <br/><br/>
@@ -44,9 +42,10 @@ const navLinkStyle = {
               <Link key={project._id} to={`/projects/${project._id}`}>
                 <div className="project-list">
                   <h1>{project.title}</h1>
-                  <h2>{moment(project.startDate).format('MM/DD/YYYY')}</h2>
-                  <h2>{moment(project.endDate).format('MM/DD/YYYY')}</h2>
+                  <h2>{project.is_Active}</h2>
+                  <h2>Deliver By: {moment(project.endDate).format('MM/DD/YYYY')}</h2>
                   <h3>${project.hourlyRate} /Hr</h3>
+                  <br/>
                 </div>
               </Link>
             ))}
@@ -54,6 +53,7 @@ const navLinkStyle = {
       }
       <div className={`clients ${clientListStatus ? "inactive-list" : "active-list"}`}>
         <h1 className="list-title">Client List</h1>
+        <br/>
           {clients?.map((client) => (
             <div className="client">
               <h1>{client.name}</h1>
