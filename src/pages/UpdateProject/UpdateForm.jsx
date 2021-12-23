@@ -1,17 +1,36 @@
 import React, { useEffect, useRef } from 'react';
 import moment from 'moment';
+import { Link } from 'react-router-dom';
 
 const UpdateForm = ({handleChange, handleUpdateProject, validForm, setValidForm, formData, clients}) => {  
   const formElement = useRef()
   
+const linkStyle = {
+    width: "10vw",
+    height: "10vh",
+    border: " 3px solid rgba(53, 53, 53, 0.5",
+    color: "rgba(60, 110, 113, 1",
+    position: "absolute",
+    top: "0",
+    left: "0",
+    fontSize: "2vw",
+    display: "flex",
+    alignItems: "center"
+  }
+
   useEffect(() => {
     formElement.current.checkValidity() ? setValidForm(true) : setValidForm(false)
   }, [formData])
   
   return (
-    <>
+    <div className="proj-update">
+    <Link 
+      to="/profile"
+      style={linkStyle}
+      div className="return">Return To Profile
+    </Link>
       <h1>Project Form</h1>
-      <form onSubmit={(e) => handleUpdateProject(e)} ref={formElement}>
+      <form className='update' onSubmit={(e) => handleUpdateProject(e)} ref={formElement}>
         <label>Project Title</label><br />
         <input
           required
@@ -21,13 +40,13 @@ const UpdateForm = ({handleChange, handleUpdateProject, validForm, setValidForm,
           placeholder='Title'
           value={formData?.title}
           onChange={handleChange}
-        /><br />
-        <label>Client: </label>
+        /><br/>
+        <label >Client: </label>
         <select name="clientList" value={formData?.clientList}>
           {clients.map((client) => (
             <option value={client._id} key={client._id}>{client.name}</option>
           ))}
-        </select><br />
+        </select><br/><br/><br/>
         <label>Start Date</label><br />
         <input 
           required
@@ -55,14 +74,14 @@ const UpdateForm = ({handleChange, handleUpdateProject, validForm, setValidForm,
           value={formData?.hourlyRate}
           onChange={handleChange}
         /><br />
-        <button
+        <button className='change'
           type="submit"
           disabled={!validForm}
         >
           Update Project
         </button>
       </form>
-    </>
+    </div>
   )
 }
 

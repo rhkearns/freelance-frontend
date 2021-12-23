@@ -5,6 +5,14 @@ body {
   background-color: $light2;
 }
 
+.prof-page {
+  height: 100vh;
+  background-image: url('../../images/Project-photo10.jpeg');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
 .header {
   height: 5%;
   width: 100%;
@@ -14,12 +22,19 @@ body {
   margin-left: 0%;
 }
 
+ 
+.side-nav {
+  height: 51vh;
+  background-color: $mid1;
+}
+
 button {
   background-color: rgba(255, 255, 255, 0);
   border: none;
-  font-size: 1.5rem;
   color: $light1;
   cursor: pointer;
+  margin-left: 3%;
+  font-size: 2vw;
 
   &:hover{
     border-bottom: 2px solid rgba($light1, 0.5);
@@ -38,7 +53,6 @@ button {
   transition: 0.5s ease-in-out;
 }
 
-
 @media screen and (max-width: 992px) {
   .prof-page {
     display: flex;
@@ -54,37 +68,26 @@ button {
     }
 
     .prof-picture {
-      height: 12%;
-      background-color: $light2;
+      height: 5%;
+      background-color: $mid1;
     }
 
     .prof-card {
-      height: 37%;
+      height: 44%;
       background-image: url('../../images/ProjectPhoto3.png');
       background-size: cover;
       background-repeat: no-repeat;
     }
 
-    .side-nav {
-      height: 51vh;
-      background-color: $mid1;
-      p {
-        font-size: 1.5rem;
-        color: $light1;
-        margin-left: 3%;
-      }
-    }
-
     .project-container {
       overflow-y: scroll;
       height: 25vh;
-      width: 45%;
-      margin-top: 2px solid $dark1;
-      margin-top: 25%;
-      margin-left: 40%;
-      border-top: 2px solid $dark1;
-      border-bottom: 2px solid $dark1;
-
+      width: 35%;
+      align-self: center;
+      justify-self: center;
+      margin-left: 35%;
+      border-top: 2px solid rgba($dark1, 0.3);
+      border-bottom: 2px solid rgba($dark1, 0.3);
       }
     }
   
@@ -135,27 +138,16 @@ button {
       z-index: 1;
   
       .prof-picture {
-        height: 12%;
-        background-color: $light2;
+        height: 5%;
+        background-color: $mid1;
   
       }
   
       .prof-card {
-        height: 37%;
+        height: 44%;
         background-image: url('../../images/ProjectPhoto3.png');
         background-size: cover;
         background-repeat: no-repeat;
-      }
-  
-      .side-nav {
-        height: 51vh;
-        background-color: $light2;
-        li {
-          font-size: 1.5rem;
-          color: $light1;
-          margin-left: 3%;
-          overflow-y: scroll;
-        }
       }
     }
   
@@ -163,9 +155,11 @@ button {
       overflow-y: scroll;
       height: 25vh;
       width: 35%;
-      margin-top: 2px solid $dark1;
-      margin-left: 40%;
-      margin-top: 25%;
+      align-self: center;
+      justify-self: center;
+      // margin-top: 2px solid $dark1;
+      // margin-left: 40%;
+      // margin-top: 45%;
       border-top: 2px solid rgba($dark1, 0.5);
       border-bottom: 2px solid rgba($dark1, 0.5);
     }

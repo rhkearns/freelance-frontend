@@ -1,10 +1,18 @@
 @import '../../sassStyles/variables';
 @import '../../components/Forms/signInForm.scss';
+@import '../../sassStyles/mixins';
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+
+.blur {
+  position: absolute;
+  height: 42vh;
+  width: 100vw;
+  background-color: rgba($light2, 0.5);
 }
 
 .container {
@@ -15,10 +23,6 @@
     scroll-snap-align: start;
     color: $mid1;
   
-  }
-
-  .navigation {
-    display: flex;
   }
   
   .one {
@@ -31,11 +35,26 @@
     h1 {
       font-size: 4rem; 
       margin-left: 19vw;
+      width: 12vw;
     }
 
     h2 {
       font-size: 2rem;
       margin-left: 23vw;
+      width: 27vw;
+    }
+
+    .sign-up-button {
+      position: absolute;
+      width: 20vw;
+      height: 5vw;
+      background-color: $mid1;
+      margin-left: 14vw;
+      margin-top: 5vh;
+    
+      &:hover {
+        border: 2px solid $light2;
+      }
     }
   }
   
@@ -46,7 +65,7 @@
   
   .three {
     height: 60vh;
-    background-image: url('../../images/Project-photo5.jpg');
+    background-image: url('../../images/Project-phot7.jpeg');
     background-size: 100%;
     background-repeat: no-repeat;
   }
@@ -85,16 +104,20 @@
 // }
 
 // .reg-nav {
-//   height: 5vh;
 //   width: 100%;
-//   background-color: $dark1;
+//   height: 5vh;
+//   margin-top: 1%;
 
 //   li {
 //     list-style: none;
-//     color: white;
+//     display: inline;
+//     justify-content: space-between;
 //     a {
 //       text-decoration: none;
 //       color: white;
+//       top: 3vh;
+//       font-size: 2vw;
+//       justify-self: center;
 //     }
 //   }
 // }
@@ -102,14 +125,10 @@
 .sign-in-form {
   position: absolute;
   
-  button {
-    color: black;
-  }
 }
 
 .active-sign-in {
   z-index: 3;
-  backdrop-filter: blur(45px);
 }
 
 .inactive-sign-in {
@@ -119,16 +138,44 @@
 .sign-up-form {
   position: absolute;
   
-  button {
-    color: black;
-  }
 }
 
 .active-sign-up {
   z-index: 3;
-  backdrop-filter: blur(45px);
 }
 
 .inactive-sign-up {
   visibility: hidden;
+}
+
+.title-info {
+  height: 42vh;
+  position: relative;
+  // background-color: rgba($dark1, 0.2);
+}
+
+.short-desc {
+  font-size: 2vw;
+  margin-left: 19vw;
+  width: 38vw;
+  font-weight: bolder;
+}
+
+@media screen and (max-width: 768px) {
+  .one {
+
+    h1 {
+      margin-top: -3vh;
+      margin-bottom: -2vh;;
+    }
+
+    h2 {
+      margin-bottom: -2vh;
+    }
+
+    p {
+      font-size: 3vw;
+      margin-bottom: -2vh;
+    }
+  }
 }

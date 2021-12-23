@@ -3,8 +3,8 @@ import React from 'react';
 const TaskActions = (props) => {
   return (
     <>
-      <button onClick={() => props.handleDeleteTask(props.task._id)}>
-        Delete Task
+      <button className="task-delete" onClick={() => props.handleDeleteTask(props.task._id)}>
+        X
       </button>
     </>
   )

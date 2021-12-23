@@ -34,7 +34,6 @@ const CreateProject = (props) => {
 
   return (
     <>
-      <h1>Create Project</h1>
       <ProjectForm 
         project={project}
         setProject={setProject}

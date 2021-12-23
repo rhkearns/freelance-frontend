@@ -37,7 +37,6 @@ const AddInvoice = (props) => {
   
   return (
     <>
-      <h1>Add Invoice</h1>
       <InvoiceForm 
         invoiec={invoice}
         setInvoice={setInvoice}

@@ -2,12 +2,17 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import moment from 'moment'
 // Components
-import ClientList from '../ClientList';
 // Styles
 import './profile.scss'
 
-const Profile = ({user, projects, clients, clientListStatus, setClientListStatus}) => {
+const Profile = ({user, projects, clients, clientListStatus, setClientListStatus, handleLogout}) => {
   console.log(clientListStatus)
+
+const navLinkStyle = {
+  fontSize: "2.3vw",
+  color: "#D9D9D9",
+  marginLeft: "3%"
+}
 
   return (
     <div className="prof-page">
@@ -24,11 +29,13 @@ const Profile = ({user, projects, clients, clientListStatus, setClientListStatus
             <br/><br/>
             <p><button onClick={() => setClientListStatus(!clientListStatus)}>Client List</button></p>
             <br/><br/>
-            <p>Create New Project</p>
-            <br/><br/>
-            <p>Another Link</p>
-            <br/><br/>
-            <p>Log Out</p>
+            <Link to="/newProject" style={navLinkStyle}>Create New Project</Link>
+            <br/><br/><br/>
+            <Link to="/newClient" style={navLinkStyle}>Add New Client</Link>
+            <br/><br/><br/>
+            <Link to="/newInvoice" style={navLinkStyle}>Write Invoice</Link>
+            <br/><br/><br/>
+            <Link to="" onClick={handleLogout} style={navLinkStyle}>Log Out</Link>
         </div>
       </div>
       {projects?.length > 0 &&
@@ -45,7 +52,7 @@ const Profile = ({user, projects, clients, clientListStatus, setClientListStatus
             ))}
         </section>
       }
-      <div className={`clients ${clientListStatus ? "active-list" : "inactive-list"}`}>
+      <div className={`clients ${clientListStatus ? "inactive-list" : "active-list"}`}>
         <h1 className="list-title">Client List</h1>
           {clients?.map((client) => (
             <div className="client">
@@ -60,3 +67,4 @@ const Profile = ({user, projects, clients, clientListStatus, setClientListStatus
 
 export default Profile
 
+//will line 37 need to be a button with handle logout attached to it?

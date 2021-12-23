@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom'
+import { Link } from 'react-router-dom';
 // Styles
 import './project-details.scss'
 // Services
@@ -15,6 +16,19 @@ const ProjectDetails = ({handleUpdateProjectsList}) => {
   const [project, setProject] = useState()
   const [tasks, setTasks] = useState([])
   const [hours, setHours] = useState()
+
+  const linkStyle = {
+    width: "10vw",
+    height: "10vh",
+    border: " 3px solid rgba(53, 53, 53, 0.5",
+    color: "rgba(60, 110, 113, 1",
+    position: "absolute",
+    top: "0",
+    left: "0",
+    fontSize: "2vw",
+    display: "flex",
+    alignItems: "center"
+  }
 
   useEffect(() => {
     const fetchProject = async () => {
@@ -41,7 +55,12 @@ const ProjectDetails = ({handleUpdateProjectsList}) => {
   }
 
   return (
-    <>
+    <div className="project-details">
+      <Link 
+      to="/profile"
+      style={linkStyle}
+      div className="return">Return To Profile
+    </Link>
       <h1>Project Details</h1>
       {project &&
         <ProjectCard 
@@ -70,7 +89,7 @@ const ProjectDetails = ({handleUpdateProjectsList}) => {
         tasks={tasks}
         setTasks={setTasks}
       />
-    </>
+    </div>
   )
 }
 

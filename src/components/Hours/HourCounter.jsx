@@ -21,6 +21,7 @@ const HourCounter = (props) => {
           onChange={(e) => setText(e.target.value)}
         />
         <button
+          className='counter'
           type='submit'
         >
           Add Hours

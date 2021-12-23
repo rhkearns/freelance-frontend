@@ -40,8 +40,8 @@ const TaskSection = ({project, setProject, tasks, setTasks}) => {
   
 
   return (
-    <>
-      <h1>Tasks</h1>
+    <div className="task-container">
+      <h2>Tasks</h2>
       <button onClick={() => setToggleNew(!toggleNew)}>Add New Task</button>
       {toggleNew && 
         <CreateTask 
@@ -59,7 +59,7 @@ const TaskSection = ({project, setProject, tasks, setTasks}) => {
         handleSetStatus={handleSetStatus}
         />
       }
-    </>
+    </div>
   )
 }
 

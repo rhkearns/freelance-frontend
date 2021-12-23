@@ -1,3 +1,155 @@
+@import '../sassStyles/variables';
+
+.project-details {
+  height: 100vh;
+  width: 100vw;
+  background-image: url(../images/Project-photo8-Edit.png);
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+
+  h1 {
+    text-align: center;
+    margin-top: 2vh;
+    font-size: 5vw;
+  }
+}
+
+.project-card  {
+  position: absolute;
+  margin-left: 10vw;
+  margin-top: 18vh;
+  width: 32vw;
+  height: 55vh;
+  // background-color: rgba($dark1, 0.3);
+
+  h2 {
+    text-align: center;
+    font-size: 4vw;
+  }
+
+  h3 {
+    margin-top: 3vh;
+    font-size: 2.5vw;
+  }
+
+  h4 {
+    text-align: center;
+  }
+}
+
+.hours-info {
+  position: absolute;
+  // background-color: rgba($mid1, 0.3);
+  margin-left: 10vw;
+  margin-top: 52vh;
+
+  h2 {
+    font-size:2.5vw;
+  }
+
+  .add {
+    color: black;
+    margin-top: 1vh;
+  } 
+
+  form {
+    position: absolute;
+    margin-left: 0%;
+    margin-top: 5%;
+  }
+
+  input {
+    position: absolute;
+    margin-top: -50%;
+    margin-left: 13vw;
+    width: 6vw;
+  }
+
+  .counter {
+    color: black;
+    width: 10vw;
+  }
+
+}
+
+.status {
+  position: absolute;
+  width: 40vw;
+  // background-color: rgba($mid1, 0.3);
+  margin-left: 6.5vw;
+  margin-top: 68vh;
+  
+  button {
+    color: black;
+    margin-right: 2vw;
+  }
+}
+
+.task-container {
+  position: absolute;
+  // background-color: rgba($mid1, 0.3);
+  width: 20vw;
+  height: 20vh;
+  margin-left: 60vw;
+  margin-top:18vh;
+
+  h2 {
+    font-size: 4vw;
+  }
+
+  button{
+    color: black;
+  }
+}
+
+.task-card {
+  width: 36vw;
+  margin-left: -50%;
+  border: 3px solid rgba($dark1, 0.5);
+  border-radius: 15px;
+  margin-top: 1vh;
+
+  p {
+    font-size: 1.75vw;
+    margin-left: 1vw;
+  }
+
+  select {
+    position: absolute;
+    margin-left: 22vw;
+  }
+
+  button {
+    margin-left: 33vw;;
+  }
+}
+
+.create-task {
+  margin-top: 3vh;
+  margin-left: 0vw;
+  margin-bottom: 1vh;
+
+  label {
+    position: absolute;
+    margin-left: -5vw;
+    font-size: 2vw;
+  }
+
+  input {
+    position: absolute;
+  }
+
+  button {
+    position: inherit;
+    margin-bottom: 0.5vh;
+    width: 10vw;
+    margin-top: 2vh;
+  }
+}
+
+
+
 
 
 

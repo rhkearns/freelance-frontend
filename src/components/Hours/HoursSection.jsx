@@ -18,16 +18,14 @@ const HoursSection = (props) => {
   }
 
   return (
-    <>
+    <div className="hours-info">
       <div>
         <TotalHours 
           hours={props.hours}
           />
-        <button onClick={() => setHoursToggle(!hoursToggle)}>
+        <button className="add" onClick={() => setHoursToggle(!hoursToggle)}>
           Adjust Hours
         </button>
-      </div>
-      <div>
         {hoursToggle && 
           <HourCounter 
             hours={props.hours}
@@ -36,7 +34,7 @@ const HoursSection = (props) => {
             />
         }
       </div>
-    </>
+    </div>
   )
 }
 
