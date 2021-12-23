@@ -1,0 +1,49 @@
+@import '../../sassStyles/variables';
+
+.invoice-list {
+  height: 100vh;
+  width: 100vw;
+  background-image: url(../../images/Project-photo10.jpeg);
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+
+  h1 {
+    font-size: 5vw;
+    text-align: center;
+    color: $mid1;
+  }
+}
+
+
+
+.invoice-holder {
+  overflow-y: scroll;
+  text-align: left;
+  height: 25vh;
+  width: 36vw;
+  margin-top: 25vh;
+  margin-left: 37vw;
+  
+
+  .invoice {
+    border: 3px solid rgba($dark1, 0.5);
+  }
+
+  .name {
+    text-align: center;
+    font-family: "Playfair Display SC";
+    color: $mid1;
+  }
+
+  h2 {
+    font-size: 2.5vw;
+  }
+
+  h3 {
+    font-size: 2vw;
+    font-weight: 800;
+    line-height: 1.2;
+    font-family: 'Alegreya Sans SC';
+  }
+}
