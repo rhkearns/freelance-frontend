@@ -9,12 +9,12 @@
 }
 
 .blur {
-  position: fixed;
+  position: relative;
   height: 42vh;
   width: 100vw;
   background-color: rgba($light2, 0.5);
   z-index: 1;
-  top: 5vh;
+  top: -13.2%;
 }
 
 .container {
@@ -131,6 +131,11 @@
 }
 
 @media screen and (max-width: 768px) {
+
+  .blur {
+    top: -9vh;
+  }
+
   .one {
 
     h1 {
@@ -156,8 +161,20 @@
 .user-nav {
   li {
     display: inline;
+    
+    a {
+      color: $light2;
+      font-size: 1.5vw;
+      margin-top: -3vh;
+    }
   }
   .prof {
     margin-right: 80vw;
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .blur {
+    top: -6.2vh;
   }
 }

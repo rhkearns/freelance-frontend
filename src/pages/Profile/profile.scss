@@ -6,11 +6,75 @@ body {
 }
 
 .prof-page {
+  display:flex;
   height: 100vh;
   background-image: url('../../images/Project-photo10.jpeg');
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
+}
+
+.prof-card {
+  text-align: center;
+}
+
+.prof-page {
+  display: flex;
+
+  .prof-side-bar {
+    position: fixed;
+    width: 25%;
+    height: 100%;
+    bottom: 0;
+    left: 0;
+    box-shadow: 2px 2px 25px;
+    z-index: 3;
+  }
+
+  .prof-picture {
+    height: 5%;
+    background-color: $mid1;
+  }
+
+  .prof-card {
+    height: 44%;
+    background-image: url('../../images/ProjectPhoto3.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+
+  .project-container {
+    overflow-y: scroll;
+    height: 25vh;
+    width: 35%;
+    align-self: center;
+    justify-self: center;
+    margin-left: 35%;
+    border-top: 2px solid rgba($dark1, 0.3);
+    border-bottom: 2px solid rgba($dark1, 0.3);
+    }
+  }
+
+
+.clients {
+  background-color: $mid1;
+  color: $light1;
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  width: 35%;
+  height: 100%;
+  z-index: 2;
+  box-shadow: -2px -2px 25px rgba($dark1, 1.0);
+  cursor: pointer;
+
+  .list-title {
+    text-align: center;
+  }
+
+  .client {
+    margin-left: 5%;
+  }
 }
 
 .header {
@@ -119,7 +183,7 @@ button {
   }
 
   .header {
-    z-index: 2;
+    
   }
 }
 
@@ -140,7 +204,7 @@ button {
       .prof-picture {
         height: 5%;
         background-color: $mid1;
-  
+        z-index: 7;
       }
   
       .prof-card {
@@ -167,7 +231,7 @@ button {
   }
   
   .clients {
-    background-color: $light2;
+    background-color: $mid1;
     position: fixed;
     bottom: 0;
     right: 0;
@@ -179,13 +243,11 @@ button {
 
   .header {
     width: 100%;
-    z-index: 2;
     margin-left: 0;
   }
 
   
 }
-
 
 .active-list {
   background-color: black;
@@ -199,7 +261,12 @@ button {
   transition: 0.5s ease-in-out;
 }
 
-
+.project-list {
+  &:hover {
+    background-color: rgba($mid1, 0.4);
+    transition: 0.5s ease-in-out;
+  }
+}
   
 
 
