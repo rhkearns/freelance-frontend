@@ -19,9 +19,9 @@ const navLinkStyle = {
       <div className="header"></div>
       <div className="prof-side-bar">
         <div className="prof-picture">
-        </div>
-        <div className="prof-card">
           <h1>{user.name}</h1>
+        </div>
+        <div className="prof-card">  
         </div>
         <div className="side-nav">
             <br/><br/>
@@ -53,6 +53,7 @@ const navLinkStyle = {
       }
       <div className={`clients ${clientListStatus ? "inactive-list" : "active-list"}`}>
         <h1 className="list-title">Client List</h1>
+        <br/>
           {clients?.map((client) => (
             <div className="client">
               <h1>{client.name}</h1>
