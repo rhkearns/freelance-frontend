@@ -33,6 +33,8 @@ const navLinkStyle = {
             <br/><br/><br/>
             <Link to="/newClient" style={navLinkStyle}>Add New Client</Link>
             <br/><br/><br/>
+            <Link to="/newInvoice" style={navLinkStyle}>Write Invoice</Link>
+            <br/><br/><br/>
             <Link to="" onClick={handleLogout} style={navLinkStyle}>Log Out</Link>
         </div>
       </div>
