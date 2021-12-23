@@ -18,7 +18,7 @@ const HoursSection = (props) => {
   }
 
   return (
-    <>
+    <div className="hours-info">
       <div>
         <TotalHours 
           hours={props.hours}
@@ -36,7 +36,7 @@ const HoursSection = (props) => {
             />
         }
       </div>
-    </>
+    </div>
   )
 }
 

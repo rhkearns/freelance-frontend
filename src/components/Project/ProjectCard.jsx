@@ -12,6 +12,7 @@ const ProjectCard = (props) => {
       <h3>Start Date: {moment(props.project.startDate).format('MM/DD/YYYY')}</h3>
       <h3>End Date: {moment(props.project.endDate).format('MM/DD/YYYY')}</h3>
       <h3>Hourly Rate: ${props.project.hourlyRate}</h3>
+      <h4>_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _</h4>
     </div>
 
   )
