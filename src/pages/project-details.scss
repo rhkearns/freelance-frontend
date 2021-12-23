@@ -125,6 +125,28 @@
   }
 }
 
+.create-task {
+  margin-top: 3vh;
+  margin-left: 0vw;
+  margin-bottom: 1vh;
+
+  label {
+    position: absolute;
+    margin-left: -5vw;
+    font-size: 2vw;
+  }
+
+  input {
+    position: absolute;
+  }
+
+  button {
+    position: inherit;
+    margin-bottom: 0.5vh;
+    width: 10vw;
+    margin-top: 2vh;
+  }
+}
 
 
 
