@@ -82,11 +82,10 @@ button {
       overflow-y: scroll;
       height: 25vh;
       width: 45%;
-      margin-top: 2px solid $dark1;
       margin-top: 25%;
       margin-left: 40%;
-      border-top: 2px solid $dark1;
-      border-bottom: 2px solid $dark1;
+      border-top: 2px solid rgba($dark1, 0.3);
+      border-bottom: 2px solid rgba($dark1, 0.3);
 
       }
     }
