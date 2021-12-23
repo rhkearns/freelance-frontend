@@ -86,6 +86,46 @@
   }
 }
 
+.task-container {
+  position: absolute;
+  // background-color: rgba($mid1, 0.3);
+  width: 20vw;
+  height: 20vh;
+  margin-left: 60vw;
+  margin-top:18vh;
+
+  h2 {
+    font-size: 4vw;
+  }
+
+  button{
+    color: black;
+  }
+}
+
+.task-card {
+  width: 36vw;
+  margin-left: -50%;
+  border: 3px solid rgba($dark1, 0.5);
+  border-radius: 15px;
+  margin-top: 1vh;
+
+  p {
+    font-size: 1.75vw;
+    margin-left: 1vw;
+  }
+
+  select {
+    position: absolute;
+    margin-left: 22vw;
+  }
+
+  button {
+    margin-left: 33vw;;
+  }
+}
+
+
 
 
 
