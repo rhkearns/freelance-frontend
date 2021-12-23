@@ -79,6 +79,19 @@
     background-image: url('../../images/Project-phot7.jpeg');
     background-size: cover;
     background-repeat: no-repeat;
+
+    .CTA {
+      font-size: 4vw;
+      margin-left: 40vw;
+    }
+
+    h2 {
+      margin-top: 2vh;
+      margin-left: 45vw;
+      line-height: 2;
+      font-family: 'Alegreya Sans SC';
+      color: $dark1;
+    }
   }
 
   .spacer1 {
