@@ -95,7 +95,7 @@ const SignupForm = props => {
           onChange={handleChange}
         />
       </FormGroup>
-      <Button disabled={isFormInvalid()}></Button> 
+      <Button disabled={isFormInvalid()}>Sign Up</Button> 
     </Form>
    </div>
   )
