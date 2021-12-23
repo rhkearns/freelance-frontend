@@ -55,7 +55,7 @@ const UpdateForm = ({handleChange, handleUpdateProject, validForm, setValidForm,
           value={formData?.hourlyRate}
           onChange={handleChange}
         /><br />
-        <button className='update'
+        <button className='change'
           type="submit"
           disabled={!validForm}
         >

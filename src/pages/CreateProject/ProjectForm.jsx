@@ -76,7 +76,7 @@ const ProjectForm = ({ handleCreateProject, handleChange, validForm, setValidFor
           autoComplete='off'
           onChange={handleChange}
         /><br />
-        <button
+        <button className='create'
           type="submit"
           disabled={!validForm}
         >
