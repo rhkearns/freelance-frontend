@@ -48,7 +48,6 @@
     }
 
     .sign-up-button {
-      position: absolute;
       width: 20vw;
       height: 5vw;
       background-color: $mid1;
@@ -64,6 +63,15 @@
   .two {
     height: 74vh;
     background-color: $light1;
+    background-image: url(../../images/Project-photo13.png);
+
+    .Testimony {
+      font-family: 'Alegreya Sans SC';
+      font-size: 3vw;
+      text-align: center;
+      color: $dark1;
+      font-weight: 800;
+    }
   }
   
   .three {
@@ -177,4 +185,13 @@
   .blur {
     top: -6.2vh;
   }
+}
+
+.sign-in-button {
+  background-color: $mid1;
+  width: 10vw;
+  margin-top: .5vw;
+  margin-right: 0%;
+  margin-left: 85vw;
+  font-size: 3vw;
 }

@@ -19,7 +19,7 @@ const Landing = ({ user, handleLogout, signInFormStatus, setSignInFormStatus,  h
         :
           <div className="reg-nav">
             <ul>
-              <li><button onClick={() => setSignInFormStatus(!signInFormStatus)}>Form Trigger SignIn</button></li>
+              <li><button className='sign-in-button' onClick={() => setSignInFormStatus(!signInFormStatus)}>SignIn</button></li>
               
             </ul>
           </div>
@@ -58,7 +58,7 @@ const Landing = ({ user, handleLogout, signInFormStatus, setSignInFormStatus,  h
       </section>
       <section className="spacer1"></section>
       <section className="two">
-        <h1>Second</h1>
+        <p className='Testimony'>Stay organized, on track and on top of your projects!</p>
       </section>
       <section className="spacer2"></section>
       <section className="three">
