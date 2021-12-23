@@ -5,6 +5,13 @@ body {
   background-color: $light2;
 }
 
+.prof-page {
+  height: 100vh;
+  background-image: url('../../images/Project-photo10.jpeg');
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
 .header {
   height: 5%;
   width: 100%;
@@ -53,12 +60,12 @@ button {
     }
 
     .prof-picture {
-      height: 12%;
+      height: 5%;
       background-color: $mid1;
     }
 
     .prof-card {
-      height: 37%;
+      height: 44%;
       background-image: url('../../images/ProjectPhoto3.png');
       background-size: cover;
       background-repeat: no-repeat;
@@ -134,13 +141,13 @@ button {
       z-index: 1;
   
       .prof-picture {
-        height: 12%;
+        height: 5%;
         background-color: $mid1;
   
       }
   
       .prof-card {
-        height: 37%;
+        height: 44%;
         background-image: url('../../images/ProjectPhoto3.png');
         background-size: cover;
         background-repeat: no-repeat;
