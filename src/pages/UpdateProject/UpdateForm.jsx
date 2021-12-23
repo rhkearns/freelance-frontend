@@ -9,9 +9,9 @@ const UpdateForm = ({handleChange, handleUpdateProject, validForm, setValidForm,
   }, [formData])
   
   return (
-    <>
+    <div className="proj-update">
       <h1>Project Form</h1>
-      <form onSubmit={(e) => handleUpdateProject(e)} ref={formElement}>
+      <form className='update' onSubmit={(e) => handleUpdateProject(e)} ref={formElement}>
         <label>Project Title</label><br />
         <input
           required
@@ -21,13 +21,13 @@ const UpdateForm = ({handleChange, handleUpdateProject, validForm, setValidForm,
           placeholder='Title'
           value={formData?.title}
           onChange={handleChange}
-        /><br />
-        <label>Client: </label>
+        /><br/>
+        <label >Client: </label>
         <select name="clientList" value={formData?.clientList}>
           {clients.map((client) => (
             <option value={client._id} key={client._id}>{client.name}</option>
           ))}
-        </select><br />
+        </select><br/><br/><br/>
         <label>Start Date</label><br />
         <input 
           required
@@ -55,14 +55,14 @@ const UpdateForm = ({handleChange, handleUpdateProject, validForm, setValidForm,
           value={formData?.hourlyRate}
           onChange={handleChange}
         /><br />
-        <button
+        <button className='update'
           type="submit"
           disabled={!validForm}
         >
           Update Project
         </button>
       </form>
-    </>
+    </div>
   )
 }
 

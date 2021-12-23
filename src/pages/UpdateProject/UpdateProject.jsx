@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 // Components
 import UpdateForm from './UpdateForm'
+//Styles
+import './updateProject.scss'
 // Services
 import { updateProject, getProjectById } from '../../services/projectService';
 

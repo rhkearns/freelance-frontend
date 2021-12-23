@@ -65,5 +65,11 @@ form {
 } 
 
 .button {
+  width: 20vw;
+  height: 5vw;
+  background-color: $mid1;
 
+  &:hover {
+    border: 2px solid $light2;
+  }
 }
