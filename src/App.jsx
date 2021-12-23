@@ -105,7 +105,7 @@ const App = () => {
         />
         <Route
           path="/profile"
-          element={user ? <Profile user={user} projects={projects} clients={clients} clientListStatus={clientListStatus} setClientListStatus={setClientListStatus} handleLogout={handleLogout}/> : <Navigate to="/login" />}
+          element={user ? <Profile user={user} projects={projects} clients={clients} clientListStatus={clientListStatus} setClientListStatus={setClientListStatus} handleLogout={handleLogout}/> : <Navigate to="/" />}
         />
         <Route
           path="/projects"

@@ -40,7 +40,7 @@ const InvoiceForm = ({handleCreateInvoice, handleChange, validForm, setValidForm
 
   return (
     <div className='invoice-container'>
-    <Link 
+      <Link 
       to="/profile"
       style={linkStyle}
       div className="return">Return To Profile
@@ -104,7 +104,6 @@ const InvoiceForm = ({handleCreateInvoice, handleChange, validForm, setValidForm
           autoComplete='off'
           onChange={handleChange}
         /> <br />
-        
         <button className='bill'
           type='submit'
           disabled={!validForm}
