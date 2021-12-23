@@ -10,6 +10,7 @@ body {
   background-image: url('../../images/Project-photo10.jpeg');
   background-size: contain;
   background-repeat: no-repeat;
+  background-position: center;
 }
 
 .header {
@@ -25,15 +26,15 @@ body {
 .side-nav {
   height: 51vh;
   background-color: $mid1;
-  font-size: 1.5vw;
 }
 
 button {
   background-color: rgba(255, 255, 255, 0);
   border: none;
-  font-size: 1.5rem;
   color: $light1;
   cursor: pointer;
+  margin-left: 3%;
+  font-size: 2vw;
 
   &:hover{
     border-bottom: 2px solid rgba($light1, 0.5);

@@ -8,8 +8,8 @@ const ProjectForm = ({ handleCreateProject, handleChange, validForm, setValidFor
   const formElement = useRef()
   
   const linkStyle = {
-    width: "20%",
-    height: "20%",
+    width: "20vw",
+    height: "20vh",
     backgroundColor: "rgba(60, 110, 113, 0.5",
     color: "black",
     position: "absolute",

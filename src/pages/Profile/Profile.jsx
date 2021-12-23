@@ -2,11 +2,10 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import moment from 'moment'
 // Components
-import ClientList from '../ClientList';
 // Styles
 import './profile.scss'
 
-const Profile = ({user, projects, clients, clientListStatus, setClientListStatus}) => {
+const Profile = ({user, projects, clients, clientListStatus, setClientListStatus, handleLogout}) => {
   console.log(clientListStatus)
 
 const navLinkStyle = {
@@ -31,10 +30,10 @@ const navLinkStyle = {
             <p><button onClick={() => setClientListStatus(!clientListStatus)}>Client List</button></p>
             <br/><br/>
             <Link to="/newProject" style={navLinkStyle}>Create New Project</Link>
-            <br/><br/>
+            <br/><br/><br/>
             <Link to="/newClient" style={navLinkStyle}>Add New Client</Link>
             <br/><br/>
-            <p>Log Out</p>
+            <Link to="" onClick={handleLogout} style={navLinkStyle}>Log Out</Link>
         </div>
       </div>
       {projects.length > 0 &&
