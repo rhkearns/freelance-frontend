@@ -70,7 +70,22 @@
     color: black;
     width: 10vw;
   }
+
 }
+
+.status {
+  position: absolute;
+  width: 40vw;
+  // background-color: rgba($mid1, 0.3);
+  margin-left: 6.5vw;
+  margin-top: 68vh;
+  
+  button {
+    color: black;
+    margin-right: 2vw;
+  }
+}
+
 
 
 
