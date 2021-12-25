@@ -45,14 +45,11 @@ const Landing = ({ user, handleLogout, signInFormStatus, setSignInFormStatus,  h
                 />
             </div>
           }
-          
-          <div className="blur">
-          <h1>Folio</h1>
+                    <h1>Folio</h1>
           <br/>
           <h2>An App for Freelancers</h2>
           <br/><br/>
           <p className="short-desc">A way to simplify your life with the ability to store your past and current projects and clients</p>
-          </div>
         </div>
       </section>
       <section className="spacer1"></section>

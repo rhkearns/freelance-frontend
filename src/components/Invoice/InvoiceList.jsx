@@ -27,15 +27,17 @@ const InvoiceList = ({invoices}) => {
       div className="return">Return To Profile
     </Link>
       <h1>Invoice List</h1>
-      {invoices?.map((invoice) => {
-        return (
-          <Link key={invoice._id} to={`/invoices/${invoice._id}`}>
-            <InvoiceCard 
-              invoice={invoice}
-            />
-          </Link>
-        )
-      })}
+      <div className="invoice-listed">
+        {invoices?.map((invoice) => {
+          return (
+            <Link key={invoice._id} to={`/invoices/${invoice._id}`}>
+              <InvoiceCard 
+                invoice={invoice}
+              />
+            </Link>
+          )
+        })}
+      </div>
     </div>
   )
 }
