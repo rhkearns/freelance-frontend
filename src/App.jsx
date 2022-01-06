@@ -127,7 +127,7 @@ const App = () => {
         />
         <Route
           path="/projects/:id"
-          element={user ? <ProjectDetails projects={projects} setProjects={setProjects} handleUpdateProjectsList={handleUpdateProjectsList}/> : <Navigate to='/login' />}
+          element={user ? <ProjectDetails projects={projects} setProjects={setProjects} clients={clients} handleUpdateProjectsList={handleUpdateProjectsList}/> : <Navigate to='/login' />}
         />
         <Route 
           path="/clients"
