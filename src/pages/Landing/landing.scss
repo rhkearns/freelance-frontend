@@ -31,16 +31,21 @@
     }
     .short-desc {
       margin-left: 19%;
+      width: 38vw;
+      font-weight: bolder;
     }
   }
   
   .two {
-
-    background-color: $light2;
+    background-color: #EBEBEB;
     background-image: url(../../images/Project-Screenshot1.png);
     background-repeat: no-repeat;
     background-size: contain;
     background-position: center;
+    p {
+      text-align: center;
+      font-weight: bolder;
+    }
   }
   
   .three {
@@ -85,16 +90,20 @@
       padding-bottom: 2vh;
     }
   }
-  .two {
-    min-height: 55vh;
-  }
   .sign-in-button {
     background-color: $mid1;
-    width: 10vw;
+    width: 17vw;
     margin-top:  35vh;
     margin-bottom: 100vh;
     margin-left: 66vw;
-    font-size: 1,5rem;
+    font-size: 1.25rem;
+  }
+
+  .two {
+    min-height: 46vh;
+    p {
+      font-size: 1.25rem;
+    }
   }
 }
 
@@ -173,13 +182,6 @@
 
 .inactive-sign-up {
   visibility: hidden;
-}
-
-.short-desc {
-  font-size: 2vw;
-  margin-left: 19vw;
-  width: 38vw;
-  font-weight: bolder;
 }
 
   .three {
