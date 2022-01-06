@@ -11,7 +11,7 @@ import CardActions from '../components/Project/CardActions';
 import TaskSection from '../components/Task/TaskSection'
 import HoursSection from '../components/Hours/HoursSection';
 
-const ProjectDetails = ({handleUpdateProjectsList, clients}) => {
+const ProjectDetails = ({handleUpdateProjectsList}) => {
   const { id } = useParams()
   const [project, setProject] = useState()
   const [tasks, setTasks] = useState([])
@@ -65,7 +65,6 @@ const ProjectDetails = ({handleUpdateProjectsList, clients}) => {
       {project &&
         <ProjectCard 
           project={project}
-          clients={clients}
           key={project._id}
         />
       }
