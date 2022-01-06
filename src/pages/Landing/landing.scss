@@ -50,7 +50,7 @@
   
   .three {
     height: 50vh;
-    background-image: url('../../images/Project-phot7.jpeg');
+    background-image: url('../../images/Project-photo2.jpg');
     background-size: cover;
     background-repeat: no-repeat;
   }
@@ -98,11 +98,27 @@
     margin-left: 66vw;
     font-size: 1.25rem;
   }
+  .sign-up-button {
+    position: relative;
+    background-color: $mid1;
+    width: 22vw;
+    margin-left: 66vw;
+    font-size: 1.25rem;
+  }
 
   .two {
     min-height: 46vh;
     p {
       font-size: 1.25rem;
+    }
+  }
+
+  .three {
+    h2 {
+      width: 52%;
+      margin-left: 48%;
+      padding-top: 2%;
+      font-size: 1rem;
     }
   }
 }
@@ -206,13 +222,5 @@
 
 
 
-.sign-up-button {
-  position: relative;
-  background-color: $mid1;
-  width: 20vw;
-  margin-top: -10vh;
-  margin-right: 0%;
-  margin-left: 45vw;
-  font-size: 2.5vw;
-}
+
 
