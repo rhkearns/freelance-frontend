@@ -28,9 +28,6 @@ const Landing = ({ user, handleLogout, signInFormStatus, setSignInFormStatus,  h
       
       <section className="one">
         <div className="title-info">
-          <br/>
-          <br/>
-          <br/>
           {!user && signInFormStatus &&
             <div className={`sign-in-form ${signInFormStatus ? "active-sign-in" : "inactive-sign-in"}`}>
               <SignInForm 
@@ -45,10 +42,10 @@ const Landing = ({ user, handleLogout, signInFormStatus, setSignInFormStatus,  h
                 />
             </div>
           }
-                    <h1>Folio</h1>
+          <h1>Folio</h1>
           <br/>
           <h2>An App for Freelancers</h2>
-          <br/><br/>
+          <br/>
           <p className="short-desc">A way to simplify your life with the ability to store your past and current projects and clients</p>
         </div>
       </section>
