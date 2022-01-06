@@ -51,13 +51,12 @@
   }
 
   .spacer1 {
-    height: 45px;
+    height: 4vh;
     background-color: $mid2;
-    z-index: 3;
   }
 
   .spacer2 {
-    height: 45px;
+    height: 4vh;
     background-color: $mid2;
   }
 }
@@ -88,6 +87,14 @@
   }
   .two {
     min-height: 55vh;
+  }
+  .sign-in-button {
+    background-color: $mid1;
+    width: 10vw;
+    margin-top:  35vh;
+    margin-bottom: 100vh;
+    margin-left: 66vw;
+    font-size: 1,5rem;
   }
 }
 
@@ -195,15 +202,7 @@
   }
 }
 
-.sign-in-button {
-  background-color: $mid1;
-  width: 10vw;
-  margin-top:  1vh;
-  margin-bottom: 160vh;
-  margin-right: 0%;
-  margin-left: 85vw;
-  font-size: 2vw;
-}
+
 
 .sign-up-button {
   position: relative;

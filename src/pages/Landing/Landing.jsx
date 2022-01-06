@@ -19,7 +19,7 @@ const Landing = ({ user, handleLogout, signInFormStatus, setSignInFormStatus,  h
         :
           <div className="reg-nav">
             <ul>
-              <li><button className='sign-in-button' onClick={() => setSignInFormStatus(!signInFormStatus)}>SignIn</button></li>
+              <li><button className='sign-in-button' onClick={() => setSignInFormStatus(!signInFormStatus)}>Sign In</button></li>
               <li><button className="sign-up-button" onClick={() => setSignUpFormStatus(!signUpFormStatus)}>Create Account</button></li>
             </ul>
           </div>
