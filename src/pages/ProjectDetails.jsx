@@ -14,7 +14,6 @@ import HoursSection from '../components/Hours/HoursSection';
 const ProjectDetails = ({handleUpdateProjectsList, clients}) => {
   const { id } = useParams()
   const [project, setProject] = useState()
-  const [client, setClient] = useState()
   const [tasks, setTasks] = useState([])
   const [hours, setHours] = useState()
 
@@ -42,23 +41,8 @@ const ProjectDetails = ({handleUpdateProjectsList, clients}) => {
         throw error
       }
     }
-    const findClient = async () => {
-      if (project) {
-        console.log('project.client', project);
-        try {
-          let client = clients.find(client => project.client === client._id)
-          setClient(client)
-        } catch (error) {
-          throw error
-        }
-      }
-    }
     fetchProject()
-    findClient()
   }, [id])
-
-  console.log('client', client);
-
 
   const markProjectComplete = async (projectId) => {
     try {
@@ -69,7 +53,6 @@ const ProjectDetails = ({handleUpdateProjectsList, clients}) => {
       throw error
     }
   }
-
 
   return (
     <div className="project-details">
@@ -82,7 +65,7 @@ const ProjectDetails = ({handleUpdateProjectsList, clients}) => {
       {project &&
         <ProjectCard 
           project={project}
-          client={client}
+          clients={clients}
           key={project._id}
         />
       }
