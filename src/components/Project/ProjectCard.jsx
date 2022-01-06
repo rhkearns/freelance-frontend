@@ -8,7 +8,7 @@ const ProjectCard = (props) => {
   return (
     <div className='project-card'>
       <h2>{props.project.title}</h2>
-      <h3>{props.client.name}</h3>
+      <h3>Client: {props.client.name}</h3>
       <h3>Status: {props.project.is_Active ? "Active" : "Complete"}</h3>
       <h3>Start Date: {moment(props.project.startDate).format('MM/DD/YYYY')}</h3>
       <h3>End Date: {moment(props.project.endDate).format('MM/DD/YYYY')}</h3>
