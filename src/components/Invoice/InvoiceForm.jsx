@@ -55,14 +55,14 @@ const InvoiceForm = ({handleCreateInvoice, handleChange, validForm, setValidForm
               <option value={project._id} key={project._id}>{project.title}</option>
             ))}
         </select> <br/><br/>
-        {/* <label>Client: </label>
+        <label>Client: </label>
         <input 
           required
           type='text'
           name='clientList'
           autoComplete='off'
           defaultValue={formData?.clientList?.name}
-        /> <br /> */}
+        /> <br />
         <label>Hourly Rate: </label>
         <input 
           required
