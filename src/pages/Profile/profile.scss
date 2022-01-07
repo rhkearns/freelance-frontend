@@ -2,32 +2,137 @@
 @import '../../sassStyles/mixins';
 
 body {
-  background-image: url('../../images/Project-photo3-Original.jpg');
-  background-size: 100%;
+  background-color: $light2;
+}
+
+h1 {
+  font-family: "Playfair Display SC";
+}
+
+h2 {
+  font-family: 'Alegreya Sans SC';
+}
+a {
+  color: $dark1;
+}
+
+.prof-page {
+  display:flex;
+  height: 100vh;
+  background-image: url('../../images/Project-photo10.jpeg');
+  background-size: contain;
   background-repeat: no-repeat;
-  background-position: fixed;
+  background-position: center;
+}
+
+.prof-card {
+  text-align: center;
+}
+
+.project-list {
+  &:hover {
+    background-color: rgba($mid1, 0.4);
+    transition: 0.5s ease-in-out;
+  }
+}
+
+.prof-page {
+  display: flex;
+
+  .prof-side-bar {
+    position: fixed;
+    width: 25%;
+    height: 100%;
+    bottom: 0;
+    left: 0;
+    box-shadow: 2px 2px 25px;
+    z-index: 3;
+    font-family: 'Alegreya Sans SC';
+    font-size: 2vw;
+  }
+
+  .prof-picture {
+    height: 5%;
+    background-color: $mid1;
+    font-family: "Playfair Display SC";
+    font-size: 1.5vw;
+    text-align: center;
+    color: $light2;
+  }
+
+  .prof-card {
+    height: 44%;
+    background-image: url('../../images/ProjectPhoto3.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+
+  .project-container {
+    overflow-y: scroll;
+    height: 25vh;
+    width: 35%;
+    align-self: center;
+    justify-self: center;
+    margin-left: 35%;
+    border-top: 2px solid rgba($dark1, 0.3);
+    border-bottom: 2px solid rgba($dark1, 0.3);
+    color: $dark1;
+
+    a {
+      color: $dark1;
+    }
+    }
+  }
+
+
+.clients {
+  background-color: $mid1;
+  color: $light1;
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  width: 35%;
+  height: 100%;
+  z-index: 2;
+  box-shadow: -2px -2px 25px rgba($dark1, 1.0);
+  cursor: pointer;
+
+  .list-title {
+    text-align: center;
+  }
+
+  .client {
+    margin-left: 5%;
+  }
 }
 
 .header {
   height: 5%;
-  width: 75%;
-  background-color: $mid1;
+  width: 100%;
+  background-color: $dark1;
   top: 0;
   position: absolute;
-  margin-left: 25%;
-  z-index: 2;
+  margin-left: 0%;
+}
+
+ 
+.side-nav {
+  height: 51vh;
+  background-color: $mid1;
 }
 
 button {
-  background-color: white;
+  background-color: rgba(255, 255, 255, 0);
   border: none;
-  font-size: 1.5rem;
   color: $light1;
   cursor: pointer;
+  margin-left: 3%;
+  font-size: 2.3vw;
+  font-family: 'Alegreya Sans SC';
 
   &:hover{
-    border-bottom: 2px solid rgba($mid1, 0.5);
-    transition: 0.1s ease-in;
+    border-bottom: 2px solid rgba($light1, 0.5);
+    transition: 0.2s ease-in;
   }
 }
 
@@ -42,7 +147,6 @@ button {
   transition: 0.5s ease-in-out;
 }
 
-
 @media screen and (max-width: 992px) {
   .prof-page {
     display: flex;
@@ -54,61 +158,79 @@ button {
       bottom: 0;
       left: 0;
       box-shadow: 2px 2px 25px;
+      z-index: 3;
     }
 
     .prof-picture {
-      height: 12%;
-      background-color: $light2;
+      height: 5%;
+      background-color: $mid1;
     }
 
     .prof-card {
-      height: 37%;
+      height: 44%;
       background-image: url('../../images/ProjectPhoto3.png');
       background-size: cover;
       background-repeat: no-repeat;
     }
 
-    .side-nav {
-      height: 51vh;
-      background-color: $light2;
-      p {
-        font-size: 1.5rem;
-        color: $light1;
-        margin-left: 3%;
-      }
-    }
-
     .project-container {
       overflow-y: scroll;
       height: 25vh;
-      width: 45%;
-      margin-top: 2px solid $dark1;
-      margin-top: 25%;
-      margin-left: 40%;
-      border-top: 2px solid $dark1;
-      border-bottom: 2px solid $dark1;
+      width: 35%;
+      align-self: center;
+      justify-self: center;
+      margin-left: 35%;
+      border-top: 2px solid rgba($dark1, 0.3);
+      border-bottom: 2px solid rgba($dark1, 0.3);
 
+      h1 {
+        font-family: "Playfair Display SC";
+      }
+
+      h2 {
+        font-family: 'Alegreya Sans SC';
+      }
+      
+      a {
+        color: $dark1;
+      }
       }
     }
   
 
   .clients {
-    background-color: $light2;
+    background-color: $mid1;
+    color: $light1;
     position: fixed;
     bottom: 0;
     right: 0;
     width: 35%;
     height: 100%;
     z-index: 2;
-    box-shadow: 2px 2px 25px;
+    box-shadow: -2px -2px 25px rgba($dark1, 1.0);
     cursor: pointer;
+
+    h1 {
+      font-family: "Playfair Display SC";
+    }
+
+    h2 {
+      font-family: 'Alegreya Sans SC';
+    }
+
+    .list-title {
+      text-align: center;
+    }
+
+    .client {
+      margin-left: 5%;
+    }
 
     // &:hover {
     //   background-color: rgba($mid1, 0.5);
     // }
     // Need to figure ot how to make this for individual clients instead of the entire library
   }
-}
 
 
 @media screen and (max-width: 768px) {
@@ -125,27 +247,16 @@ button {
       z-index: 1;
   
       .prof-picture {
-        height: 12%;
-        background-color: $light2;
-  
+        height: 5%;
+        background-color: $mid1;
+        z-index: 7;
       }
   
       .prof-card {
-        height: 37%;
+        height: 44%;
         background-image: url('../../images/ProjectPhoto3.png');
         background-size: cover;
         background-repeat: no-repeat;
-      }
-  
-      .side-nav {
-        height: 51vh;
-        background-color: $light2;
-        li {
-          font-size: 1.5rem;
-          color: $light1;
-          margin-left: 3%;
-          overflow-y: scroll;
-        }
       }
     }
   
@@ -153,9 +264,11 @@ button {
       overflow-y: scroll;
       height: 25vh;
       width: 35%;
-      margin-top: 2px solid $dark1;
-      margin-left: 40%;
-      margin-top: 25%;
+      align-self: center;
+      justify-self: center;
+      // margin-top: 2px solid $dark1;
+      // margin-left: 40%;
+      // margin-top: 45%;
       border-top: 2px solid rgba($dark1, 0.5);
       border-bottom: 2px solid rgba($dark1, 0.5);
     }
@@ -163,7 +276,7 @@ button {
   }
   
   .clients {
-    background-color: $light2;
+    background-color: $mid1;
     position: fixed;
     bottom: 0;
     right: 0;
@@ -175,13 +288,11 @@ button {
 
   .header {
     width: 100%;
-    z-index: 2;
     margin-left: 0;
   }
 
   
 }
-
 
 .active-list {
   background-color: black;
@@ -195,8 +306,13 @@ button {
   transition: 0.5s ease-in-out;
 }
 
-
-  
+.project-list {
+  &:hover {
+    background-color: rgba($mid1, 0.4);
+    transition: 0.5s ease-in-out;
+    }
+  }
+}
 
 
 

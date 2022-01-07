@@ -50,7 +50,6 @@ export const getProjectById = async (projectId) => {
 }
 
 export const updateProject = async (projectId, formData) => {
-  console.log('here');
   try {
     const res = await fetch(`${BASE_URL}${projectId}`, {
       method: "PUT",
@@ -69,7 +68,7 @@ export const updateProject = async (projectId, formData) => {
 
 export const markComplete = async (projectId) => {
   try {
-    const res = await fetch(`${BASE_URL}${projectId}`, {
+    const res = await fetch(`${BASE_URL}${projectId}/toggleActive`, {
       method: "PATCH",
       headers: {
         'content-type': 'application/json',
@@ -101,7 +100,6 @@ export const createTask = async (projectId, task) => {
 }
 
 export const setTaskStatus = async (projectId, taskId, stat) => {
-  console.log('stat', stat);
   try {
     const res = await fetch(`${BASE_URL}${projectId}/tasks/${taskId}`, {
       method: "PATCH",
@@ -109,14 +107,11 @@ export const setTaskStatus = async (projectId, taskId, stat) => {
         'content-type': 'application/json',
         'Authorization': `Bearer ` + tokenService.getToken()
       },
-
       body: JSON.stringify({
         status: stat
       })
-
     })
     const data = await res.json()
-    console.log('data', data);
     return data
   } catch (error) {
     throw error
@@ -131,6 +126,25 @@ export const deleteTask = async (projectId, taskId) => {
         'Authorization': 'Bearer ' + tokenService.getToken()
       }
     })
+  } catch (error) {
+    throw error
+  }
+}
+
+export const updateHours = async (projectId, hours) => {
+  try {
+    const res = await fetch(`${BASE_URL}${projectId}/addHours`, {
+      method: "PATCH",
+      headers: {
+        'content-type': 'application/json',
+        'Authorization': `Bearer ` + tokenService.getToken()
+      },
+      body: JSON.stringify({
+        hoursWorked: hours
+      })
+    })
+    const data = await res.json()
+    return data
   } catch (error) {
     throw error
   }

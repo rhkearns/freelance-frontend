@@ -1,0 +1,81 @@
+@import '../../sassStyles/variables';
+
+.clientel {
+  background-image: url('../../images/Project-photo12.jpg');
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.client-form {
+  padding: 1em;
+  text-align: left;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba($light2, 0.6);
+
+  h1 {
+    text-align: center;
+    font-size: 5vw;
+    margin-top: 15vh;
+    margin-bottom: -3vh;
+    color: $mid1;
+  }
+
+  h3 {
+    text-align: center;
+    font-size: 2rem;
+  }
+}
+
+.form {
+  padding-left: 15%;
+  padding-top: 10%;
+  width: 100%;
+}
+
+label {
+  font-size: 3vw;
+  font-family: 'Alegreya Sans SC';
+  font-weight: 700;
+}
+
+input {
+  width: 20vw;
+  height:4vh;
+  margin-bottom: 3vh;
+  font-size: 2vw;
+  font-family: 'Alegreya Sans SC';
+}
+
+
+form {
+margin-top: 10vh;
+margin-left: 35%;
+width: 30%;
+text-align: center;
+
+label {
+  text-align: left;
+}
+
+}
+
+
+.return {
+position: absolute;
+top: 8vh;
+left: 79.5vw;
+width: 60px;
+text-align: center;
+} 
+
+.new-client {
+width: 20vw;
+height: 5vw;
+background-color: $mid1;
+
+&:hover {
+  border: 2px solid $light2;
+}
+}

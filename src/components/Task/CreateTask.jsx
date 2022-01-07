@@ -14,7 +14,7 @@ const CreateTask = (props) => {
   }
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form className="create-task" onSubmit={handleSubmit}>
       <label>Task: </label>
       <input 
         type="text" 

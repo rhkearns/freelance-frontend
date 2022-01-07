@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-
 // Components
 import ProjectForm from './ProjectForm'
 // Services
@@ -27,7 +26,7 @@ const CreateProject = (props) => {
     try {
       const newProject = await addProject(formData)
       props.setProjects([newProject, ...props.projects ])
-      navigate('/projects')
+      navigate(`/projects/${newProject._id}`)
     } catch (error) {
       throw error
     }
@@ -35,7 +34,6 @@ const CreateProject = (props) => {
 
   return (
     <>
-      <h1>Create Project</h1>
       <ProjectForm 
         project={project}
         setProject={setProject}

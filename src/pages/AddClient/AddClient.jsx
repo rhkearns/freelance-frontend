@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom'
-
+// Components
 import ClientForm from './ClientForm'
+// Services
 import { addClient } from '../../services/clientService';
 
 const AddClient = (props) => {
@@ -22,7 +23,7 @@ const AddClient = (props) => {
     try {
       const newClient = await addClient(formData)
       props.setClients([...props.clients, newClient])
-      navigate('/clients')
+      navigate('/profile')
     } catch (error) {
       throw error
     }
@@ -30,7 +31,6 @@ const AddClient = (props) => {
 
   return (
     <>
-      <h1>Add Client</h1>
       <ClientForm 
         client={client}
         setClient={setClient}

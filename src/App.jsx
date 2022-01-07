@@ -14,19 +14,32 @@ import ClientList from './pages/ClientList'
 import CreateClient from './pages/AddClient/AddClient'
 import ClientDetails from './pages/ClientDetails'
 import UpdateClient from './pages/UpdateClient/UpdateClient'
+import AddInvoice from './components/Invoice/AddInvoice'
+import InvoiceList from './components/Invoice/InvoiceList'
+import InvoiceDetails from './components/Invoice/InvoiceDetails'
 import * as projectService from './services/projectService'
 import * as clientService from './services/clientService'
+import * as invoiceService from './services/invoiceService'
 
 const App = () => {
   const [user, setUser] = useState(authService.getUser())
   const navigate = useNavigate()
   const [projects, setProjects] = useState([])
   const [clients, setClients] = useState([])
+  const [invoices, setInvoices] = useState([])
   const [clientListStatus, setClientListStatus] = useState (false)
+  const [signInFormStatus, setSignInFormStatus] = useState (false)
+  const [signUpFormStatus, setSignUpFormStatus] = useState (false)
+  const [clientFormStatus, setClientInFormStatus] = useState (false)
+  const [projectFormStatus, setProjectInFormStatus] = useState (false)
+  const [invoiceFormStatus, setInvoiceInFormStatus] = useState (false)
 
 
   const handleLogout = () => {
     authService.logout()
+    setClients([])
+    setProjects([])
+    setInvoices([])
     setUser(null)
     navigate('/')
   }
@@ -49,6 +62,13 @@ const App = () => {
     setClients(updatedArray)
   }
 
+  const handleUpdateInvoiceList = (updatedInvoice) => {
+    const updatedArray = invoices.map(invoice => 
+      invoice._id === updatedInvoice._id ? updatedInvoice : invoice
+    )
+    setInvoices(updatedArray)
+  }
+
 
   useEffect(() => {
     const fetchProjects = async () => {
@@ -59,19 +79,25 @@ const App = () => {
       const clientData = await clientService.getAllClients()
       setClients(clientData)
     }
+    const fetchInvoices = async () => {
+      const invoiceData = await invoiceService.getAllInvoices()
+      setInvoices(invoiceData)
+    }
     fetchProjects()
     fetchClients()
+    fetchInvoices()
     return () => { 
       setProjects([]) 
       setClients([])
+      setInvoices([])
     }
-  }, [])
+  }, [user])
 
   return (
     <>
       {/* <NavBar user={user} handleLogout={handleLogout} /> */}
       <Routes>
-        <Route path="/" element={<Landing user={user} />} />
+        <Route path="/" element={<Landing user={user} handleLogout={handleLogout} signInFormStatus={signInFormStatus} setSignInFormStatus={setSignInFormStatus} signUpFormStatus={signUpFormStatus} setSignUpFormStatus={setSignUpFormStatus} handleSignupOrLogin={handleSignupOrLogin}/>} />
         <Route
           path="/signup"
           element={<Signup handleSignupOrLogin={handleSignupOrLogin} />}
@@ -82,7 +108,7 @@ const App = () => {
         />
         <Route
           path="/profile"
-          element={user ? <Profile user={user} projects={projects} clients={clients} clientListStatus={clientListStatus} setClientListStatus={setClientListStatus}/> : <Navigate to="/login" />}
+          element={user ? <Profile user={user} projects={projects} clients={clients} clientListStatus={clientListStatus} setClientListStatus={setClientListStatus} handleLogout={handleLogout}/> : <Navigate to="/" />}
         />
         <Route
           path="/projects"
@@ -121,6 +147,18 @@ const App = () => {
             handleUpdateClientsList={handleUpdateClientsList}/> 
             : 
             <Navigate to='/login' />}
+        />
+        <Route 
+          path='/newInvoice'
+          element={user ? <AddInvoice invoices={invoices} setInvoices={setInvoices} projects={projects} clients={clients}/> : <Navigate to="/login"/>}
+        />
+        <Route 
+          path='/invoices'
+          element={user ? <InvoiceList user={user} invoices={invoices}/> : <Navigate to='/login'/>}
+        />
+        <Route 
+          path='/invoices/:id'
+          element={user ? <InvoiceDetails user={user} invoices={invoices} handleUpdateInvoiceList={handleUpdateInvoiceList}/> : <Navigate to="/login"/>}
         />
       </Routes>
     </>

@@ -1,0 +1,72 @@
+@import '../../sassStyles/variables';
+
+.proj-update {
+  height: 100vh;
+  width: 100vw;
+  background-image: url('../../images/Project-photo8-Edit.png');
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+
+  h1 {
+    text-align: center;
+    margin-top: 2vh;
+    font-size: 5vw;
+    font-family: 'Playfair Display SC';
+    color: $mid1;
+  }
+}
+
+.update {
+  width: 25vw;
+  height: 60vh;
+  margin-left: 14%;
+
+  label {
+    margin-top: 2.5vh;
+    margin-bottom: 2.5vh;
+    font-size: 3vw;
+  }
+
+  input {
+    width: 20vw;
+    height:4vh;
+    margin-bottom: 3vh;
+  }
+
+}
+
+.change {
+  width: 20vw;
+  height: 5vw;
+  background-color: $mid1;
+
+  &:hover {
+    border: 2px solid $light2;
+  }
+}
+
+
+@media screen and (max-width: 800px) {
+  .update {
+    margin-top: 19vh;
+
+    label {
+      font-size: 2.5vw;
+      font-family: 'Alegreya Sans SC';
+      font-weight: 700;
+    }
+
+    input {
+      height: 3vh;
+    }
+  }
+
+  .change {
+    font-weight: 700;
+  }
+}
+
+@media screen and (max-width: 992px) {
+
+}

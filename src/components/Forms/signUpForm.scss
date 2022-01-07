@@ -1,0 +1,59 @@
+@import '../../sassStyles/variables';
+
+// .user-sign-up {
+//   height: 100vh;
+//   width: 100vw;
+// }
+
+.user-sign-up {
+  border: 2px solid $dark1;
+  border-radius: .5em;
+  margin-bottom: 1em;
+  margin-top: 5%;
+  margin-left: 35vw;
+  margin-right: 35vw;
+  padding: 1em;
+  text-align: left;
+  width: 30vw;
+  height: 60vh;
+  background-color: $light2;
+
+  h3 {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: -10vh;
+    font-family: 'Playfair Display SC';
+  }
+
+  .form {
+    margin-left: -2.4vw;
+    padding-top: 10%;
+    font-size: 1.75vw;
+    font-family: 'Alegreya Sans SC';
+    color: $dark1;
+    font-weight: 700;
+  }
+  
+  label {
+    font-size: 1.5rem;
+    
+  }
+  
+  input {
+    width: 20vw;
+    height:3vh;
+    margin-bottom: 3vh;
+  }
+  
+   button {
+    width: 20vw;
+    height: 3vw;
+    font-size: 1.25rem;
+    cursor: pointer;
+    margin-left: 0.25vw;
+    text-align: center;
+    background-color: $mid1;
+    font-weight: 700;
+    margin-top: 2vh;
+   }  
+}

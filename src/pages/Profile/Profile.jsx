@@ -1,44 +1,67 @@
 import React from 'react';
-import ProjectList from '../ProjectList';
-import ClientList from '../ClientList';
+import { Link } from 'react-router-dom';
+import moment from 'moment'
+// Components
+// Styles
 import './profile.scss'
 
-const Profile = ({user, projects, clients, clientListStatus, setClientListStatus}) => {
-  
+const Profile = ({user, projects, clients, clientListStatus, setClientListStatus, handleLogout}) => {
   console.log(clientListStatus)
+
+const navLinkStyle = {
+  fontSize: "2.3vw",
+  color: "#D9D9D9",
+  marginLeft: "3%"
+}
 
   return (
     <div className="prof-page">
-      <div className="header">
-        <button className="prof-toggle">Icon</button>
-      </div>
+      <div className="header"></div>
       <div className="prof-side-bar">
         <div className="prof-picture">
-        </div>
-        <div className="prof-card">
           <h1>{user.name}</h1>
+        </div>
+        <div className="prof-card">  
         </div>
         <div className="side-nav">
             <br/><br/>
             <p><button onClick={() => setClientListStatus(!clientListStatus)}>Client List</button></p>
+            <br/>
+            <Link to="/newProject" style={navLinkStyle}>Create New Project</Link>
             <br/><br/>
-            <p>Create New Project</p>
+            <Link to="/newClient" style={navLinkStyle}>Add New Client</Link>
             <br/><br/>
-            <p>Another Link</p>
+            <Link to="/newInvoice" style={navLinkStyle}>Write Invoice</Link>
             <br/><br/>
-            <p>Log Out</p>
+            <Link to="/invoices" style={navLinkStyle}>Invoices</Link>
+            <br/><br/>
+            <Link to="" onClick={handleLogout} style={navLinkStyle}>Log Out</Link>
         </div>
       </div>
-      <section className="project-container">
-        <div className="project-list">
-          {projects?.forEach(p => {
-            <h1>{p.title}</h1>
-          })}
-        </div>
-      </section>
-      <div className={`clients ${clientListStatus ? "active-list" : "inactive-list"}`}>
-        <h1>Client List</h1>
-          <ClientList user={user} clients={clients} />
+      {projects?.length > 0 &&
+        <section className="project-container">
+            {projects?.map((project) => (
+              <Link key={project._id} to={`/projects/${project._id}`}>
+                <div className="project-list">
+                  <h1>{project.title}</h1>
+                  <h2>{project.is_Active}</h2>
+                  <h2>Deliver By: {moment(project.endDate).format('MM/DD/YYYY')}</h2>
+                  <h3>${project.hourlyRate} /Hr</h3>
+                  <br/>
+                </div>
+              </Link>
+            ))}
+        </section>
+      }
+      <div className={`clients ${clientListStatus ? "inactive-list" : "active-list"}`}>
+        <h1 className="list-title">Client List</h1>
+        <br/>
+          {clients?.map((client) => (
+            <div className="client">
+              <h1>{client.name}</h1>
+              <h2>{client.email}</h2>
+            </div>
+          ))}
       </div>
     </div>
   )
@@ -46,21 +69,4 @@ const Profile = ({user, projects, clients, clientListStatus, setClientListStatus
 
 export default Profile
 
-// {`clients ${active ? "selected" : ""}`} this is the logic for toggling the class name for the client list toggle
-
-// stubbed up function:
-
-// const clientSelectHandler = async () => {
-//   const selectedClient = clients.filter((state) => state.id === id)
-//   await setCurrentClient({...selectedClient[0]})
-// }
-
-
-{/* <div className="project">
-{projects?.map((p)=> (
-  <ProjectCard
-    title={p.title}
-    startDate={p.startDate}
-    endDate={p.endDate}
-  />
-))} */}
+//will line 37 need to be a button with handle logout attached to it?
