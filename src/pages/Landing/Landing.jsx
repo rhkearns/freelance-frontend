@@ -19,8 +19,8 @@ const Landing = ({ user, handleLogout, signInFormStatus, setSignInFormStatus,  h
         :
           <div className="reg-nav">
             <ul>
-              <li><button className='sign-in-button' onClick={() => setSignInFormStatus(!signInFormStatus)}>SignIn</button></li>
-              <li><button className="sign-up-button" onClick={() => setSignUpFormStatus(!signUpFormStatus)}>Create Account</button></li>
+              <li><button className='sign-in-button' onClick={() => setSignInFormStatus(!signInFormStatus)}>Sign In</button></li>
+              <li><button className="sign-up-button" onClick={() => setSignUpFormStatus(!signUpFormStatus)}>Get Started</button></li>
             </ul>
           </div>
         }
@@ -28,9 +28,6 @@ const Landing = ({ user, handleLogout, signInFormStatus, setSignInFormStatus,  h
       
       <section className="one">
         <div className="title-info">
-          <br/>
-          <br/>
-          <br/>
           {!user && signInFormStatus &&
             <div className={`sign-in-form ${signInFormStatus ? "active-sign-in" : "inactive-sign-in"}`}>
               <SignInForm 
@@ -45,14 +42,11 @@ const Landing = ({ user, handleLogout, signInFormStatus, setSignInFormStatus,  h
                 />
             </div>
           }
-          
-          <div className="blur">
           <h1>Folio</h1>
           <br/>
           <h2>An App for Freelancers</h2>
-          <br/><br/>
+          <br/>
           <p className="short-desc">A way to simplify your life with the ability to store your past and current projects and clients</p>
-          </div>
         </div>
       </section>
       <section className="spacer1"></section>
@@ -61,9 +55,7 @@ const Landing = ({ user, handleLogout, signInFormStatus, setSignInFormStatus,  h
       </section>
       <section className="spacer2"></section>
       <section className="three">
-        <h1 className='CTA'>Start your Folio today!</h1>
-        <h2>Whether you have previous work looking for an organized place to live, or are looking to have a great tool in your work as a freelancer, you can do it all with Folio. </h2>
-        <h1>Get Started</h1>
+        <h2>Whether you have previous work looking for an organized place to live, or are looking to have a great tool for your work as a freelancer, you can do it all with Folio. </h2>
       </section>
     </div>
   )

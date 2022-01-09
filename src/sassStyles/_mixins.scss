@@ -1,6 +1,12 @@
 // More prep for Responseive Design
 @import './variables';
 
+@mixin xSmallMinBreakPoint {
+  @media (min-width: #{$screen-xSmall}) {
+    @content;
+  }
+}
+
 @mixin smallMinBreakPoint {
   @media (min-width: #{$screen-small}) {
     @content;

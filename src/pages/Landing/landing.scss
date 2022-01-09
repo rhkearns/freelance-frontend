@@ -8,15 +8,6 @@
   box-sizing: border-box;
 }
 
-.blur {
-  position: relative;
-  height: 42vh;
-  width: 100vw;
-  background-color: rgba($light2, 0.5);
-  // z-index: 1;
-  top: -10.9%;
-}
-
 .container {
   overflow-y: scroll;
   height: 100vh;
@@ -24,90 +15,263 @@
   section {
     scroll-snap-align: start;
     color: $mid1;
-  
   }
   
   .one {
-    height: 42vh;
-    background-image: url('../../images/Project-photo1.jpg');
+    background-image: url('../../images/Landing-Page-Masked.jpg');
     background-size: cover;
     background-repeat: no-repeat;
     background-position: fixed;
-    z-index: 3;
-
     h1 {
-      font-size: 4rem; 
-      margin-left: 19vw;
-      width: 12vw;
+      margin-left: 19%;
+      padding-top: 7vh;
     }
-
     h2 {
-      font-size: 2rem;
-      margin-left: 23vw;
-      width: 27vw;
+      margin-left: 23%;
     }
-
-    .sign-up-button {
-      width: 20vw;
-      height: 5vw;
-      background-color: $mid1;
-      margin-left: 14vw;
-      margin-top: 5vh;
-    
-      &:hover {
-        border: 2px solid $light2;
-      }
+    .short-desc {
+      margin-left: 19%;
+      font-weight: bolder;
     }
   }
   
   .two {
-    height: 74vh;
-    background-color: $light2;
+    background-color: #EBEBEB;
     background-image: url(../../images/Project-Screenshot1.png);
     background-repeat: no-repeat;
     background-size: contain;
     background-position: center;
-
-    .Testimony {
-      font-family: 'Alegreya Sans SC';
-      font-size: 3vw;
+    p {
       text-align: center;
-      color: $dark1;
-      font-weight: 800;
+      font-weight: bolder;
     }
   }
   
   .three {
-    height: 50vh;
-    background-image: url('../../images/Project-phot7.jpeg');
+    background-image: url('../../images/Project-photo2.jpg');
     background-size: cover;
     background-repeat: no-repeat;
-
-    h1 {
-      font-size: 4vw;
-      margin-left: 40vw;
-    }
-
-    h2 {
-      margin-top: 2vh;
-      margin-left: 45vw;
-      line-height: 2;
-      font-family: 'Alegreya Sans SC';
-      color: $dark1;
-    }
   }
 
   .spacer1 {
-    height: 45px;
+    height: 4vh;
     background-color: $mid2;
-    z-index: 3;
   }
 
   .spacer2 {
-    height: 45px;
+    height: 4vh;
     background-color: $mid2;
   }
 }
+
+
+
+
+@media screen and (max-width: 2000px) {
+  .one {
+    min-height: 75vh;
+    h1 {
+      font-size: 7rem;
+    }
+    h2 {
+      font-size: 3rem;
+    }
+    p {
+      font-size: 2rem;
+      width: 26%;
+    }
+  }
+  .sign-in-button {
+    background-color: $mid1;
+    width: 17vw;
+    margin-top:  68vh;
+    margin-bottom: 147vh;
+    margin-left: 66vw;
+    font-size: 2.5rem;
+  }
+  .sign-up-button {
+    position: relative;
+    background-color: $mid1;
+    width: 22vw;
+    margin-left: 66vw;
+    font-size: 2.5rem;
+  }
+
+  .two {
+    min-height: 85vh;
+    p {
+      font-size: 3.5rem;
+    }
+  }
+
+  .three {
+    min-height: 85vh;
+    h2 {
+      width: 48%;
+      margin-left: 52%;
+      font-size: 3rem;
+    }
+  }
+}
+
+
+@media screen and (max-width: 1200px) {
+  .two {
+    p {
+      font-size: 1.75rem;
+    }
+  }
+}
+
+
+
+@media screen and (max-width: 1200px) {
+  .one {
+    min-height: 42vh;
+    h1 {
+      font-size: 5rem;
+    }
+    h2 {
+      font-size: 2rem;
+    }
+    p {
+      font-size: 1.5rem;
+      width: 46%;
+    }
+  }
+  .sign-in-button {
+    background-color: $mid1;
+    width: 17vw;
+    margin-top:  35vh;
+    margin-bottom: 100vh;
+    margin-left: 66vw;
+    font-size: 1.25rem;
+  }
+  .sign-up-button {
+    position: relative;
+    background-color: $mid1;
+    width: 22vw;
+    margin-left: 66vw;
+    font-size: 1.25rem;
+  }
+
+  .two {
+    min-height: 45vh;
+    p {
+      font-size: 1.5rem;
+    }
+  }
+
+  .three {
+    min-height: 50vh;
+    h2 {
+      width: 48%;
+      margin-left: 52%;
+      font-size: 2rem;
+    }
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .three {
+    h2 {
+      font-size: 1.75rem;
+    }
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .one {
+    h1 {
+      font-size: 2rem;
+    }
+    h2 {
+      font-size: 1.25rem;
+    }
+    p {
+      font-size: 1rem;
+      padding-bottom: 2vh;
+      width: 38vw;
+    }
+  }
+  .sign-in-button {
+    background-color: $mid1;
+    width: 17vw;
+    margin-top:  35vh;
+    margin-bottom: 100vh;
+    margin-left: 66vw;
+    font-size: 1.25rem;
+  }
+  .sign-up-button {
+    position: relative;
+    background-color: $mid1;
+    width: 22vw;
+    margin-left: 66vw;
+    font-size: 1.25rem;
+  }
+
+  .two {
+    min-height: 46vh;
+    p {
+      font-size: 1.25rem;
+    }
+  }
+
+  .three {
+    min-height: 50vh;
+    h2 {
+      width: 52%;
+      margin-left: 48%;
+      padding-top: 2%;
+      font-size: 1rem;
+    }
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 .navigation {
   display: flex;
@@ -141,46 +305,9 @@
   visibility: hidden;
 }
 
-.title-info {
-  height: 42vh;
-  position: relative;
-  // background-color: rgba($dark1, 0.2);
-}
-
-.short-desc {
-  font-size: 2vw;
-  margin-left: 19vw;
-  width: 38vw;
-  font-weight: bolder;
-}
-
-@media screen and (max-width: 768px) {
-
-  .blur {
-    top: -9vh;
-  }
-
-  .one {
-
-    h1 {
-      margin-top: 2.5vh;
-      margin-bottom: -2vh;;
-    }
-
-    h2 {
-      margin-bottom: -2vh;
-    }
-
-    p {
-      font-size: 3vw;
-      margin-bottom: -2vh;
-    }
-  }
-
   .three {
     background-size: 200%;
   }
-}
 
 .user-nav {
   li {
@@ -198,28 +325,7 @@
   }
 }
 
-@media screen and (max-width: 992px) {
-  .blur {
-    top: -6.2vh;
-  }
-}
 
-.sign-in-button {
-  background-color: $mid1;
-  width: 10vw;
-  margin-top:  1vh;
-  margin-bottom: 160vh;
-  margin-right: 0%;
-  margin-left: 85vw;
-  font-size: 2vw;
-}
 
-.sign-up-button {
-  position: relative;
-  background-color: $mid1;
-  width: 20vw;
-  margin-top: -10vh;
-  margin-right: 0%;
-  margin-left: 45vw;
-  font-size: 2.5vw;
-}
+
+
