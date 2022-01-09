@@ -48,7 +48,6 @@
   }
   
   .three {
-    height: 50vh;
     background-image: url('../../images/Project-photo2.jpg');
     background-size: cover;
     background-repeat: no-repeat;
@@ -67,14 +66,73 @@
 
 
 
-@media screen and (max-width: 800px) {
+
+@media screen and (max-width: 2000px) {
+  .one {
+    min-height: 75vh;
+    h1 {
+      font-size: 7rem;
+    }
+    h2 {
+      font-size: 3rem;
+    }
+    p {
+      font-size: 2rem;
+      width: 26%;
+    }
+  }
+  .sign-in-button {
+    background-color: $mid1;
+    width: 17vw;
+    margin-top:  68vh;
+    margin-bottom: 147vh;
+    margin-left: 66vw;
+    font-size: 2.5rem;
+  }
+  .sign-up-button {
+    position: relative;
+    background-color: $mid1;
+    width: 22vw;
+    margin-left: 66vw;
+    font-size: 2.5rem;
+  }
+
+  .two {
+    min-height: 85vh;
+    p {
+      font-size: 3.5rem;
+    }
+  }
+
+  .three {
+    min-height: 85vh;
+    h2 {
+      width: 48%;
+      margin-left: 52%;
+      font-size: 3rem;
+    }
+  }
+}
+
+
+@media screen and (max-width: 1200px) {
+  .two {
+    p {
+      font-size: 1.75rem;
+    }
+  }
+}
+
+
+
+@media screen and (max-width: 1200px) {
   .one {
     min-height: 42vh;
     h1 {
       font-size: 5rem;
     }
     h2 {
-      font-size: 2.5rem;
+      font-size: 2rem;
     }
     p {
       font-size: 1.5rem;
@@ -105,6 +163,7 @@
   }
 
   .three {
+    min-height: 50vh;
     h2 {
       width: 48%;
       margin-left: 52%;
@@ -113,53 +172,13 @@
   }
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+@media screen and (max-width: 700px) {
+  .three {
+    h2 {
+      font-size: 1.75rem;
+    }
+  }
+}
 
 @media screen and (max-width: 500px) {
   .one {
@@ -199,6 +218,7 @@
   }
 
   .three {
+    min-height: 50vh;
     h2 {
       width: 52%;
       margin-left: 48%;
