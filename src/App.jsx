@@ -49,6 +49,7 @@ const App = () => {
   }
 
   const handleUpdateProjectsList = (updatedProject) => {
+    console.log('handling');
     const updatedArray = projects.map(project => 
       project._id === updatedProject._id ? updatedProject : project
     )
@@ -92,6 +93,20 @@ const App = () => {
       setInvoices([])
     }
   }, [user])
+
+  // useEffect(() => {
+  //   const fetchProjects = async () => {
+  //     const projectData = await projectService.getAllProjects()
+  //     setProjects(projectData)
+  //   }
+  //   fetchProjects()
+  //   return () => {
+  //     setProjects([])
+  //   }
+  // }, [projects])
+
+  console.log('user', {user});
+  console.log('app projects', projects);
 
   return (
     <>
