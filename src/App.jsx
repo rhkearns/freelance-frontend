@@ -21,10 +21,14 @@ import * as projectService from './services/projectService'
 import * as clientService from './services/clientService'
 import * as invoiceService from './services/invoiceService'
 
+import { useSelector, useDispatch } from 'react-redux'
+import * as projectsReducers from './features/projectsSlice'
+
+
 const App = () => {
   const [user, setUser] = useState(authService.getUser())
   const navigate = useNavigate()
-  const [projects, setProjects] = useState([])
+  // const [projects, setProjects] = useState([])
   const [clients, setClients] = useState([])
   const [invoices, setInvoices] = useState([])
   const [clientListStatus, setClientListStatus] = useState (false)
@@ -34,11 +38,13 @@ const App = () => {
   const [projectFormStatus, setProjectInFormStatus] = useState (false)
   const [invoiceFormStatus, setInvoiceInFormStatus] = useState (false)
 
+  const projects = useSelector((state) => state.projects.value)
+  const dispatch = useDispatch()
 
   const handleLogout = () => {
     authService.logout()
     setClients([])
-    setProjects([])
+    // setProjects([])
     setInvoices([])
     setUser(null)
     navigate('/')
@@ -53,7 +59,7 @@ const App = () => {
     const updatedArray = projects.map(project => 
       project._id === updatedProject._id ? updatedProject : project
     )
-    setProjects(updatedArray)
+    // setProjects(updatedArray)
   }
 
   const handleUpdateClientsList = (updatedClient) => {
@@ -74,7 +80,8 @@ const App = () => {
   useEffect(() => {
     const fetchProjects = async () => {
       const projectData = await projectService.getAllProjects()
-      setProjects(projectData)
+      // setProjects(projectData)
+      dispatch(projectsReducers.getProjects)
     }
     const fetchClients = async () => {
       const clientData = await clientService.getAllClients()
@@ -88,7 +95,7 @@ const App = () => {
     fetchClients()
     fetchInvoices()
     return () => { 
-      setProjects([]) 
+      // setProjects([]) 
       setClients([])
       setInvoices([])
     }
@@ -127,7 +134,9 @@ const App = () => {
         />
         <Route
           path="/projects"
-          element={user ? <ProjectList projects={projects} setProjects={setProjects}/> : <Navigate to='/login' />}
+          element={user ? <ProjectList projects={projects} 
+          // setProjects={setProjects}
+          /> : <Navigate to='/login' />}
         />
         <Route
           path="/projects/:id/edit"
@@ -138,11 +147,15 @@ const App = () => {
         />
         <Route
           path="/newProject"
-          element={user ? <CreateProject projects={projects} setProjects={setProjects} clients={clients}/> : <Navigate to='/login' />}
+          element={user ? <CreateProject projects={projects} 
+          // setProjects={setProjects} 
+          clients={clients}/> : <Navigate to='/login' />}
         />
         <Route
           path="/projects/:id"
-          element={user ? <ProjectDetails projects={projects} setProjects={setProjects} handleUpdateProjectsList={handleUpdateProjectsList}/> : <Navigate to='/login' />}
+          element={user ? <ProjectDetails projects={projects} 
+          // setProjects={setProjects} 
+          handleUpdateProjectsList={handleUpdateProjectsList}/> : <Navigate to='/login' />}
         />
         <Route 
           path="/clients"
