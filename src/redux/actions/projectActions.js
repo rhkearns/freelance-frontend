@@ -1,8 +1,8 @@
 import  { ActionTypes } from '../contants/action-types'
 
-export const getProjects = (projects) => {
+export const setProjects = (projects) => {
   return {
-    type: ActionTypes.GET_PROJECTS,
+    type: ActionTypes.SET_PROJECTS,
     payload: projects
   }
 }

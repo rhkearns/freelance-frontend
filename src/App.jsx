@@ -24,7 +24,7 @@ import * as invoiceService from './services/invoiceService'
 const App = () => {
   const [user, setUser] = useState(authService.getUser())
   const navigate = useNavigate()
-  const [projects, setProjects] = useState([])
+  // const [projects, setProjects] = useState([])
   const [clients, setClients] = useState([])
   const [invoices, setInvoices] = useState([])
   const [clientListStatus, setClientListStatus] = useState (false)
@@ -38,7 +38,7 @@ const App = () => {
   const handleLogout = () => {
     authService.logout()
     setClients([])
-    setProjects([])
+    // setProjects([])
     setInvoices([])
     setUser(null)
     navigate('/')
@@ -48,13 +48,13 @@ const App = () => {
     setUser(authService.getUser())
   }
 
-  const handleUpdateProjectsList = (updatedProject) => {
-    // console.log('handling');
-    const updatedArray = projects.map(project => 
-      project._id === updatedProject._id ? updatedProject : project
-    )
-    setProjects(updatedArray)
-  }
+  // const handleUpdateProjectsList = (updatedProject) => {
+  //   // console.log('handling');
+  //   const updatedArray = projects.map(project => 
+  //     project._id === updatedProject._id ? updatedProject : project
+  //   )
+  //   setProjects(updatedArray)
+  // }
 
   const handleUpdateClientsList = (updatedClient) => {
     const updatedArray = clients.map(client => 
@@ -72,10 +72,10 @@ const App = () => {
 
 
   useEffect(() => {
-    const fetchProjects = async () => {
-      const projectData = await projectService.getAllProjects()
-      setProjects(projectData)
-    }
+    // const fetchProjects = async () => {
+    //   const projectData = await projectService.getAllProjects()
+    //   setProjects(projectData)
+    // }
     const fetchClients = async () => {
       const clientData = await clientService.getAllClients()
       setClients(clientData)
@@ -84,11 +84,11 @@ const App = () => {
       const invoiceData = await invoiceService.getAllInvoices()
       setInvoices(invoiceData)
     }
-    fetchProjects()
+    // fetchProjects()
     fetchClients()
     fetchInvoices()
     return () => { 
-      setProjects([]) 
+      // setProjects([]) 
       setClients([])
       setInvoices([])
     }
@@ -123,26 +123,35 @@ const App = () => {
         />
         <Route
           path="/profile"
-          element={user ? <Profile user={user} projects={projects} clients={clients} clientListStatus={clientListStatus} setClientListStatus={setClientListStatus} handleLogout={handleLogout}/> : <Navigate to="/" />}
+          element={user ? <Profile user={user} 
+          // projects={projects} 
+          clients={clients} clientListStatus={clientListStatus} setClientListStatus={setClientListStatus} handleLogout={handleLogout}/> : <Navigate to="/" />}
         />
         <Route
           path="/projects"
-          element={user ? <ProjectList projects={projects} setProjects={setProjects}/> : <Navigate to='/login' />}
+          element={user ? <ProjectList 
+            // projects={projects} setProjects={setProjects}
+            /> : <Navigate to='/login' />}
         />
         <Route
           path="/projects/:id/edit"
           element={user ? <UpdateProject 
-            handleUpdateProjectsList={handleUpdateProjectsList} clients={clients}/> 
+            // handleUpdateProjectsList={handleUpdateProjectsList} 
+            clients={clients}/> 
             : 
             <Navigate to='/login' />}
         />
         <Route
           path="/newProject"
-          element={user ? <CreateProject projects={projects} setProjects={setProjects} clients={clients}/> : <Navigate to='/login' />}
+          element={user ? <CreateProject 
+            // projects={projects} setProjects={setProjects} 
+            clients={clients}/> : <Navigate to='/login' />}
         />
         <Route
           path="/projects/:id"
-          element={user ? <ProjectDetails projects={projects} setProjects={setProjects} handleUpdateProjectsList={handleUpdateProjectsList}/> : <Navigate to='/login' />}
+          element={user ? <ProjectDetails 
+            // projects={projects} setProjects={setProjects} handleUpdateProjectsList={handleUpdateProjectsList}
+            /> : <Navigate to='/login' />}
         />
         <Route 
           path="/clients"
@@ -165,7 +174,9 @@ const App = () => {
         />
         <Route 
           path='/newInvoice'
-          element={user ? <AddInvoice invoices={invoices} setInvoices={setInvoices} projects={projects} clients={clients}/> : <Navigate to="/login"/>}
+          element={user ? <AddInvoice invoices={invoices} setInvoices={setInvoices} 
+          // projects={projects} 
+          clients={clients}/> : <Navigate to="/login"/>}
         />
         <Route 
           path='/invoices'

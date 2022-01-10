@@ -1,12 +1,33 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import { Link } from 'react-router-dom';
 import moment from 'moment'
+import { useSelector, useDispatch } from 'react-redux'
+import { getAllProjects } from '../../services/projectService';
+import { setProjects } from '../../redux/actions/projectActions';
 // Components
 // Styles
 import './profile.scss'
 
-const Profile = ({user, projects, clients, clientListStatus, setClientListStatus, handleLogout}) => {
+const Profile = ({user, clients, clientListStatus, setClientListStatus, handleLogout}) => {
   // console.log(clientListStatus)
+  const dispatch = useDispatch()
+  const projects = useSelector((state) => state.allProjects.projects)
+  console.log('projects', projects);
+
+  const fetchProjects = async () => {
+    try {
+      const response = await getAllProjects()
+      console.log('response', response);
+      dispatch(setProjects(response))
+    } catch (err) {
+      throw err
+    }
+  }
+
+  useEffect(() => {
+    fetchProjects()
+  }, [])
+console.log('projects post fetch', projects);
 
 const navLinkStyle = {
   fontSize: "2.3vw",
