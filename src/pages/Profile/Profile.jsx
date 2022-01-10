@@ -6,7 +6,7 @@ import moment from 'moment'
 import './profile.scss'
 
 const Profile = ({user, projects, clients, clientListStatus, setClientListStatus, handleLogout}) => {
-  console.log(clientListStatus)
+  // console.log(clientListStatus)
 
 const navLinkStyle = {
   fontSize: "2.3vw",

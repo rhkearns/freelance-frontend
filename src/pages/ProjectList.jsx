@@ -1,9 +1,13 @@
 import React from 'react';
 import { Link } from 'react-router-dom'
+import { useSelector } from 'react-redux'
 // Components
 import ProjectCard from '../components/Project/ProjectCard'
 
-const ProjectList = ({user, projects}) => {
+const ProjectList = () => {
+  const projects = useSelector((state) => state)
+  console.log(projects);
+
   return (
     <>
       <h1>Projects</h1>

@@ -49,7 +49,7 @@ const App = () => {
   }
 
   const handleUpdateProjectsList = (updatedProject) => {
-    console.log('handling');
+    // console.log('handling');
     const updatedArray = projects.map(project => 
       project._id === updatedProject._id ? updatedProject : project
     )
@@ -105,8 +105,8 @@ const App = () => {
   //   }
   // }, [projects])
 
-  console.log('user', {user});
-  console.log('app projects', projects);
+  // console.log('user', {user});
+  // console.log('app projects', projects);
 
   return (
     <>
