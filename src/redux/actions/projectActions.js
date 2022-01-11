@@ -1,8 +1,8 @@
 import  { ActionTypes } from '../contants/action-types'
-import * as projectService from '../../services/projectService'
+import {getAllProjects} from '../../services/projectService'
 
 export const fetchProjects = () => async (dispatch) => {
-  const response = await projectService.getAllProjects()
+  const response = await getAllProjects()
   console.log(response);
   dispatch({type: ActionTypes.FETCH_PROJECTS, payload: response})
 }
