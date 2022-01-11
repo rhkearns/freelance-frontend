@@ -54,6 +54,8 @@ const ProjectDetails = () => {
     }
   }
 
+  console.log(project);
+
   return (
     <div className="project-details">
       <Link 

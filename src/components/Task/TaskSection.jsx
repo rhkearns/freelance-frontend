@@ -29,10 +29,12 @@ const TaskSection = ({project, setProject, tasks, setTasks}) => {
   const handleSetStatus = async (taskId, stat) => {
     try {
       const updatedTask = await projectService.setTaskStatus(project._id, taskId, stat)
+      console.log(updatedTask);
       const updatedTaskList = tasks.map((task) => (
         task._id === taskId ? updatedTask : task
       ))
       setTasks(updatedTaskList)
+      console.log(tasks);
     } catch (error) {
       throw error
     }
