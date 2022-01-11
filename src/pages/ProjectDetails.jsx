@@ -11,7 +11,7 @@ import CardActions from '../components/Project/CardActions';
 import TaskSection from '../components/Task/TaskSection'
 import HoursSection from '../components/Hours/HoursSection';
 
-const ProjectDetails = ({handleUpdateProjectsList}) => {
+const ProjectDetails = () => {
   const { id } = useParams()
   const [project, setProject] = useState()
   const [tasks, setTasks] = useState([])
@@ -48,12 +48,11 @@ const ProjectDetails = ({handleUpdateProjectsList}) => {
     try {
       const updatedProject = await projectService.markComplete(projectId)
       setProject(updatedProject)
-      handleUpdateProjectsList(updatedProject)
     } catch (error) {
       throw error
     }
   }
-
+  
   return (
     <div className="project-details">
       <Link 
@@ -74,7 +73,6 @@ const ProjectDetails = ({handleUpdateProjectsList}) => {
           setProject={setProject}
           hours={hours}
           setHours={setHours}
-          handleUpdateProjectsList={handleUpdateProjectsList}
         />
       }
       {project &&

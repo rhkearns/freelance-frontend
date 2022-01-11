@@ -1,8 +1,9 @@
 import React, { useEffect, useRef } from 'react';
 import moment from 'moment';
 import { Link } from 'react-router-dom';
+import { useSelector } from 'react-redux'
 
-const UpdateForm = ({handleChange, handleUpdateProject, validForm, setValidForm, formData, clients}) => {  
+const UpdateForm = ({handleChange, handleUpdateProject, validForm, setValidForm, formData}) => {  
   const formElement = useRef()
   
 const linkStyle = {
@@ -17,6 +18,8 @@ const linkStyle = {
     display: "flex",
     alignItems: "center"
   }
+
+  const clients = useSelector((state) => state.allClients.clients)
 
   useEffect(() => {
     formElement.current.checkValidity() ? setValidForm(true) : setValidForm(false)

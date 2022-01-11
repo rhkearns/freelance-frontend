@@ -1,10 +1,10 @@
 import React, { useEffect, useRef } from 'react'
 import { Link } from 'react-router-dom';
-
+import { useSelector } from 'react-redux'
 
 import './invoiceForm.scss'
 
-const InvoiceForm = ({handleCreateInvoice, handleChange, validForm, setValidForm, formData, setFormData, projects}) => {
+const InvoiceForm = ({handleCreateInvoice, handleChange, validForm, setValidForm, formData, setFormData}) => {
   const formElement = useRef()
 
   const linkStyle = {
@@ -20,11 +20,12 @@ const InvoiceForm = ({handleCreateInvoice, handleChange, validForm, setValidForm
     alignItems: "center"
   }
 
+  const projects = useSelector((state) => state.allProjects.projects)
+
   const fetchProjectData = (e) => {
     const foundProj = projects.find((project) => {
       return project._id === e.target.value
     })
-    console.log(foundProj);
     setFormData({
       projectBilled: foundProj._id,
       title: foundProj.title,

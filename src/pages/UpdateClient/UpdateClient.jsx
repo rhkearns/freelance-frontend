@@ -19,7 +19,6 @@ const UpdateClient = (props) => {
     e.preventDefault()
     try {
       const updatedClient = await updateClient(id, formData)
-      props.handleUpdateClientsList(updatedClient)
       navigate(`/profile`)
     } catch (error) {
       throw error

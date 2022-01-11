@@ -1,9 +1,18 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom'
+import { useSelector, useDispatch } from 'react-redux'
+import { fetchProjects } from '../redux/actions/projectActions'
 // Components
 import ProjectCard from '../components/Project/ProjectCard'
 
-const ProjectList = ({user, projects}) => {
+const ProjectList = () => {
+  const projects = useSelector((state) => state.allProjects.projects)
+  const dispatch = useDispatch()
+
+  useEffect(() => {
+    dispatch(fetchProjects())
+  }, [])
+
   return (
     <>
       <h1>Projects</h1>

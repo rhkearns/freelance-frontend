@@ -6,7 +6,7 @@ import * as clientService from '../services/clientService'
 import ClientCard from '../components/Client_components/ClientCard'
 import ClientActions from '../components/Client_components/ClientActions';
 
-const ClientDetails = (props) => {
+const ClientDetails = () => {
   const { id } = useParams()
   const navigate = useNavigate()
   const [client, setClient] = useState()
@@ -14,7 +14,6 @@ const ClientDetails = (props) => {
   const handleDeleteClient = async (clientId) => {
     try {
       await clientService.deleteClient(clientId)
-      props.setClients(props.clients.filter(client => client._id !== clientId))
       navigate('/clients')
     } catch (error) {
       throw error

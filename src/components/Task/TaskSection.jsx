@@ -38,7 +38,6 @@ const TaskSection = ({project, setProject, tasks, setTasks}) => {
     }
   }
   
-
   return (
     <div className="task-container">
       <h2>Tasks</h2>

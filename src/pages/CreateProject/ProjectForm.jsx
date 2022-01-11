@@ -1,11 +1,13 @@
 import React, { useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
+import { useSelector } from 'react-redux'
 
 import './projectForm.scss'
 import '../../sassStyles/_variables.scss'
 
-const ProjectForm = ({ handleCreateProject, handleChange, validForm, setValidForm, formData, clients}) => {
+const ProjectForm = ({ handleCreateProject, handleChange, validForm, setValidForm, formData}) => {
   const formElement = useRef()
+  const clients = useSelector((state) => state.allClients.clients)
   
   const linkStyle = {
     width: "10vw",
@@ -32,7 +34,6 @@ const ProjectForm = ({ handleCreateProject, handleChange, validForm, setValidFor
       div className="return">Return To Profile
     </Link>
     <div className="project-form">
-    
       <form onSubmit={(e) => handleCreateProject(e)} ref={formElement}>
         <label>Project Title</label><br />
         <input

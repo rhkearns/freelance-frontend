@@ -22,7 +22,6 @@ const AddClient = (props) => {
     e.preventDefault()
     try {
       const newClient = await addClient(formData)
-      props.setClients([...props.clients, newClient])
       navigate('/profile')
     } catch (error) {
       throw error

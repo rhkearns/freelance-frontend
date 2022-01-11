@@ -20,6 +20,7 @@ const AddInvoice = (props) => {
   })
   const [validForm, setValidForm] = useState(false)
 
+
   const handleChange = (e) => {
     setFormData({...formData, [e.target.name]: e.target.value})
   }
@@ -28,7 +29,6 @@ const AddInvoice = (props) => {
     e.preventDefault()
     try {
       const newInvoice = await addInvoice(formData)
-      props.setInvoices([newInvoice, ...props.invoices])
       navigate('/invoices')
     } catch (error) {
       throw error
@@ -38,7 +38,7 @@ const AddInvoice = (props) => {
   return (
     <>
       <InvoiceForm 
-        invoiec={invoice}
+        invoice={invoice}
         setInvoice={setInvoice}
         handleCreateInvoice={handleCreateInvoice}
         handleChange={handleChange}
@@ -46,8 +46,6 @@ const AddInvoice = (props) => {
         setValidForm={setValidForm}
         formData={formData}
         setFormData={setFormData}
-        projects={props.projects}
-        clients={props.clients}
       />
     </>
   )
