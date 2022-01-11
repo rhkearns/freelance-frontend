@@ -43,7 +43,7 @@ const CreateProject = (props) => {
         setValidForm={setValidForm}
         formData={formData}
         setFormData={setFormData}
-        clients={props.clients}
+        // clients={props.clients}
       />
     </>
   )

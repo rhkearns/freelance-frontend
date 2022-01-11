@@ -44,7 +44,7 @@ const UpdateProject = (props) => {
       setValidForm={setValidForm}
       formData={formData}
       setFormData={setFormData}
-      clients={props.clients}
+      // clients={props.clients}
     />
   )
 }

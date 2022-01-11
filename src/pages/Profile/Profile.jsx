@@ -3,16 +3,19 @@ import { Link } from 'react-router-dom';
 import moment from 'moment'
 import { useSelector, useDispatch } from 'react-redux'
 import { fetchProjects } from '../../redux/actions/projectActions';
+import { fetchClients } from '../../redux/actions/clientActions';
 // Components
 // Styles
 import './profile.scss'
 
-const Profile = ({user, clients, clientListStatus, setClientListStatus, handleLogout}) => {
+const Profile = ({user, clientListStatus, setClientListStatus, handleLogout}) => {
   const dispatch = useDispatch()
   const projects = useSelector((state) => state.allProjects.projects)
+  const clients = useSelector((state) => state.allClients.clients)
 
   useEffect(() => {
     dispatch(fetchProjects())
+    dispatch(fetchClients())
   }, [])
 
 const navLinkStyle = {

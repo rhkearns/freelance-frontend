@@ -1,10 +1,11 @@
 import React, { useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
+import { useSelector } from 'react-redux'
 
 import './projectForm.scss'
 import '../../sassStyles/_variables.scss'
 
-const ProjectForm = ({ handleCreateProject, handleChange, validForm, setValidForm, formData, clients}) => {
+const ProjectForm = ({ handleCreateProject, handleChange, validForm, setValidForm, formData}) => {
   const formElement = useRef()
   
   const linkStyle = {
@@ -19,6 +20,8 @@ const ProjectForm = ({ handleCreateProject, handleChange, validForm, setValidFor
     display: "flex",
     alignItems: "center"
   }
+
+  const clients = useSelector((state) => state.allClients.clients)
 
   useEffect(() => {
     formElement.current.checkValidity() ? setValidForm(true) : setValidForm(false)
