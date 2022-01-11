@@ -26,7 +26,7 @@ const InvoiceDetails = (props) => {
     try {
       const updatedInvoice = await invoiceService.markPaid(invoiceId)
       setInvoice(updatedInvoice)
-      props.handleUpdateInvoiceList(updatedInvoice)
+      // props.handleUpdateInvoiceList(updatedInvoice)
     } catch (error) {
       throw error
     }

@@ -1,10 +1,15 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom'
+import { useSelector, useDispatch } from 'react-redux'
+import { fetchInvoices } from '../../redux/actions/invoiceActions'
 // Components
 import InvoiceCard from './InvoiceCard'
 import'./invoiceList.scss'
 
-const InvoiceList = ({invoices}) => {
+const InvoiceList = () => {
+
+  const invoices = useSelector((state) => state.allInvoices.invoices)
+  const dispatch = useDispatch()
 
   const linkStyle = {
     width: "10vw",
@@ -18,6 +23,10 @@ const InvoiceList = ({invoices}) => {
     display: "flex",
     alignItems: "center"
   }
+
+  useEffect(() => {
+    dispatch(fetchInvoices())
+  })
 
   return (
     <div className="invoice-list">

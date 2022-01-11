@@ -26,7 +26,7 @@ const App = () => {
   const navigate = useNavigate()
   // const [projects, setProjects] = useState([])
   // const [clients, setClients] = useState([])
-  const [invoices, setInvoices] = useState([])
+  // const [invoices, setInvoices] = useState([])
   const [clientListStatus, setClientListStatus] = useState (false)
   const [signInFormStatus, setSignInFormStatus] = useState (false)
   const [signUpFormStatus, setSignUpFormStatus] = useState (false)
@@ -39,7 +39,7 @@ const App = () => {
     authService.logout()
     // setClients([])
     // setProjects([])
-    setInvoices([])
+    // setInvoices([])
     setUser(null)
     navigate('/')
   }
@@ -63,36 +63,36 @@ const App = () => {
   //   setClients(updatedArray)
   // }
 
-  const handleUpdateInvoiceList = (updatedInvoice) => {
-    const updatedArray = invoices.map(invoice => 
-      invoice._id === updatedInvoice._id ? updatedInvoice : invoice
-    )
-    setInvoices(updatedArray)
-  }
+  // const handleUpdateInvoiceList = (updatedInvoice) => {
+  //   const updatedArray = invoices.map(invoice => 
+  //     invoice._id === updatedInvoice._id ? updatedInvoice : invoice
+  //   )
+  //   setInvoices(updatedArray)
+  // }
 
 
-  useEffect(() => {
-    // const fetchProjects = async () => {
-    //   const projectData = await projectService.getAllProjects()
-    //   setProjects(projectData)
-    // }
-    // const fetchClients = async () => {
-    //   const clientData = await clientService.getAllClients()
-    //   setClients(clientData)
-    // }
-    const fetchInvoices = async () => {
-      const invoiceData = await invoiceService.getAllInvoices()
-      setInvoices(invoiceData)
-    }
-    // fetchProjects()
-    // fetchClients()
-    fetchInvoices()
-    return () => { 
-      // setProjects([]) 
-      // setClients([])
-      setInvoices([])
-    }
-  }, [user])
+  // useEffect(() => {
+  //   // const fetchProjects = async () => {
+  //   //   const projectData = await projectService.getAllProjects()
+  //   //   setProjects(projectData)
+  //   // }
+  //   // const fetchClients = async () => {
+  //   //   const clientData = await clientService.getAllClients()
+  //   //   setClients(clientData)
+  //   // }
+  //   // const fetchInvoices = async () => {
+  //   //   const invoiceData = await invoiceService.getAllInvoices()
+  //   //   setInvoices(invoiceData)
+  //   // }
+  //   // fetchProjects()
+  //   // fetchClients()
+  //   // fetchInvoices()
+  //   return () => { 
+  //     // setProjects([]) 
+  //     // setClients([])
+  //     // setInvoices([])
+  //   }
+  // }, [user])
 
   // useEffect(() => {
   //   const fetchProjects = async () => {
@@ -184,18 +184,23 @@ const App = () => {
         />
         <Route 
           path='/newInvoice'
-          element={user ? <AddInvoice invoices={invoices} setInvoices={setInvoices} 
+          element={user ? <AddInvoice 
+            // invoices={invoices} setInvoices={setInvoices} 
           // projects={projects} 
           // clients={clients}
           /> : <Navigate to="/login"/>}
         />
         <Route 
           path='/invoices'
-          element={user ? <InvoiceList user={user} invoices={invoices}/> : <Navigate to='/login'/>}
+          element={user ? <InvoiceList user={user} 
+          // invoices={invoices}
+          /> : <Navigate to='/login'/>}
         />
         <Route 
           path='/invoices/:id'
-          element={user ? <InvoiceDetails user={user} invoices={invoices} handleUpdateInvoiceList={handleUpdateInvoiceList}/> : <Navigate to="/login"/>}
+          element={user ? <InvoiceDetails user={user} 
+          // invoices={invoices} handleUpdateInvoiceList={handleUpdateInvoiceList}
+          /> : <Navigate to="/login"/>}
         />
       </Routes>
     </>
