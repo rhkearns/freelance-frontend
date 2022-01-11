@@ -29,7 +29,6 @@ const AddInvoice = (props) => {
     e.preventDefault()
     try {
       const newInvoice = await addInvoice(formData)
-      // props.setInvoices([newInvoice, ...props.invoices])
       navigate('/invoices')
     } catch (error) {
       throw error

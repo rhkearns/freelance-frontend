@@ -6,7 +6,6 @@ export const fetchProjects = () => async (dispatch) => {
   dispatch({type: ActionTypes.FETCH_PROJECTS, payload: response})
 }
 
-
 export const setProjects = (projects) => {
   return {
     type: ActionTypes.SET_PROJECTS,

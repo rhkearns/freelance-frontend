@@ -48,14 +48,11 @@ const ProjectDetails = () => {
     try {
       const updatedProject = await projectService.markComplete(projectId)
       setProject(updatedProject)
-      // handleUpdateProjectsList(updatedProject)
     } catch (error) {
       throw error
     }
   }
-
-  console.log(project);
-
+  
   return (
     <div className="project-details">
       <Link 
@@ -76,7 +73,6 @@ const ProjectDetails = () => {
           setProject={setProject}
           hours={hours}
           setHours={setHours}
-          // handleUpdateProjectsList={handleUpdateProjectsList}
         />
       }
       {project &&

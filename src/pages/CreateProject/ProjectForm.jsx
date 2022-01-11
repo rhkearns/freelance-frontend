@@ -7,6 +7,7 @@ import '../../sassStyles/_variables.scss'
 
 const ProjectForm = ({ handleCreateProject, handleChange, validForm, setValidForm, formData}) => {
   const formElement = useRef()
+  const clients = useSelector((state) => state.allClients.clients)
   
   const linkStyle = {
     width: "10vw",
@@ -21,8 +22,6 @@ const ProjectForm = ({ handleCreateProject, handleChange, validForm, setValidFor
     alignItems: "center"
   }
 
-  const clients = useSelector((state) => state.allClients.clients)
-
   useEffect(() => {
     formElement.current.checkValidity() ? setValidForm(true) : setValidForm(false)
   }, [formData])
@@ -35,7 +34,6 @@ const ProjectForm = ({ handleCreateProject, handleChange, validForm, setValidFor
       div className="return">Return To Profile
     </Link>
     <div className="project-form">
-    
       <form onSubmit={(e) => handleCreateProject(e)} ref={formElement}>
         <label>Project Title</label><br />
         <input

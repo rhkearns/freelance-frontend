@@ -21,7 +21,6 @@ const UpdateProject = (props) => {
     e.preventDefault()
     try {
       const updatedProject = await updateProject(id, formData)
-      // props.handleUpdateProjectsList(updatedProject)
       navigate(`/projects/${updatedProject._id}`)
       } catch (error) {
         throw error
@@ -44,7 +43,6 @@ const UpdateProject = (props) => {
       setValidForm={setValidForm}
       formData={formData}
       setFormData={setFormData}
-      // clients={props.clients}
     />
   )
 }

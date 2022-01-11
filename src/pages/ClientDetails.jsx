@@ -14,7 +14,6 @@ const ClientDetails = () => {
   const handleDeleteClient = async (clientId) => {
     try {
       await clientService.deleteClient(clientId)
-      // props.setClients(props.clients.filter(client => client._id !== clientId))
       navigate('/clients')
     } catch (error) {
       throw error

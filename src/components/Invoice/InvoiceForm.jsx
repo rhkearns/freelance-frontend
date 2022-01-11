@@ -26,7 +26,6 @@ const InvoiceForm = ({handleCreateInvoice, handleChange, validForm, setValidForm
     const foundProj = projects.find((project) => {
       return project._id === e.target.value
     })
-    console.log(foundProj);
     setFormData({
       projectBilled: foundProj._id,
       title: foundProj.title,

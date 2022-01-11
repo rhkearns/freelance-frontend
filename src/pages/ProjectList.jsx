@@ -8,7 +8,6 @@ import ProjectCard from '../components/Project/ProjectCard'
 const ProjectList = () => {
   const projects = useSelector((state) => state.allProjects.projects)
   const dispatch = useDispatch()
-  // console.log(projects);
 
   useEffect(() => {
     dispatch(fetchProjects())

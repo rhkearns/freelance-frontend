@@ -25,7 +25,6 @@ const CreateProject = (props) => {
     e.preventDefault()
     try {
       const newProject = await addProject(formData)
-      // props.setProjects([newProject, ...props.projects ])
       navigate(`/projects/${newProject._id}`)
     } catch (error) {
       throw error
@@ -43,7 +42,6 @@ const CreateProject = (props) => {
         setValidForm={setValidForm}
         formData={formData}
         setFormData={setFormData}
-        // clients={props.clients}
       />
     </>
   )
