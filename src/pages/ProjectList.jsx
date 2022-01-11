@@ -1,30 +1,18 @@
 import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom'
 import { useSelector, useDispatch } from 'react-redux'
-import { setProjects } from '../redux/actions/projectActions'
-import { getAllProjects } from '../services/projectService';
+import { fetchProjects } from '../redux/actions/projectActions'
 // Components
 import ProjectCard from '../components/Project/ProjectCard'
 
 const ProjectList = () => {
   const projects = useSelector((state) => state.allProjects.projects)
   const dispatch = useDispatch()
-  console.log(projects);
-
-  const fetchProjects = async () => {
-    try {
-      const response = await getAllProjects()
-      console.log('response', response);
-      dispatch(setProjects(response))
-    } catch (err) {
-      throw err
-    }
-  }
+  // console.log(projects);
 
   useEffect(() => {
-    fetchProjects()
+    dispatch(fetchProjects())
   }, [])
-console.log('projects post fetch', projects);
 
   return (
     <>

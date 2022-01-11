@@ -12,7 +12,7 @@ const HoursSection = (props) => {
     try {
       props.setHours(totalHours)
       await updateHours(props.project._id, totalHours)
-      await props.handleUpdateProjectsList(props.project)
+      // await props.handleUpdateProjectsList(props.project)
     } catch (error) {
       throw error
     }

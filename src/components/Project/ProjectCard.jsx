@@ -4,7 +4,7 @@ import moment from 'moment'
 import './project-card.scss'
 
 const ProjectCard = (props) => {
-  console.log(props)
+  // console.log(props)
 
   return (
     <div className='project-card'>
