@@ -75,7 +75,8 @@
 }
 
 .active-sign-in {
-  z-index: 3;
+  position: absolute;
+  z-index: 1;
 }
 
 .inactive-sign-in {
@@ -171,13 +172,6 @@
   }
 }
 
-@media screen and (max-width: 1200px) {
-  .two {
-    p {
-      font-size: 1.75rem;
-    }
-  }
-}
 
 @media screen and (max-width: 1200px) {
   .one {

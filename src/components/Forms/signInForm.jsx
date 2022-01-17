@@ -43,7 +43,7 @@ const SignInForm = (props) => {
         onSubmit={handleSubmit}
       >
         <FormGroup>
-          <Label for="exampleEmail">Username</Label>
+          <Label for="exampleEmail" style={{fontSize: "2vw"}}>Username</Label>
           <Input
             type="text"
             autoComplete='off'
@@ -55,7 +55,7 @@ const SignInForm = (props) => {
           />
         </FormGroup>
         <FormGroup>
-          <Label for="examplePassword">Password</Label>
+          <Label for="examplePassword" style={{fontSize: "2vw"}}>Password</Label>
           <Input
             type="password"
             autoComplete='off'
