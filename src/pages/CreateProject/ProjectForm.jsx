@@ -27,7 +27,7 @@ const ProjectForm = ({ handleCreateProject, handleChange, validForm, setValidFor
   }, [formData])
   
   return (
-    <div className="container">
+    <div className="container2">
     <Link 
       to="/profile"
       style={linkStyle}
