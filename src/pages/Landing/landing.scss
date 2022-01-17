@@ -22,6 +22,9 @@
     background-size: cover;
     background-repeat: no-repeat;
     background-position: fixed;
+    .title-info {
+      position: inherit;
+    }
     h1 {
       margin-left: 19%;
       padding-top: 7vh;
@@ -30,6 +33,7 @@
       margin-left: 23%;
     }
     .short-desc {
+      position: relative;
       margin-left: 19%;
       font-weight: bolder;
     }
@@ -64,6 +68,51 @@
   }
 }
 
+.navigation {
+  display: flex;
+  height: 5vh;
+  background-color: $dark1;
+}
+
+.active-sign-in {
+  z-index: 3;
+}
+
+.inactive-sign-in {
+  visibility: hidden;
+}
+
+.active-sign-up {
+  z-index: 3;
+}
+
+.inactive-sign-up {
+  visibility: hidden;
+}
+
+.three {
+  background-size: 200%;
+}
+
+.user-nav {
+  li {
+    display: inline;
+    z-index: 15;
+    
+    a {
+      color: $light2;
+      font-size: 1.5vw;
+      margin-top: -3vh;
+    }
+  }
+  .prof {
+    margin-right: 80vw;
+  }
+}
+
+.sign-in-button {
+  z-index: 100;
+}
 
 
 
@@ -129,8 +178,6 @@
     }
   }
 }
-
-
 
 @media screen and (max-width: 1200px) {
   .one {
@@ -279,58 +326,6 @@
 
 
 
-
-.navigation {
-  display: flex;
-  height: 5vh;
-  background-color: $dark1;
-}
-
-.sign-in-form {
-  position: absolute;
-  
-}
-
-.active-sign-in {
-  z-index: 3;
-}
-
-.inactive-sign-in {
-  visibility: hidden;
-}
-
-.sign-up-form {
-  position: absolute;
-  margin-top: 80vh;
-}
-
-.active-sign-up {
-  z-index: 3;
-}
-
-.inactive-sign-up {
-  visibility: hidden;
-}
-
-  .three {
-    background-size: 200%;
-  }
-
-.user-nav {
-  li {
-    display: inline;
-    z-index: 15;
-    
-    a {
-      color: $light2;
-      font-size: 1.5vw;
-      margin-top: -3vh;
-    }
-  }
-  .prof {
-    margin-right: 80vw;
-  }
-}
 
 
 
