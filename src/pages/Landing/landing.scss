@@ -22,6 +22,9 @@
     background-size: cover;
     background-repeat: no-repeat;
     background-position: fixed;
+    .title-info {
+      position: inherit;
+    }
     h1 {
       margin-left: 19%;
       padding-top: 7vh;
@@ -30,6 +33,7 @@
       margin-left: 23%;
     }
     .short-desc {
+      position: relative;
       margin-left: 19%;
       font-weight: bolder;
     }
@@ -64,37 +68,83 @@
   }
 }
 
+.navigation {
+  display: flex;
+  height: 5vh;
+  background-color: $dark1;
+}
+
+.active-sign-in {
+  position: absolute;
+  z-index: 1;
+}
+
+.inactive-sign-in {
+  visibility: hidden;
+}
+
+.active-sign-up {
+  z-index: 3;
+}
+
+.inactive-sign-up {
+  visibility: hidden;
+}
+
+.three {
+  background-size: 200%;
+}
+
+.user-nav {
+  li {
+    display: inline;
+    z-index: 15;
+    
+    a {
+      color: $light2;
+      font-size: 1.5vw;
+      margin-top: -3vh;
+    }
+  }
+  .prof {
+    margin-right: 80vw;
+  }
+}
+
+.sign-in-button {
+  z-index: 100;
+}
 
 
 
-@media screen and (max-width: 2000px) {
+@media screen and (max-width: 3000px) {
   .one {
     min-height: 75vh;
     h1 {
       font-size: 7rem;
     }
     h2 {
-      font-size: 3rem;
+      font-size: 4rem;
     }
     p {
-      font-size: 2rem;
+      font-size: 2.75rem;
       width: 26%;
     }
   }
   .sign-in-button {
     background-color: $mid1;
-    width: 17vw;
+    width: 12vw;
     margin-top:  68vh;
     margin-bottom: 147vh;
     margin-left: 66vw;
-    font-size: 2.5rem;
+    font-size: 3.5rem;
   }
   .sign-up-button {
     position: relative;
     background-color: $mid1;
-    width: 22vw;
+    width: 18vw;
     margin-left: 66vw;
-    font-size: 2.5rem;
+    font-size: 3.5rem;
   }
 
   .two {
@@ -109,20 +159,18 @@
     h2 {
       width: 48%;
       margin-left: 52%;
-      font-size: 3rem;
+      font-size: 4.75rem;
     }
   }
 }
 
-
-@media screen and (max-width: 1200px) {
-  .two {
-    p {
-      font-size: 1.75rem;
+@media screen and (max-width: 2500px) {
+  .three {
+    h2 {
+      font-size: 4.5rem
     }
   }
 }
-
 
 
 @media screen and (max-width: 1200px) {
@@ -272,58 +320,6 @@
 
 
 
-
-.navigation {
-  display: flex;
-  height: 5vh;
-  background-color: $dark1;
-}
-
-.sign-in-form {
-  position: absolute;
-  
-}
-
-.active-sign-in {
-  z-index: 3;
-}
-
-.inactive-sign-in {
-  visibility: hidden;
-}
-
-.sign-up-form {
-  position: absolute;
-  margin-top: 80vh;
-}
-
-.active-sign-up {
-  z-index: 3;
-}
-
-.inactive-sign-up {
-  visibility: hidden;
-}
-
-  .three {
-    background-size: 200%;
-  }
-
-.user-nav {
-  li {
-    display: inline;
-    z-index: 15;
-    
-    a {
-      color: $light2;
-      font-size: 1.5vw;
-      margin-top: -3vh;
-    }
-  }
-  .prof {
-    margin-right: 80vw;
-  }
-}
 
 
 

@@ -1,12 +1,11 @@
 @import '../../sassStyles/variables';
 
 .sign-in-form {
+  position: sticky;
   border: 2px solid $dark1;
   border-radius: .5em;
-  margin-bottom: 1em;
   margin-left: 35vw;
   margin-right: 35vw;
-  padding: 1em;
   text-align: center;
   width: 30vw;
   height: 35vh;
@@ -14,7 +13,7 @@
 
   h3 {
     text-align: center;
-    font-size: 2rem;
+    font-size: 2em;
     margin-bottom: -5vh;
     font-family: 'Playfair Display SC';
   }
@@ -23,7 +22,7 @@
     text-align: left;
     margin-left: 0%;
     margin-top: 4vh;
-    font-size: 1.75vw;
+    font-size: 1rem;
     font-family: 'Alegreya Sans SC';
     color: $dark1;
     font-weight: 700;
