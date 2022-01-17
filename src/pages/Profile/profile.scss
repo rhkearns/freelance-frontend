@@ -53,11 +53,8 @@ a {
 
   .prof-picture {
     height: 5%;
-    background-color: $mid1;
-    font-family: "Playfair Display SC";
-    font-size: 1.5vw;
-    text-align: center;
-    color: $light2;
+    background-color: $dark1;
+
   }
 
   .prof-card {
@@ -65,6 +62,10 @@ a {
     background-image: url('../../images/ProjectPhoto3.png');
     background-size: cover;
     background-repeat: no-repeat;
+    font-family: "Playfair Display SC";
+    font-size: 1.5vw;
+    text-align: center;
+    color: $light2;
   }
 
   .project-container {
@@ -118,6 +119,11 @@ a {
 .side-nav {
   height: 51vh;
   background-color: $mid1;
+  overflow-y: scroll;
+  ::-webkit-scrollbar {
+    display: none;
+  }
+  scrollbar-width: none;
 }
 
 button {
