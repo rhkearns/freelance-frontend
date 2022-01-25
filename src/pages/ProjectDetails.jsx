@@ -53,14 +53,13 @@ const ProjectDetails = () => {
     }
   }
   
-  return (
+  return (   
     <div className="project-details">
       <Link 
-      to="/profile"
-      style={linkStyle}
-      div className="return">Return To Profile
-    </Link>
-      <h1>Project Details</h1>
+        to="/profile"
+        style={linkStyle}
+        div className="return">Return To Profile
+      </Link>
       {project &&
         <ProjectCard 
           project={project}

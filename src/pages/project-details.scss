@@ -1,54 +1,47 @@
 @import '../sassStyles/variables';
 
 .project-details {
-  height: 100vh;
+  min-height: 100vh;
   width: 100vw;
-  background-image: url(../images/Project-photo8-Edit.png);
+  background-image: url(../images/Project-Photo9.jpeg);
   background-position: center;
-  background-size: contain;
   background-repeat: no-repeat;
+  background-size: 1000%;
+}
 
-  h1 {
+.project-card {
+  width: 50vw;
+  height: 55vw;
+
+  h2 {
+    width: 100vw;
+    padding-bottom: 15vh;
     text-align: center;
-    margin-top: 2vh;
     font-size: 5vw;
     font-family: 'Playfair Display SC';
     color: $mid1;
-  }
-}
-
-.project-card  {
-  position: absolute;
-  margin-left: 10vw;
-  margin-top: 18vh;
-  width: 32vw;
-  height: 55vh;
-  // background-color: rgba($dark1, 0.3);
-
-  h2 {
-    text-align: center;
-    font-size: 4vw;
-    font-family: 'Playfair Display SC';
-    color: $mid1;
+    text-decoration: underline rgba($dark1, 0.4);
   }
 
   h3 {
     margin-top: 3vh;
-    font-size: 2.5vw;
+    margin-left: 5vw;
+    font-size: 3.5vw;
     font-family: 'Alegreya Sans SC';
     color: $dark1;
+    text-decoration: underline rgba($dark1, 0.4);
   }
 
   h4 {
     text-align: center;
+    margin-left: 5vw;
   }
 }
 
 .hours-info {
-  position: absolute;
-  // background-color: rgba($mid1, 0.3);
+  width: 50vw;
   margin-left: 10vw;
-  margin-top: 52vh;
+  margin-left: 5vw;
 
   h2 {
     font-size:2.5vw;
@@ -80,15 +73,13 @@
     width: 10vw;
     font-weight: 700;
   }
-
 }
 
 .status {
-  position: absolute;
-  width: 40vw;
-  // background-color: rgba($mid1, 0.3);
-  margin-left: 6.5vw;
-  margin-top: 68vh;
+  width: 50vw;
+  margin-left: 5vw;
+  margin-top: 5vh;
+  border-bottom: solid rgba($dark1, 0.4);
   
   button {
     color: black;
@@ -98,122 +89,8 @@
 }
 
 .task-container {
-  position: absolute;
-  // background-color: rgba($mid1, 0.3);
-  width: 20vw;
-  height: 20vh;
-  margin-left: 60vw;
-  margin-top:18vh;
-
-  h2 {
-    font-size: 4vw;
-    font-family: 'Playfair Display SC';
-    color: $mid1;
-  }
-
-  button{
-    color: black;
-    font-weight: 900;
-  }
+  position: relative;
+  width: 50vw;
+  margin-left: 50vw;
 }
-
-.task-card {
-  width: 36vw;
-  margin-left: -50%;
-  border: 3px solid rgba($dark1, 0.5);
-  border-radius: 15px;
-  margin-top: 1vh;
-
-  p {
-    font-size: 1.75vw;
-    margin-left: 1vw;
-    font-family: 'Alegreya Sans SC';
-    font-weight: 500;
-  }
-
-  select {
-    position: absolute;
-    margin-left: 20vw;
-  }
-
-  button {
-    margin-left: 33vw;
-  }
-}
-
-.create-task {
-  margin-top: 3vh;
-  margin-left: 0vw;
-  margin-bottom: 1vh;
-
-  label {
-    position: absolute;
-    margin-left: -5vw;
-    font-size: 2vw;
-    font-family: 'Alegreya Sans SC';
-    font-weight: 700;
-  }
-
-  input {
-    position: absolute;
-  }
-
-  button {
-    position: inherit;
-    margin-bottom: 0.5vh;
-    width: 10vw;
-    margin-top: 4vh;
-  }
-}
-
-@media screen and (max-width: 768px) {
-
-  .project-card {
-    h3 {
-      margin-top: 1.5vh;
-    }
-  }
-
-  .hours-info {
-    margin-top: 45vh;
-  }
-
-  .task-container {
-    margin-top: 24vh;
-
-    select {
-      margin-left: 18vw;
-    }
-  }
- 
-  .status {
-    width: 40vw;
-    margin-left: 15vw;
-    margin-top: 60vh;
-  }
-
-}
-
-
-
-
-@media screen and(max-width:500px){
-
-  .project-details {
-    background-size: 200%;
-    background-position: center;
-  }
-}
-
-
-
-
-
-
-
-
-
-
-
-
 
