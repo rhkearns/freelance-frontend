@@ -60,32 +60,36 @@ const ProjectDetails = () => {
         style={linkStyle}
         div className="return">Return To Profile
       </Link>
-      {project &&
-        <ProjectCard 
-          project={project}
-          key={project._id}
-        />
-      }
-      {project &&
-        <HoursSection 
+      <div className="project">
+        {project &&
+          <ProjectCard 
+            project={project}
+            key={project._id}
+          />
+        }
+        {project &&
+          <HoursSection 
+            project={project}
+            setProject={setProject}
+            hours={hours}
+            setHours={setHours}
+          />
+        }
+        {project &&
+          <CardActions 
+            project={project}
+            markProjectComplete={markProjectComplete}
+          />
+        }
+      </div>
+      <div className="tasks">
+        <TaskSection 
           project={project}
           setProject={setProject}
-          hours={hours}
-          setHours={setHours}
+          tasks={tasks}
+          setTasks={setTasks}
         />
-      }
-      {project &&
-        <CardActions 
-          project={project}
-          markProjectComplete={markProjectComplete}
-        />
-      }
-      <TaskSection 
-        project={project}
-        setProject={setProject}
-        tasks={tasks}
-        setTasks={setTasks}
-      />
+      </div>
     </div>
   )
 }

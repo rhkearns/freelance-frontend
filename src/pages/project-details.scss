@@ -1,6 +1,7 @@
 @import '../sassStyles/variables';
 
 .project-details {
+  position: absolute;
   min-height: 100vh;
   width: 100vw;
   background-image: url(../images/Project-Photo9.jpeg);
@@ -12,10 +13,11 @@
 .project-card {
   width: 50vw;
   height: 55vw;
+  margin-bottom: 5vh;
 
   h2 {
     width: 100vw;
-    padding-bottom: 15vh;
+    padding-bottom: 5vh;
     text-align: center;
     font-size: 5vw;
     font-family: 'Playfair Display SC';
@@ -24,7 +26,7 @@
   }
 
   h3 {
-    margin-top: 3vh;
+    margin-top: 2vh;
     margin-left: 5vw;
     font-size: 3.5vw;
     font-family: 'Alegreya Sans SC';
@@ -38,9 +40,13 @@
   }
 }
 
+.project {
+  display: flex;
+  flex-direction: column;
+}
+
 .hours-info {
   width: 50vw;
-  margin-left: 10vw;
   margin-left: 5vw;
 
   h2 {
@@ -56,13 +62,11 @@
   } 
 
   form {
-    position: absolute;
     margin-left: 0%;
     margin-top: 5%;
   }
 
   input {
-    position: absolute;
     margin-top: -50%;
     margin-left: 13vw;
     width: 6vw;
@@ -88,9 +92,61 @@
   }
 }
 
-.task-container {
-  position: relative;
+.tasks {
+  position: absolute;
+  height: 100vh;
   width: 50vw;
-  margin-left: 50vw;
+  margin-left: 60vw;
+  top: 15vh;
+
+  .task-card {
+    width: 36vw;
+    border: 3px solid rgba($dark1, 0.5);
+    border-radius: 15px;
+    margin-top: 1vh;
+  
+    p {
+      font-size: 1.75vw;
+      margin-left: 1vw;
+      font-family: 'Alegreya Sans SC';
+      font-weight: 500;
+    }
+  
+    select {
+      position: absolute;
+      margin-left: 20vw;
+    }
+  
+    button {
+      margin-left: 33vw;
+    }
+  }
+  
+  .create-task {
+    margin-top: 3vh;
+    margin-left: 0vw;
+    margin-bottom: 1vh;
+  
+    label {
+      position: absolute;
+      margin-left: -5vw;
+      font-size: 2vw;
+      font-family: 'Alegreya Sans SC';
+      font-weight: 700;
+    }
+  
+    input {
+      position: absolute;
+    }
+  
+    button {
+      position: inherit;
+      margin-bottom: 0.5vh;
+      width: 10vw;
+      margin-top: 4vh;
+    }
+  }
 }
+
+
 
