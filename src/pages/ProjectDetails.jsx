@@ -90,6 +90,7 @@ const ProjectDetails = () => {
           setTasks={setTasks}
         />
       </div>
+      <div className="crease"></div>
     </div>
   )
 }
